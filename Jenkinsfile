@@ -31,11 +31,6 @@ pipeline {
             }
         }
 		
-		stage("Update Server Code") {
-            steps {
-                
-            }
-		}
 	}
 	
     post {
