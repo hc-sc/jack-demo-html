@@ -36,7 +36,6 @@ pipeline {
             steps {
                 withCredentials([azureServicePrincipal('AZURE_JENKINS_PRINCIPLE')]) {
                     sh """
-                    cd ./k8s
                     az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
                     az account set -s $AZURE_SUBSCRIPTION_ID
                     az aks get-credentials --resource-group SolutionsEnablement-Clusters --name build
