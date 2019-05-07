@@ -1,0 +1,52 @@
+image:https://img.shields.io/badge/platform-G1-green.svg[Scope]
+image:https://img.shields.io/badge/type-base image-green.svg[Scope]
+image:https://img.shields.io/badge/scope-internal-red.svg[Scope]
+image:https://img.shields.io/badge/classification-unclassified-green.svg[World Change]
+
+= HA Proxy Standard Images
+
+Standard HA Proxy docker images for use in all applications and platforms. Includes HTTP method blocking for TRACE and unknown HTTP methods and TLS ciphers to meet IT PIN 2018-01. There are two flavours an open version which runs on port 80 and a secure version running on port 80 and 443. The secure version will redirect all port 80 traffic up to 443.
+Note that both secure and open configurations enforce all of the same rules outside of TLS specific settings (Ciphers, Secure Cookies, etc).
+
+[IMPORTANT]
+This is the required front end for all applications in the custom or G1 stream of development.
+
+Both configurations of the service require that mappings to backend services are defined. The mapping file uses standard HA Proxy 1.8 syntax. Do not include and global or front-end section declarations.
+Here is an example of the mapping required for a JIRA instance.
+
+.Service Mapping
+----
+    acl url_jira path_beg /jira
+
+    use_backend jira if url_jira
+
+    default_backend nginx
+
+backend jira
+    balance roundrobin
+    server  jira-server1 10.6.21.4:9980 check
+----
+
+To create an instance of an open instance the following bash script fragment can be used. The only requirenents are to implement a mapping file in HA Proxy 1.8 syntax at /var/opt/jack/ops/ha-mapping.cfg, and to identify the specific version of the proxy that you would like to run.
+
+.Create Script For Open
+[source,bash]
+----
+ docker create --name haproxy \
+    -v /var/opt/jack/ops/ha-mapping.cfg:/usr/local/etc/haproxy/ha-mapping.cfg:ro \
+    -p 80:80 \
+    haproxy-open:<version>
+----
+
+To create secure instance there are two additional requirements. The first is that there must be a PEM format file created with the server certificate, bridge certificates and the server private key created at /var/op/jack/ops/certificate.pem. The second requirement is that a decision is needed to include or block the port 80 listener. The only task of this listener is to redirect traffic to the listener on port 443.
+
+.Create Script For Secure
+[source,bash]
+----
+ docker create --name haproxy \
+    -v /var/opt/jack/ops/ha-mapping.cfg:/usr/local/etc/haproxy/ha-mapping.cfg:ro \
+    -v /var/opt/jack/ops/certificate.pem:/usr/local/etc/haproxy/certificate.pem:ro \
+    [ -p 80:80 \ ]
+    -p 443:443 \
+    haproxy-secure:<version>
+----
