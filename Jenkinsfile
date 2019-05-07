@@ -6,6 +6,13 @@ pipeline {
         }
     }
     stages {
+        stage('Dump Environment') {
+            steps {
+                sh 'env'
+            }
+        }
+    }
+    stages {
         stage('update files') {
             steps {
                 sh 'docker restart apache2'
