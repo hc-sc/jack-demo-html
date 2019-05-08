@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage ('Build') { 
       steps {
-        sh 'docker stop apache2'
+        
       }
     }
   }
