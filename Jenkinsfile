@@ -43,13 +43,13 @@ pipeline {
             }
         }        
 
-        stage("Update HTML ile") {
+        stage("Deploy") {
             when {
                 branch 'master'
             }
 		
             steps {
-		     withCredentials([azureServicePrincipal('AZURE_JENKINS_PRINCIPLE')]) {
+				withCredentials([azureServicePrincipal('AZURE_JENKINS_PRINCIPLE')]) {
                     sh """
                         cd ./k8s
                         az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
@@ -59,12 +59,11 @@ pipeline {
                         ./phpserver.sh ${containerRegistryPull} ${rootGroup} ${version} ${buildId} | kubectl create --namespace=build -f - 
                     """
                 }
-	    
-        
-                //todo G1 deployment integration
+				//todo G1 deployment integration
                 println("Need something to do here")
-            }
-        }
 
+			}
+        
+        }                
     }
 }
