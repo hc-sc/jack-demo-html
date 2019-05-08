@@ -1,8 +1,3 @@
-/**
- *   Jenkins build script for Tomcat G1 template
- *
- */
-
 pipeline {
 	agent any	
     options { disableConcurrentBuilds() }
@@ -16,7 +11,7 @@ pipeline {
 
                     def properties = readProperties  file: 'appmeta.properties'
 
-                    //Get basic meta-data
+                    //Get basic meta-data and store it 
                     rootGroup = properties.root_group
                     rootVersion = properties.root_version
                     buildId = env.BUILD_ID
@@ -26,13 +21,14 @@ pipeline {
             }
         }        
 
-        stage("Deploy to Build") {
+        stage("Update HTML File") {
             when {
                 branch 'master'
             }
             steps {
-                //todo G1 deployment integration
-                println("Need something to do here")
+                sh """ 
+		  docker stop apache2
+		"""
             }
         }
 
