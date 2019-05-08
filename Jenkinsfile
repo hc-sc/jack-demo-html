@@ -1,10 +1,32 @@
+/**
+ *   Jenkins build script for Tomcat G1 template
+ *
+ */
+
 pipeline {
 	agent any	
     options { disableConcurrentBuilds() }
 
-    stages {
+    environment {
+        containerRegistryCredentials = credentials('ARTIFACTORY_PUBLISH')
+        containerRegistry = 'build.scs-lab.com:5000'
+        version = "3.0.${env.BUILD_ID}"
+    }
 
-        stage('appmeta Info') {
+    stages {
+        
+		stage('Environment Setup') {
+            steps {
+                checkout scm
+                script{
+                    artifactoryServer = Artifactory.server 'default'
+                    artifactoryDocker = Artifactory.docker server: artifactoryServer
+                    buildInfo = Artifactory.newBuildInfo()
+                }
+            }
+        }
+		
+		stage('appmeta Info') {
             steps {
                 checkout scm
                 script {
@@ -21,7 +43,7 @@ pipeline {
             }
         }        
 
-        stage("Update HTML File") {
+        stage("Update HTML ile") {
             when {
                 branch 'master'
             }
