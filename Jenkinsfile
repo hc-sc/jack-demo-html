@@ -1,40 +1,89 @@
-/**
- *   Jenkins build script for Tomcat G1 template
- *
- */
-
 pipeline {
-	agent any	
-    options { disableConcurrentBuilds() }
+    agent {
+        label 'standardv2'
+    }
+
+    environment {
+        containerRegistryCredentials = credentials('ARTIFACTORY_PUBLISH')
+        containerRegistry = 'build.scs-lab.com:5000'
+        containerRegistryPull = 'build.scs-lab.com'
+    }
 
     stages {
 
-        stage('appmeta Info') {
+        stage('Version Info') {
             steps {
-                checkout scm
-                script {
+                node("master") {
+                    checkout scm
+                    script {
 
-                    def properties = readProperties  file: 'appmeta.properties'
+                        //Get basic meta-data
+                        versions = load './buildSrc/src/main/groovy/Version.groovy'
+                        rootGroup = versions.getRootGroup()
+                        rootVersion = versions.getRootVersion()
+                        buildId = env.BUILD_ID
+                        version = rootVersion + "." + (buildId ? buildId : "MANUAL-BUILD")
+                        module = rootGroup
 
-                    //Get basic meta-data
-                    rootGroup = properties.root_group
-                    rootVersion = properties.root_version
-                    buildId = env.BUILD_ID
-                    version = rootVersion + "." + (buildId ? buildId : "MANUAL-BUILD")
-                    module = rootGroup
+
+                        // Setup Artifactory connection
+                        artifactoryServer = Artifactory.server 'default'
+                        artifactoryDocker = Artifactory.docker server: artifactoryServer
+                        buildInfo = Artifactory.newBuildInfo()
+
+                    }
                 }
-            }
-        }        
-
-        stage("Deploy to Build") {
-            when {
-                branch 'master'
-            }
-            steps {
-                //todo G1 deployment integration
-                println("Need something to do here")
             }
         }
 
+      
+
+        stage("Publish to Artifactory") {
+            steps {
+                script {
+                    def buildInfoTemp
+                    buildInfoTemp = artifactoryDocker.push "${containerRegistry}/php/${rootGroup}.phpserver:${version}", 'docker-local'
+                    buildInfo.append buildInfoTemp
+                    buildInfoTemp = artifactoryDocker.push "${containerRegistry}/php/${rootGroup}.mysql:${version}", 'docker-local'
+                    buildInfo.append buildInfoTemp
+                    artifactoryServer.publishBuildInfo buildInfo
+                }
+            }
+        }
+
+       
+
+    }
+
+    post {
+        always {
+            script {
+                resultString = "None"
+            }
+        }
+        success {
+            script {
+                resultString = "Success"
+            }
+        }
+        unstable {
+            script {
+                resultString = "Unstable"
+            }
+        }
+        failure {
+            script {
+                resultString = "Failure"
+            }
+        }
+        cleanup {
+            emailext body: "<p>See build result details at: <a href='${env.JOB_URL}'>${env.JOB_URL}</a></p>", mimeType: 'text/html; charset=UTF-8', recipientProviders: [[$class: 'CulpritsRecipientProvider'], [$class: 'DevelopersRecipientProvider'], [$class: 'UpstreamComitterRecipientProvider'], [$class: 'RequesterRecipientProvider']], replyTo: 'no-reply@build.scs-lab.com', subject: "${currentBuild.fullDisplayName} ${resultString}"
+            script {
+                jiraIssueSelector(issueSelector: [$class: 'DefaultIssueSelector'])
+                        .each {
+                    id -> jiraComment body: "*Build Result ${resultString}* Module: ${module} Version: ${version} [Details|${env.BUILD_URL}]", issueKey: id
+                }
+            }
+        }
     }
 }
