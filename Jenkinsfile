@@ -7,12 +7,6 @@ pipeline {
 
     options { disableConcurrentBuilds() }
 
-    environment {
-        containerRegistryCredentials = credentials('ARTIFACTORY_PUBLISH')
-        containerRegistry = 'build.scs-lab.com:5000'
-        containerRegistryPull = 'build.scs-lab.com'
-    }
-
     stages {
 
         stage('appmeta Info') {
