@@ -26,9 +26,8 @@ pipeline {
                 branch 'master'
             }
             steps {
-                sh """ 
-		  docker stop apache2
-		"""
+                //todo G1 deployment integration
+                println("Need something to do here")
             }
         }
 
