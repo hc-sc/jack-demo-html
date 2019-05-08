@@ -41,19 +41,6 @@ pipeline {
             }
         }        
 
-        stage("Publish to Artifactory") {
-            when {
-                branch 'master'
-            }
-            steps {
-                script {
-                    def buildInfoTemp
-                    buildInfoTemp = artifactoryGradle.run rootDir: ".", buildFile: 'build.gradle', tasks: 'clean artifactoryPublish'
-                    artifactoryServer.publishBuildInfo buildInfoTemp
-                }
-            }
-        }
-
         stage("Deploy to Build") {
             when {
                 branch 'master'
