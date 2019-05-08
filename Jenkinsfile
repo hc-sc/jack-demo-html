@@ -59,7 +59,7 @@ pipeline {
                         ./phpserver.sh ${containerRegistryPull} ${rootGroup} ${version} ${buildId} | kubectl create --namespace=build -f - 
                     """
                 }
-	    }
+	    
         
                 //todo G1 deployment integration
                 println("Need something to do here")
