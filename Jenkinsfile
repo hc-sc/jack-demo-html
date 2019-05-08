@@ -4,7 +4,11 @@
  */
 
 pipeline {
-	agent any	
+	agent {
+		node{
+			label 'docker'
+		}
+	}
     options { disableConcurrentBuilds() }
 
     environment {
@@ -51,12 +55,8 @@ pipeline {
             steps {
 				withCredentials([azureServicePrincipal('AZURE_JENKINS_PRINCIPLE')]) {
                     sh """
- 
-                        az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
-                        az account set -s $AZURE_SUBSCRIPTION_ID
-                        az aks get-credentials --resource-group SolutionsEnablement-Clusters --name build
-                        ./phpserver.sh ${containerRegistryPull} ${rootGroup} ${version} ${buildId}
-                        ./phpserver.sh ${containerRegistryPull} ${rootGroup} ${version} ${buildId} | kubectl create --namespace=build -f - 
+						ssh mradwan@majic-student.canadacentral.cloudapp.azure.com
+						
                     """
                 }
 				//todo G1 deployment integration
