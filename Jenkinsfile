@@ -4,11 +4,7 @@
  */
 
 pipeline {
-	agent {
-		node{
-			label 'docker'
-		}
-	}
+	agent any
     options { disableConcurrentBuilds() }
 
     environment {
