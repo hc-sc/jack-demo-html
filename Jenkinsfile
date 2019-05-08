@@ -4,9 +4,6 @@
  */
 
 pipeline {
-    agent {
-        label 'standardv1'
-    }
 
     options { disableConcurrentBuilds() }
 
