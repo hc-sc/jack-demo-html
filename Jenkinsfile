@@ -51,7 +51,7 @@ pipeline {
 		
             steps {
 
-					withCredentials([usernamePassword(credentialsId: 'amazon', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+					withCredentials([SSHCredentials(credentialsId: 'amazon', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
 					sh 'echo $PASSWORD'
 					echo USERNAME
 					echo "username is $USERNAME"
