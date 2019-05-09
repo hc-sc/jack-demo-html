@@ -1,5 +1,5 @@
 /**
- *   Jenkins build script for Tomcat G1 template
+ *   Jenkins build script for HelloWorld_HTML
  *
  */
 
@@ -8,7 +8,8 @@ pipeline {
     options { disableConcurrentBuilds() }
 	
     environment {
-		SSHCredentials = credentials('SSH_Cred')
+		SSHCredentials = credentials('AZURE_SSH')
+		containerRegistryCredentials = credentials('ARTIFACTORY_PUBLISH')
         containerRegistry = 'build.scs-lab.com:5000'
         version = "3.0.${env.BUILD_ID}"
     }
@@ -26,39 +27,22 @@ pipeline {
                 }
             }
         }
-		
-		stage('appmeta Info') {
-            steps {
-                checkout scm
-                script {
-
-                    def properties = readProperties  file: 'appmeta.properties'
-
-                    //Get basic meta-data and store it 
-                    rootGroup = properties.root_group
-                    rootVersion = properties.root_version
-                    buildId = env.BUILD_ID
-                    version = rootVersion + "." + (buildId ? buildId : "MANUAL-BUILD")
-                    module = rootGroup
-                }
-            }
-        }        
 
         stage("Deploy") {
             when {
                 branch 'master'
             }
-		
             steps {
-
-					withCredentials([SSHCredentials(credentialsId: 'amazon', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-					sh 'echo $PASSWORD'
-					echo USERNAME
-					echo "username is $USERNAME"
-				}
-				//todo G1 deployment integration
+				withCredentials(('AZURE_SSH')) {
+                    sh '''
+						ssh -i mradwan@majic-student.canadacentral.cloudapp.azure.com
+						sudo -i
+						cd
+						cd apache2
+						git pull https://github.scs-lab.com/Jack/HelloWorld_HTML.git
+                    '''
+                }
                 println("Need something to do here")
-
 			}
         
         }                
