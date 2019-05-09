@@ -4,7 +4,7 @@
  */
 
 pipeline {
-	agent any
+	agent {label 'HelloWorld_HTML'}
     options { disableConcurrentBuilds() }
 	
     environment {
