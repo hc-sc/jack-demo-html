@@ -33,13 +33,13 @@ pipeline {
                 branch 'master'
             }
             steps {
-				sshagent(credentials : ['SSHCredentials']) {
-					sh '''
+				withCredentials([azureServicePrincipal('SSHCredentials')]) {
+                    sh """
 						ssh -vv mradwan@majic-student.canadacentral.cloudapp.azure.com echo testing connection || true
 						ssh-add -L
 						echo done running remote windows test
-					'''
-				}
+                    """
+                }
 
 				/**
 				sh """
