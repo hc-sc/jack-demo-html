@@ -9,12 +9,17 @@ pipeline {
 	
     environment {
 		SSHCredentials = credentials('AZURE_SSH')
+		
+		AWS_ID = credentials("AWS_ID")
+		AWS_ACCESS_KEY_ID = "${env.AWS_ID_USR}"
+		AWS_SECRET_ACCESS_KEY = "${env.AWS_ID_PSW}"
+		
+		
 		containerRegistryCredentials = credentials('ARTIFACTORY_PUBLISH')
         containerRegistry = 'build.scs-lab.com:5000'
         version = "3.0.${env.BUILD_ID}"
     }
-	
-	
+
     stages {
         
 		stage('Environment Setup') {
@@ -33,15 +38,12 @@ pipeline {
                 branch 'master'
             }
             steps {
-				withCredentials(('AZURE_SSH')) {
                     sh '''
-						ssh -i mradwan@majic-student.canadacentral.cloudapp.azure.com
 						sudo -i
 						cd
 						cd apache2
 						git pull https://github.scs-lab.com/Jack/HelloWorld_HTML.git
                     '''
-                }
                 println("Need something to do here")
 			}
         
