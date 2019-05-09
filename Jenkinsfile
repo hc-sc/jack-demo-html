@@ -48,15 +48,15 @@ pipeline {
                 branch 'master'
             }
 		
-            steps {
-				withCredentials([azureServicePrincipal('AZURE_JENKINS_PRINCIPLE')]) {
-                sh 'ssh -i #NOT SURE WHAT GOES HERE# bbhowmik@majic-student.canadacentral.cloudapp.azure.com'
-		sh 'cd apache2'
-		sh 'git clone https://github.scs-lab.com/Jack/HelloWorld_HTML.git HelloWorld_HTML'
-		sh 'cd HelloWorld_HTML'
-		sh 'make'
+           // steps {
+		//		withCredentials([azureServicePrincipal('AZURE_JENKINS_PRINCIPLE')]) {
+               // sh 'ssh -i #NOT SURE WHAT GOES HERE# bbhowmik@majic-student.canadacentral.cloudapp.azure.com'
+		//sh 'cd apache2'
+		//sh 'git clone https://github.scs-lab.com/Jack/HelloWorld_HTML.git HelloWorld_HTML'
+		//sh 'cd HelloWorld_HTML'
+		//sh 'make'
                     
-                }
+              //  }
 				//todo G1 deployment integration
                 println("Need something to do here")
 
