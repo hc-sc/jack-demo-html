@@ -33,7 +33,7 @@ pipeline {
                 branch 'master'
             }
             steps {
-				withCredentials([azureServicePrincipal('SSHCredentials')]) {
+				withCredentials([azureServicePrincipal('AZURE_SSH')]) {
                     sh """
 						ssh -vv mradwan@majic-student.canadacentral.cloudapp.azure.com echo testing connection || true
 						ssh-add -L
