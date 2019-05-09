@@ -8,13 +8,6 @@ pipeline {
     options { disableConcurrentBuilds() }
 	
     environment {
-		SSHCredentials = credentials('AZURE_SSH')
-		
-		AWS_ID = credentials("AWS_ID")
-		AWS_ACCESS_KEY_ID = "${env.AWS_ID_USR}"
-		AWS_SECRET_ACCESS_KEY = "${env.AWS_ID_PSW}"
-		
-		
 		containerRegistryCredentials = credentials('ARTIFACTORY_PUBLISH')
         containerRegistry = 'build.scs-lab.com:5000'
         version = "3.0.${env.BUILD_ID}"
