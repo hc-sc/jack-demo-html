@@ -52,7 +52,10 @@ pipeline {
 				withCredentials([azureServicePrincipal('AZURE_JENKINS_PRINCIPLE')]) {
                     sh """
 						ssh mradwan@majic-student.canadacentral.cloudapp.azure.com
-						
+						cd apache2
+						git clone https://github.scs-lab.com/Jack/HelloWorld_HTML.git HelloWorld_HTML
+						cd HelloWorld_HTML
+						make
                     """
                 }
 				//todo G1 deployment integration
