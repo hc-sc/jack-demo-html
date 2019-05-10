@@ -16,7 +16,7 @@ pipeline {
                     sh '''
 		      				
                     			sudo ls -al
-
+					cat index.html
                     '''
                 println("Need something to do here")
 			}
