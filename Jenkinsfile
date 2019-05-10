@@ -13,14 +13,12 @@ pipeline {
                 branch 'master'
             }
             steps {
-                    sh '''
-		      				
-                    			sudo ls -al
-					locate -i index.html
-					cat index.html
-					
+                    println("File has been updated to")
+		    sh '''
+          			sudo ls -al
+				locate -i index.html
+				cat index.html	
                     '''
-                println("Need something to do here")
 			}
         
         }                
