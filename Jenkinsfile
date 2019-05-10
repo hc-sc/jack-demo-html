@@ -14,11 +14,13 @@ pipeline {
             }
             steps {
                     sh '''
-						cd
-						sudo -i
-						cd
-						cd apache2
-						git pull https://github.scs-lab.com/Jack/HelloWorld_HTML.git
+		      				echo "Multiline shell steps works too"
+                    				ls -lah
+						//cd
+						//sudo -i
+						//cd
+						//cd apache2
+						//git pull https://github.scs-lab.com/Jack/HelloWorld_HTML.git
                     '''
                 println("Need something to do here")
 			}
