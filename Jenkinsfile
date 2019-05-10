@@ -14,6 +14,7 @@ pipeline {
             }
             steps {
                     sh '''
+						cd
 						sudo -i
 						cd
 						cd apache2
