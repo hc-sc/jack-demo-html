@@ -5,29 +5,10 @@
 
 pipeline {
 	agent {label 'HelloWorld_HTML'}
-    options { disableConcurrentBuilds() }
 	
-    //environment {
-	//containerRegistryCredentials = credentials('ARTIFACTORY_PUBLISH')
-      //  containerRegistry = 'build.scs-lab.com:5000'
-	//containerRegistryPull = 'build.scs-lab.com'
-       // version = "3.0.${env.BUILD_ID}"
-    }
-
     stages {
         
-	stage('Environment Setup') {
-           steps {
-                checkout scm
-                script{
-                    artifactoryServer = Artifactory.server 'default'
-                    artifactoryDocker = Artifactory.docker server: artifactoryServer
-                    buildInfo = Artifactory.newBuildInfo()
-                }
-            }
-        }
-
-        stage("Deploy") {
+		stage("Deploy") {
             when {
                 branch 'master'
             }
@@ -42,5 +23,6 @@ pipeline {
 			}
         
         }                
-    }
+    
+	}
 }
