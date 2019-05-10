@@ -15,7 +15,7 @@ pipeline {
             steps {
                     sh '''
 		      				
-                    			sudo	ls -al
+                    			sudo ls -al
 
                     '''
                 println("Need something to do here")
