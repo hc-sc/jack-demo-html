@@ -7,8 +7,13 @@ pipeline {
 	agent {label 'HelloWorld_HTML'}
 	
     stages {
-        
-		stage("Deploy") {
+	    stage("Grunt Tasks") {
+		    
+	    }
+	    stage("Tests") {
+	    }
+	    
+	    stage("Deploy") {
             when {
                 branch 'master'
             }
