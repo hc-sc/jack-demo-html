@@ -14,11 +14,11 @@ pipeline {
             }
             steps {
                     println("File has been updated to")
-		   // sh '''
-          	//		sudo ls -al
-		//		locate -i index.html
-		//		cat index.html	
-                 //   '''
+		    sh '''
+          			sudo ls -al
+				locate -i index.html
+				cat index.html	
+                    '''
 			}
         
         }                
