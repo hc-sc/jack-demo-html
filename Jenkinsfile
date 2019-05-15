@@ -16,11 +16,13 @@ pipeline {
                 branch 'master'
             }
             steps {
-                    println("File has been updated to")
-
-		sh '''
-		    grunt htmllint
-		    '''
+                    
+		println("HTML Validation")
+		sh 'grunt htmllint'
+		println("CSS minifying")
+		sh 'grunt cssmin'
+		println("JS minify and Uglify")
+		sh 'grunt uglify'    
 	    }
 	    }
 	    
