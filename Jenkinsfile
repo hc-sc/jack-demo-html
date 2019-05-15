@@ -21,7 +21,7 @@ pipeline {
 		println("JS minify and Uglify")
 		sh 'grunt uglify --force'
 		println("Mocha Test")
-		sh 'grunt'    
+		sh 'grunt mocha --force'    
 	    }
 	    }
 	    
