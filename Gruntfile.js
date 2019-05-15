@@ -21,10 +21,18 @@ grunt.initConfig({
 			dest: '/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master/main.min.js'
 		},	
 	},
+	    // Mocha
+    	mocha: {
+      		all: ['test.html']
+        	},
+      		options: {
+        		run: true
+      		}
+    	}
 
        });
 
-
+grunt.loadNpmTasks('grunt-mocha');
 grunt.loadNpmTasks('grunt-contrib-cssmin');
 grunt.loadNpmTasks('grunt-html');
 grunt.loadNpmTasks('grunt-contrib-uglify');
