@@ -28,7 +28,7 @@ grunt.initConfig({
       		options: {
         		run: true
       		}
-    	}
+    	},
 
        });
 
