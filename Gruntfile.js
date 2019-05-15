@@ -25,8 +25,6 @@ grunt.initConfig({
        });
 
 
-
-grunt.loadNpmTasks('grunt-contrib-concat');
 grunt.loadNpmTasks('grunt-contrib-cssmin');
 grunt.loadNpmTasks('grunt-html');
 grunt.loadNpmTasks('grunt-contrib-uglify');
