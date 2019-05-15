@@ -12,8 +12,14 @@ pipeline {
 	    
 
 	stage("Tests") {
+		 when {
+                branch 'master'
+            }
+            steps {
+
 		sh './gradlew clean build'
-	}
+	    }
+	    }
 	    
 	    stage("Deploy") {
             when {
