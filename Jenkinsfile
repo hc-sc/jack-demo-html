@@ -17,7 +17,7 @@ pipeline {
             }
             steps {
 
-		sh './gradlew clean build'
+		sh 'ls'
 	    }
 	    }
 	    
