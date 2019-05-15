@@ -22,7 +22,7 @@ pipeline {
 		println("CSS minifying")
 		sh 'grunt cssmin --force'
 		println("JS minify and Uglify")
-		sh 'grunt uglify'    
+		sh 'grunt uglify --force'    
 	    }
 	    }
 	    
