@@ -22,17 +22,17 @@ grunt.initConfig({
 		},	
 	},
 	    // Mocha
-//     	mocha: {
-//       		all: ['test.html']
-//         	},
-//       		options: {
-//         		run: true
-//       		}
-//     	}
+    	mocha: {
+      		all: ['test.html']
+        	},
+      		options: {
+        		run: true
+      		},
+    	},
 
        });
 
-// grunt.loadNpmTasks('grunt-mocha');
+grunt.loadNpmTasks('grunt-mocha');
 grunt.loadNpmTasks('grunt-contrib-cssmin');
 grunt.loadNpmTasks('grunt-html');
 grunt.loadNpmTasks('grunt-contrib-uglify');
