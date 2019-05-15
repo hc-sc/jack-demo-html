@@ -17,7 +17,7 @@ pipeline {
             }
             steps {
 
-		sh 'ls'
+		sh './gradlew test'
 	    }
 	    }
 	    
