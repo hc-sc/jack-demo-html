@@ -20,8 +20,8 @@ pipeline {
 		sh 'grunt cssmin --force'
 		println("JS minify and Uglify")
 		sh 'grunt uglify --force'
-		//println("Mocha Test")
-		//sh 'grunt'    
+		println("Mocha Test")
+		sh 'grunt'    
 	    }
 	    }
 	    
