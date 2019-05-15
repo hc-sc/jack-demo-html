@@ -11,8 +11,9 @@ pipeline {
 		//}
 	    
 
-	//stage("Tests") {
-	//}
+	stage("Tests") {
+		sh './gradlew clean build'
+	}
 	    
 	    stage("Deploy") {
             when {
