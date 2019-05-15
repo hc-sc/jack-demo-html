@@ -8,6 +8,9 @@ grunt.initConfig({
 				dest: '/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master/style.min.css'
                 },
            },
+	htmllint: {
+    			all: ['/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master/index.html']
+           },
        });
 
 
