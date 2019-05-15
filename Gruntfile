@@ -1,5 +1,13 @@
 module.exports = (grunt)
 
+grunt.initConfig({
+        cssmin: {
+			css: {
+				src: '/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master/style.css',
+				dest: '/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master/style.min.css'
+                }
+           }
+       });
 
 
 
