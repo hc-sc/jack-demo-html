@@ -1,6 +1,7 @@
-module.exports = (grunt)
+module.exports = function(grunt)
 
 grunt.initConfig({
+	pkg: grunt.file.readJSON('package.json'),
         cssmin: {
 			css: {
 				src: '/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master/style.css',
