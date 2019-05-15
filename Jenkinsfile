@@ -17,6 +17,7 @@ pipeline {
 		grunt htmllint
 		grunt cssmin --force
 		grunt uglify --force
+		grunt mocha --force
 		'''  
 	    }
 	    }
