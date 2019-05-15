@@ -10,7 +10,7 @@ grunt.initConfig({
            },
 	htmllint: {
     			all: ['/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master/index.html']
-           },
+           }
 	uglify: {
 		options : {
 		banner : "/*! app.min.js file */\n"
@@ -18,7 +18,7 @@ grunt.initConfig({
  		build:{
   			src : '/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master/main.js', 
 			dest: '/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master/main.min.js'
-		},	
+		}	
 	}
 
        });
