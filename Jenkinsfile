@@ -18,7 +18,10 @@ pipeline {
             steps {
                     println("File has been updated to")
 
-		//sh './gradlew test'
+		sh '''
+		    npm install -g bower grunt-cli && npm install
+		    grunt htmllint
+		    '''
 	    }
 	    }
 	    
