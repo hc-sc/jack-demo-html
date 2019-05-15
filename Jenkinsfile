@@ -16,8 +16,9 @@ pipeline {
                 branch 'master'
             }
             steps {
+                    println("File has been updated to")
 
-		sh './gradlew test'
+		//sh './gradlew test'
 	    }
 	    }
 	    
