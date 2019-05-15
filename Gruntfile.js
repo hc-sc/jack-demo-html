@@ -22,7 +22,7 @@ grunt.initConfig({
 		},	
 	},
 	    // Mocha
-    mocha: {
+    mochaTest: {
       all: {
         src: ['tests/testrunner.html'],
       },
