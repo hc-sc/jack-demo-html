@@ -22,13 +22,14 @@ grunt.initConfig({
 		},	
 	},
 	    // Mocha
-    	mocha: {
-      		all: ['test.html']
-        	},
-      		options: {
-        		run: true
+	mocha: {
+      		all: {
+        		src: ['tests/testrunner.html'],
       		},
-    	},
+     		options: {
+       		 	run: true
+      		}
+    	}
 
        });
 
