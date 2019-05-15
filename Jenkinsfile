@@ -15,9 +15,9 @@ pipeline {
             steps {
 		sh '''
 		grunt htmllint
-		sh 'grunt cssmin --force'
-		sh 'grunt uglify --force'
-		sh 'grunt mocha --force'  
+		grunt cssmin --force
+		grunt uglify --force
+		grunt mocha --force
 		'''  
 	    }
 	    }
