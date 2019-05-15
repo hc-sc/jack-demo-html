@@ -24,7 +24,7 @@ grunt.initConfig({
 	    // Mocha
 	mocha: {
       		all: {
-        		src: ['tests/test.html'],
+        		src: ['test/test.html'],
       		},
      		options: {
        		 	run: true
