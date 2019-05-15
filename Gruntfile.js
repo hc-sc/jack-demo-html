@@ -11,6 +11,7 @@ grunt.initConfig({
 	htmllint: {
     			all: ['/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master/index.html']
            },
+	
        });
 
 
