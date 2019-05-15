@@ -20,7 +20,7 @@ pipeline {
 		//println("HTML Validation")
 		//sh 'grunt htmllint'
 		println("CSS minifying")
-		sh 'grunt cssmin'
+		sh 'grunt cssmin --force'
 		println("JS minify and Uglify")
 		sh 'grunt uglify'    
 	    }
