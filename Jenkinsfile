@@ -13,15 +13,12 @@ pipeline {
                 branch 'master'
             }
             steps {
-                    
-		println("HTML Validation")
-		sh 'grunt htmllint'
-		println("CSS minifying")
+		sh '''
+		grunt htmllint
 		sh 'grunt cssmin --force'
-		println("JS minify and Uglify")
 		sh 'grunt uglify --force'
-		println("Mocha Test")
-		sh 'grunt mocha --force'    
+		sh 'grunt mocha --force'  
+		'''  
 	    }
 	    }
 	    
