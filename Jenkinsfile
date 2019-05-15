@@ -17,8 +17,8 @@ pipeline {
             }
             steps {
                     
-		println("HTML Validation")
-		sh 'grunt htmllint'
+		//println("HTML Validation")
+		//sh 'grunt htmllint'
 		println("CSS minifying")
 		sh 'grunt cssmin'
 		println("JS minify and Uglify")
