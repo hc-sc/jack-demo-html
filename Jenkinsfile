@@ -33,8 +33,14 @@ pipeline {
 
                     // Setup Artifactory connection
                     artifactoryServer = Artifactory.server 'default'
+                    artifactoryGradle = Artifactory.newGradleBuild()
                     artifactoryDocker = Artifactory.docker server: artifactoryServer
                     buildInfo = Artifactory.newBuildInfo()
+                    artifactoryGradle.useWrapper = true
+                    artifactoryGradle.usesPlugin = true
+                    artifactoryGradle.deployer.deployArtifacts = true
+                    artifactoryGradle.deployer repo: 'gradle-local', server: artifactoryServer
+                    artifactoryGradle.resolver repo: 'gradle', server: artifactoryServer
                 }
             }
         }
@@ -69,14 +75,17 @@ pipeline {
 			}
 		}	
 		
-		stage("Publish to Artifactory") {
-            steps{
-				script {
+        stage("Publish to Artifactory") {
+            when {
+                branch 'master'
+            }
+            steps {
+                script {
                     def buildInfoTemp
-                    buildInfoTemp = artifactoryDocker.push "test/test:${version}", 'docker-local'
-                    buildInfo.append buildInfoTemp
+                    buildInfoTemp = artifactoryGradle.run rootDir: ".", buildFile: 'build.gradle', tasks: 'clean artifactoryPublish'
+                    artifactoryServer.publishBuildInfo buildInfoTemp
                 }
-			}
-		}
+            }
+        }
 	}
 }
