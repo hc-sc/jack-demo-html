@@ -24,9 +24,7 @@ grunt.initConfig({
 	    // Mocha
     mochaTest: {
       test: {
-        //src: ['tests/testrunner.html'],
-	      src: ['/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master/index.html'],
-	      dest: ['/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master/test.html'],
+        src: ['tests/testrunner.html'],
       },
       options: {
         run: true
