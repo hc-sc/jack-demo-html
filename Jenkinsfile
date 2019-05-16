@@ -18,7 +18,6 @@ pipeline {
 					steps {
 						sh '''
 						grunt htmllint
-						grunt mochaTest --force
 						'''  
 					}
 				}	
@@ -50,10 +49,12 @@ pipeline {
 		
 		stage("Publish to Artifactory") {
             steps {
-                rtPublishBuildInfo (
-                    serverId: SERVER_ID
-                )
-            }
-        }
+                script {
+                    def buildInfoTemp
+                    buildInfoTemp = artifactoryGradle.run rootDir: ".", buildFile: 'build.gradle', tasks: 'clean artifactoryPublish'
+                    artifactoryServer.publishBuildInfo buildInfoTemp
+                }
+			}
+		}
 	}
 }
