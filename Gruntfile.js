@@ -33,7 +33,7 @@ grunt.initConfig({
           noFail: false, // Optionally set to not fail on failed tests (will still fail on other errors)
 		run: true,
         },
-        src: ['tests/testrunner.html']
+        src: ['tests/testrunner.html'],
       }
     }
 
