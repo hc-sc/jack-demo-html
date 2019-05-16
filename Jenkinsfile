@@ -18,6 +18,7 @@ pipeline {
 					steps {
 						sh '''
 						grunt htmllint
+						grunt mochaTest --force
 						'''  
 					}
 				}	
