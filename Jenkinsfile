@@ -8,15 +8,16 @@ pipeline {
 	
 	options { disableConcurrentBuilds() }   	
 	
-	environment {
+    environment {
         containerRegistryCredentials = credentials('ARTIFACTORY_PUBLISH')
         containerRegistry = 'build.scs-lab.com:5000'
         containerRegistryPull = 'build.scs-lab.com'
+        appUri = 'cfg-classification-webapp'
     }
 	
     stages {
 		
-		stage('appmeta Info') {
+        stage('appmeta Info') {
             steps {
                 checkout scm
                 script {
@@ -44,7 +45,7 @@ pipeline {
 					steps {
 						sh '''
 							grunt htmllint
-							grunt mocha --force
+							grunt mochaTest --force
 						'''  
 					}
 				}	
