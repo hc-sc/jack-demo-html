@@ -69,11 +69,13 @@ pipeline {
 		}	
 		
 		stage("Publish to Artifactory") {
-                script {
+            steps{
+				script {
                     def buildInfoTemp
                     buildInfoTemp = artifactoryDocker.push "${containerRegistry}/fm/fc/fc-webapp:${version}", 'docker-local'
                     buildInfo.append buildInfoTemp
                 }
+			}
 		}
 	}
 }
