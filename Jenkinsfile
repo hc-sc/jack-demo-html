@@ -55,7 +55,7 @@ pipeline {
 					steps {
 						sh '''
 						grunt htmllint
-						grunt mocha --force
+
 						'''  
 					}
 				}	
