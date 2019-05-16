@@ -22,7 +22,7 @@ grunt.initConfig({
 		},	
 	},
 	    // Mocha
-     mochaTest: {
+     mocha: {
       test: {
         options: {
           reporter: 'spec',
