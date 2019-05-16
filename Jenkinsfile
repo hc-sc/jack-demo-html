@@ -46,7 +46,7 @@ pipeline {
         }
 			
 			
-		stage("Component Builds") {
+		stage("Testing and Minification") {
 			parallel{
 				stage("Tests") {
 					when {
@@ -55,11 +55,11 @@ pipeline {
 					steps {
 						sh '''
 						grunt htmllint
-						grunt mocha --force
+						grunt mochaTest --force
 						'''  
 					}
-				}
-					
+				}	
+
 				stage("Minify") {
 					when {
 						branch 'master'
@@ -74,7 +74,6 @@ pipeline {
 			}
 		}
 						
-		
 		stage("Deploy") {
 			when {
 				branch 'master'
