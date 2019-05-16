@@ -73,7 +73,7 @@ pipeline {
             steps{
 				script {
                     def buildInfoTemp
-                    buildInfoTemp = artifactoryDocker.push "${containerRegistry}/fm/fc/fc-webapp:${version}", 'docker-local'
+                    buildInfoTemp = artifactoryDocker.push "test/test:${version}", 'docker-local'
                     buildInfo.append buildInfoTemp
                 }
 			}
