@@ -8,14 +8,43 @@ pipeline {
 	
 	options { disableConcurrentBuilds() }   	
 	
+	environment {
+        containerRegistryCredentials = credentials('ARTIFACTORY_PUBLISH')
+        containerRegistry = 'build.scs-lab.com:5000'
+        containerRegistryPull = 'build.scs-lab.com'
+    }
+	
     stages {
+		
+		stage('appmeta Info') {
+            steps {
+                checkout scm
+                script {
+
+                    def properties = readProperties  file: 'appmeta.properties'
+
+                    //Get basic meta-data
+                    rootGroup = properties.root_group
+                    rootVersion = properties.root_version
+                    buildId = env.BUILD_ID
+                    version = rootVersion + "." + (buildId ? buildId : "MANUAL-BUILD")
+                    module = rootGroup
+
+                    // Setup Artifactory connection
+                    artifactoryServer = Artifactory.server 'default'
+                    artifactoryDocker = Artifactory.docker server: artifactoryServer
+                    buildInfo = Artifactory.newBuildInfo()
+                }
+            }
+        }
+
 		stage("Testing and Minification") {
 			parallel{
 				stage("Tests") {
 					steps {
 						sh '''
-						grunt htmllint
-						grunt mocha --force
+							grunt htmllint
+							grunt mochaTest --force
 						'''  
 					}
 				}	
@@ -23,8 +52,8 @@ pipeline {
 				stage("Minify") {
 					steps {
 						sh '''
-						grunt cssmin --force
-						grunt uglify --force	
+							grunt cssmin --force
+							grunt uglify --force	
 						'''  
 					}
 				}
@@ -40,13 +69,11 @@ pipeline {
 		}	
 		
 		stage("Publish to Artifactory") {
-            steps {
-               	
-				sh '''
-				cat index.html
-				'''
-			
-			}
+                script {
+                    def buildInfoTemp
+                    buildInfoTemp = artifactoryDocker.push "${containerRegistry}/fm/fc/fc-webapp:${version}", 'docker-local'
+                    buildInfo.append buildInfoTemp
+                }
 		}
 	}
 }
