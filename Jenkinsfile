@@ -92,9 +92,9 @@ pipeline {
                 script {
                     def buildInfoTemp
                     buildInfo = Artifactory.newBuildInfo()
-                    buildInfoTemp = artifactoryDocker.push "${containerRegistry}/java/${rootGroup}.javaserver:${version}", 'docker-local'
+                    buildInfoTemp = artifactoryDocker.push "${containerRegistry}/java/${rootGroup}.javaserver:${version}"
                     buildInfo.append buildInfoTemp
-                    buildInfoTemp = artifactoryDocker.push "${containerRegistry}/java/${rootGroup}.postgres:${version}", 'docker-local'
+                    buildInfoTemp = artifactoryDocker.push "${containerRegistry}/java/${rootGroup}.postgres:${version}"
                     buildInfo.append buildInfoTemp
                     artifactoryServer.publishBuildInfo buildInfo
                 }
