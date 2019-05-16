@@ -23,7 +23,7 @@ grunt.initConfig({
 	},
 	    // Mocha
     mochaTest: {
-      test: {
+      all: {
         src: ['tests/testrunner.html'],
       },
       options: {
