@@ -32,7 +32,7 @@ grunt.initConfig({
           clearCacheFilter: (key) => true, // Optionally defines which files should keep in cache
           noFail: false // Optionally set to not fail on failed tests (will still fail on other errors)
         },
-        src: ['tests/tests.js']
+        src: ['tests/testrunner.html']
       }
     }
 
