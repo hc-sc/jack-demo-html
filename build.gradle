@@ -1,7 +1,7 @@
 buildscript{
     repositories {
         maven {
-            url pluginrepo_url
+            url https://github.scs-lab.com/Jack/HelloWorld_HTML
             credentials {
                 username repo_uid
                 password repo_pwd
@@ -129,7 +129,7 @@ dependencies {
 	compile("org.apache.logging.log4j:log4j-api:$log4jVersion")
 	compile("org.apache.logging.log4j:log4j-core:$log4jVersion")
 	compile("com.google.code.gson:gson:2.8.0")
-	compile("org.mongodb:mongo-java-driver:3.4.3")
+	//compile("org.mongodb:mongo-java-driver:3.4.3")
 	//compile "org.apache.poi:poi:3.17"
 	//compile "org.apache.poi:poi-ooxml:3.17"
 	
