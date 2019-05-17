@@ -17,44 +17,9 @@ pipeline {
 	
     stages {
 		
-        stage('appmeta Info') {
-            steps {
-                checkout scm
-                script {
-
-                    def properties = readProperties  file: 'appmeta.properties'
-
-                    //Get basic meta-data
-                    rootGroup = properties.root_group
-                    rootVersion = properties.root_version
-                    buildId = env.BUILD_ID
-                    version = rootVersion + "." + (buildId ? buildId : "MANUAL-BUILD")
-                    module = rootGroup
-
-                    // Setup Artifactory connection
-                    artifactoryServer = Artifactory.server 'default'
-                    artifactoryGradle = Artifactory.newGradleBuild()
-                    artifactoryDocker = Artifactory.docker server: artifactoryServer
-                    buildInfo = Artifactory.newBuildInfo()
-                    artifactoryGradle.useWrapper = true
-                    artifactoryGradle.usesPlugin = true
-                    artifactoryGradle.deployer.deployArtifacts = true
-                    artifactoryGradle.deployer repo: 'gradle-local', server: artifactoryServer
-                    artifactoryGradle.resolver repo: 'gradle', server: artifactoryServer
-                }
-            }
-        }
-		
 		// Testing and analysis stage
 		stage("Testing") {
-			parallel{
-				stage("Base Build") {
-					steps {
-						sh './gradlew clean build'
-						archiveArtifacts(artifacts: 'build/libs/*.jar')
-					}
-				}				
-				
+			parallel{	
 				stage("Tests") {
 					steps {
 						sh '''
@@ -74,6 +39,7 @@ pipeline {
 					}
 				}
 				// SonarQube Stage to be inserted here 
+				// Other stages before building that can be done in parallel
 			}
 		}
 						
