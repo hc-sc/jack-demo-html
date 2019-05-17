@@ -44,13 +44,21 @@ pipeline {
                 }
             }
         }
-
-		stage("Testing and Minification") {
+		
+		// Testing and analysis stage
+		stage("Testing") {
 			parallel{
+				stage("Base Build") {
+					steps {
+						sh './gradlew clean build'
+						archiveArtifacts(artifacts: 'build/libs/*.jar')
+					}
+				}				
+				
 				stage("Tests") {
 					steps {
 						sh '''
-							sudo npm install -g mocha
+
 							grunt htmllint
 							mocha
 						'''  
@@ -65,6 +73,7 @@ pipeline {
 						'''  
 					}
 				}
+				// SonarQube Stage to be inserted here 
 			}
 		}
 						
@@ -82,7 +91,8 @@ pipeline {
             }
             steps {
                 script {
-                    def buildInfoTemp
+                    
+					def buildInfoTemp
                     buildInfoTemp = artifactoryGradle.run rootDir: ".", buildFile: 'build.gradle', tasks: 'clean artifactoryPublish'
                     artifactoryServer.publishBuildInfo buildInfoTemp
                 }
