@@ -62,7 +62,7 @@ $(document).ready(function(){
     numTwo = parseFloat($display.text());
 
     if (operator === "+"){
-      total = numOne + numTwo;
+      total = add(numOne,numTwo);
     }
     else if (operator === "-"){
       total = numOne - numTwo;
@@ -77,7 +77,15 @@ $(document).ready(function(){
     $display.text(total);
     testNumLength($display.text());
   });
-
+function add(x, y){
+  return x+y;
+}
+function sub(){
+}
+function div(){
+}
+function mul(){
+}
   // Call reset function
   $("#clear").click(function(){
     reset();
