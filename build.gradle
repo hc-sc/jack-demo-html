@@ -1,0 +1,136 @@
+buildscript{
+    repositories {
+        maven {
+            url pluginrepo_url
+            credentials {
+                username repo_uid
+                password repo_pwd
+            }
+        }
+    }
+    dependencies {
+        classpath 'org.asciidoctor:asciidoctorj-epub3:1.5.0-alpha.8.1'
+        classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.16'
+    }
+}
+
+plugins {
+    id "org.asciidoctor.convert" version "1.5.7"
+    id "org.sonarqube" version "2.6.2"
+    id "com.jfrog.artifactory" version "4.9.0"
+}
+
+apply plugin: "war"
+apply plugin: 'project-report'
+
+asciidoctorj {
+    noDefaultRepositories = true
+}
+
+Properties metaProperties = new Properties()
+File propertiesFile = new File("$projectDir/appmeta.properties")
+propertiesFile.withInputStream {
+    metaProperties.load(it)
+}
+
+asciidoctor {
+    backends 'html5', 'pdf'
+    attributes \
+        'pdf-stylesdir': "${sourceDir}/theme",
+            'pdf-style': 'jack'
+}
+wrapper {
+    gradleVersion = '4.10.1'
+}
+
+def rootGroup = metaProperties.root_group
+def rootVersion = metaProperties.root_version
+def buildId = System.getenv('BUILD_ID')
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+compileJava.options.encoding = 'UTF-8'
+javadoc.options.encoding = "UTF-8"
+
+test {
+    ignoreFailures = true
+}
+
+repositories {
+    maven {
+        url repo_url
+        credentials {
+            username repo_uid
+            password repo_pwd
+        }
+    }
+}
+
+group = rootGroup
+version = rootVersion + "." + (buildId ? buildId : "MANUAL-BUILD")
+def branch = ( System.getenv('BRANCH_NAME') ? System.getenv("BRANCH_NAME") : 'DESKTOP-BUILD')
+def pull_request_no = System.getenv('CHANGE_ID')
+
+sonarqube {
+    properties {
+        if(branch == 'master' || pull_request_no) {
+            property "sonar.projectKey", group + ":" + project.name
+            property "sonar.projectName", project.name
+            property "sonar.projectVersion", version
+            if (pull_request_no) {
+                property "sonar.analysis.mode", "preview"
+                property "sonar.github.oauth", github_oauth
+                property "sonar.github.repository", "hc-sc/radar-" + project.name
+                property "sonar.github.pullRequest", pull_request_no
+            }
+        }
+    }
+}
+
+tasks.withType(Jar) {
+    manifest {
+        attributes.putAt("hc-name", project.group + ":" + project.name)
+        attributes.putAt("hc-version", version)
+        attributes.putAt("hc-branch", System.getenv("GIT_BRANCH") ?: "DESKTOP-BUILD")
+        attributes.putAt("hc-commit", System.getenv("GIT_COMMIT") ?: "DESKTOP-BUILD")
+        attributes.putAt("hc-build", System.getenv("BUILD_NUMBER") ?: "DESKTOP-BUILD")
+        attributes.putAt("hc-date", new Date().format("yy/MM/dd kk:mm"))
+    }
+}
+
+ext.jerseyVersion = '2.26'
+ext.servletAPIVersion = '3.1.0'
+ext.droolsVersion = '6.5.0.Final'
+ext.junitVersion = '4.11'
+ext.log4jVersion = '2.8.2'
+
+dependencies {
+    testCompile("org.junit.jupiter:junit-jupiter-api:5.3.1")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:5.3.1")
+    testRuntime("org.junit.vintage:junit-vintage-engine:5.3.1")
+
+    compile("org.postgresql:postgresql:9.4.1212")
+
+	compile("javax.servlet:javax.servlet-api:$servletAPIVersion")
+
+	compile("org.glassfish.jersey.containers:jersey-container-servlet:$jerseyVersion")
+	compile("org.glassfish.jersey.media:jersey-media-json-jackson:$jerseyVersion")
+	compile("org.glassfish.jersey.media:jersey-media-json-processing:$jerseyVersion")
+	compile("org.glassfish.jersey.media:jersey-media-multipart:$jerseyVersion")
+	compile("org.glassfish.jersey.media:jersey-media-sse:$jerseyVersion")
+	compile("org.glassfish.jersey.core:jersey-client:$jerseyVersion")
+	compile("org.glassfish.jersey.inject:jersey-hk2:$jerseyVersion")
+	compile("org.kie:kie-api:$droolsVersion")
+	compile("org.drools:drools-core:$droolsVersion")
+	compile("org.drools:drools-compiler:$droolsVersion")
+	compile("org.drools:drools-decisiontables:$droolsVersion")
+	compile("junit:junit:$junitVersion")
+	compile("commons-lang:commons-lang:2.6")
+	compile("org.apache.logging.log4j:log4j-api:$log4jVersion")
+	compile("org.apache.logging.log4j:log4j-core:$log4jVersion")
+	compile("com.google.code.gson:gson:2.8.0")
+	compile("org.mongodb:mongo-java-driver:3.4.3")
+	//compile "org.apache.poi:poi:3.17"
+	//compile "org.apache.poi:poi-ooxml:3.17"
+	
+}
