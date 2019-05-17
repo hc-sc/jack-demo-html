@@ -11,7 +11,7 @@
 global.$ = require('jquery')
 var assert = require('assert');
 
-var calc = require('./calc.js');
+var calc = require('./main.js');
 
 // Tests are hierarchical. Here we define a test suite for our calculator.
 describe('Calculator Tests', function() {
