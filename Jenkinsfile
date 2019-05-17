@@ -50,7 +50,7 @@ pipeline {
 				stage("Tests") {
 					steps {
 						sh '''
-							npm i --global mocha
+							npm install -g mocha
 							grunt htmllint
 							mocha
 						'''  
