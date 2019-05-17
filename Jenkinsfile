@@ -51,7 +51,6 @@ pipeline {
 					steps {
 						sh '''
 							grunt htmllint
-							npm test
 						'''  
 					}
 				}	
