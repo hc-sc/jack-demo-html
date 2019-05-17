@@ -15,7 +15,7 @@
     "chai": "~1.8.1"
   },
   "scripts": {
-    "test": "grunt mocha"
+    "test": "grunt mochaTest"
   },
   "repository": {
     "type": "git",
