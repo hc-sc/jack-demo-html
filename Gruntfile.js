@@ -40,7 +40,6 @@ grunt.initConfig({
        });
 
 grunt.loadNpmTasks('grunt-mocha');
-grunt.loadNpmTasks('grunt-mocha-test');
 grunt.loadNpmTasks('grunt-contrib-cssmin');
 grunt.loadNpmTasks('grunt-html');
 grunt.loadNpmTasks('grunt-contrib-uglify');
