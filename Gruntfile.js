@@ -58,5 +58,5 @@ grunt.loadNpmTasks('grunt-mocha');
 grunt.loadNpmTasks('grunt-contrib-cssmin');
 grunt.loadNpmTasks('grunt-html');
 grunt.loadNpmTasks('grunt-contrib-uglify');
-grunt.loadNpmTasks('grunt-artifactory-publish');
+grunt.loadNpmTasks('grunt-artifactory-artifact');
 }
