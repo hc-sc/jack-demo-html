@@ -36,8 +36,7 @@ grunt.initConfig({
         src: ['tests/tests.js'],
       }
     }
-	
-	
+
 
        });
 
