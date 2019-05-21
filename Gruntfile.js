@@ -22,14 +22,6 @@ grunt.initConfig({
 			dest: '/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master/main.min.js'
 		},	
 	},
-artdeploy: {
-    options: {
-        apiKey: 'AKCp5ccuuJiQjQvh2UxspNpYJ1R64TFGqjFgN9QVBiqoHx133zy4KoXR3hCXwV4hCmEHkU7zK',
-        repositoryPath: 'https://build.scs-lab.com/artifactory/HelloWorld_HTML/',
-        targetPath: 'HelloWorld.tgz',
-        packagePath: 'HelloWorld.tgz'
-    },
-}
 	    // Mocha
      mocha: {
       test: {
@@ -46,6 +38,14 @@ artdeploy: {
       }
     }
 
+artdeploy: {
+    options: {
+        apiKey: 'AKCp5ccuuJiQjQvh2UxspNpYJ1R64TFGqjFgN9QVBiqoHx133zy4KoXR3hCXwV4hCmEHkU7zK',
+        repositoryPath: 'https://build.scs-lab.com/artifactory/HelloWorld_HTML/',
+        targetPath: 'HelloWorld.tgz',
+        packagePath: 'HelloWorld.tgz'
+    }
+}
 
        });
 
