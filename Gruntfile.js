@@ -36,7 +36,7 @@ grunt.initConfig({
         src: ['tests/tests.js'],
       }
     }
-publish: {
+	
 	artifactory: {
  		options: {
     			url: 'https://build.scs-lab.com/artifactory:8080',
@@ -51,7 +51,7 @@ publish: {
  
  			 },
 		}
-}
+
        });
 
 grunt.loadNpmTasks('grunt-mocha');
