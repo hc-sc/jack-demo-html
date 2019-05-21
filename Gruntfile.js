@@ -37,20 +37,7 @@ grunt.initConfig({
       }
     }
 	
-	artifactory: {
- 		options: {
-    			url: 'https://build.scs-lab.com/artifactory:8080',
-    			repository: 'HelloWorld_HTML',
-    			username: 'bbhowmik',
-    			password: 'changeme'
- 			 },
-  		client: {
-   			 files: [
-     			 { src: ['builds/**/*'] }
-   				 ],
- 
- 			 },
-		}
+	
 
        });
 
