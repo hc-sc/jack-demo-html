@@ -47,16 +47,7 @@ artifactory: {
     files: [
       { src: ['builds/**/*'] }
     ],
-    options: {
-      id: 'com.mycompany.js:built-artifact:tgz',
-      version: 'my-version',
-      path: 'dist/'
-      parameters: [
-        'build.name=built-artifact',
-        'version=my-version',
-        'vcs.revision=my-revision',
-      ]
-    },
+ 
   },
 }
        });
