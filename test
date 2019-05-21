@@ -4,9 +4,9 @@ var calc = require('./main.js');
 describe('Array', function() {
   describe('calculate', function() {
     it('should add 2+3 = 5', function(){
-     var ans = calc.add(2,3);
-     expect(ans).to.equal("5");
-    // assert.equal(-1, [-1,2,3].indexOf(0));
+    // var ans = calc.add(2,3);
+    // expect(ans).to.equal("5");
+     assert.equal(-1, [-1,2,3].indexOf(0));
    });
   });
 });
