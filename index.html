@@ -1,49 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
 
-    <title>Demo</title>
-    <meta name="description" content="" />
+<head>
+<title>Calculator</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link href="style.css" rel="stylesheet"/>
+<script src="main.js"></script>
+</head>
+<body>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="main.min.js"></script>
 
-    <link rel="icon" type="image/png" href="http://i.imgur.com/bsI3IOt.png">
-    <link rel="stylesheet" type="text/css" href="style.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Gudea:400,700' rel='stylesheet' type='text/css'>
-
-  </head>
-
-  <body>
-    <div class="calculator">
-      <div class="arrow-left"></div>
-      <div class="arrow-right"></div>
-      <div class="calculator-inner">
-        <div class="total"></div>
-        <div class="buttons">
-          <span class="operators">
-            <a>+</a>
-            <a>-</a>
-            <a>/</a>
-            <a>*</a>
-          </span>
-          <span class="numbers">
-            <a>1</a>
-            <a>2</a>
-            <a>3</a>
-            <a>4</a>
-            <a>5</a>
-            <a>6</a>
-            <a>7</a>
-            <a>8</a>
-            <a>9</a>
-            <a>0</a>
-          </span>
-          <a id="equals">=</a>
-          <a id="clear">C</a>
-        </div>
-      </div>
-    </div>
-  </body>
+  <div class="calc_body">
+  <header class="display"><span id="output">0</span></header>
+  <section class="row">
+    <button class="small_button number">1</button>
+    <button class="small_button number">2</button>
+    <button class="small_button number">3</button>
+    <button class="small_button operator">+</button>
+  </section>
+  <section class="row">
+    <button class="small_button number">4</button>
+    <button class="small_button number">5</button>
+    <button class="small_button number">6</button>
+    <button class="small_button operator">-</button>
+  </section>
+  <section class="row">
+    <button class="small_button number">7</button>
+    <button class="small_button number">8</button>
+    <button class="small_button number">9</button>
+    <button class="small_button operator">÷</button>
+  </section>
+  <section class="row">
+    <button class="small_button number">0</button>
+    <button class="small_button decimal">.</button>
+    <button class="small_button minus">+/-</button>
+    <button class="small_button operator">x</button>
+  </section>
+  <section class="last_row">
+    <button class="big_button clear">AC</button>
+    <button class="big_button operator">=</button>
+  </section>
+  </div>
+</body>
 </html>

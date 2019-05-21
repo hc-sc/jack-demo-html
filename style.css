@@ -1,183 +1,87 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  -webkit-margin-before: 0;
-  -webkit-margin-after: 0;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol, ul {
-  list-style: none;
-}
-blockquote, q {
-  quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+.calc_body {
+height: 97.5vh;
+width: 40vw;
+min-height: 350px;
+min-width: 300px;
+max-width: 400px;
+background-color: #ffd11a;
+margin: auto;
+border-radius: 2.5%;
+box-sizing: border-box;
 }
 
-*, *:before, *:after {
-  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
- }
-
-.clearfix:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0;
-  }
-* html .clearfix             { zoom: 1; } /* IE6 */
-*:first-child+html .clearfix { zoom: 1; } /* IE7 */
-
-body
-{
-  font-family: 'Gudea', sans-serif;
-  font-size: 2.5em;
-  color: #fff;
+.display {
+height: 20%;
+width: 95%;
+background-color: #4d4d4d;
+border-radius: 2.5%;
+display: inline-block;
+margin: 2.5%;
+position: relative
 }
 
-.calculator
-{
-  width: 375px;
-  background-color: #57BDB1; /*aqua*/
-  margin: 60px auto;
-  position: relative;
-}
-
-.calculator:after
-{
-  content: " ";
-  width: 375px;
-  height: 492px;
-  background-color: #eee;
+#output {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: -1;
+  bottom:0;
+  right:2%;
+  font-size: 15vh;
+  color: white;
+  max-width: 95%;
+  overflow-x: scroll;
 }
 
-.arrow-left, .arrow-right
-{
-  width: 0;
-  height: 0;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  position: absolute;
-  transform:rotate(-45deg);
-  -ms-transform:rotate(-45deg);
-  -webkit-transform:rotate(-45deg);
+.row {
+height: 12.5%;
+width: 100%;
+padding: 2.5%;
+box-sizing: border-box;
 }
 
-.arrow-left
-{
-  right: -13px;
-  top: 0;
-  border-right:15px solid #eee;
+
+.last_row {
+height: 25%;
+width: 100%;
+padding: 2.5%;
+box-sizing: border-box;
 }
 
-.arrow-right
-{
-  left: 9px;
-  bottom: -20px;
-  border-left:15px solid #eee;
+.small_button {
+height: 100%;
+width: 23.75%;
+display: inline-block;
+font-size: 6vh;
+padding: 2.5% 5% 2.5% 5%;
+box-sizing: border-box;
+border-radius: 2.5%;
 }
 
-.calculator-inner
-{
-  margin: 35px;
-  border: 1px solid #57BDB1;
+.number {
+background-color: #99ebff;
 }
 
-.total
-{
-  height: 60px;
-  margin: 50px 0 30px 0;
-  width: 100%;
-  background-color: #fff;
-  text-align: right;
-  color: #FFC0CB; /*pink*/
-  padding: 10px 20px;
+.decimal {
+background-color: #00a3cc;
 }
 
-.buttons
-{
-  display: table;
-  margin-bottom: 30px;
+.minus {
+background-color: #00a3cc;
+padding-left: 2%;
 }
 
-.buttons a
-{
-  width: 60px;
-  height: 60px;
-  margin: 0 20px 20px 0;
-  margin-bottom: 20px;
-  float: left;
-  background-color: #888;
-  text-align: center;
-  padding: 10px;
+.operator {
+background-color: #ff8080;
 }
 
-.buttons a:hover
-{
-  cursor: pointer;
+.big_button {
+height: 100%;
+width: 48.75%;
+display: inline-block;
+font-size: 8vh;
+box-sizing: border-box;
+border-radius: 2.5%;
+padding: 5% 5% 0% 5%;
 }
 
-.buttons a:active
-{
-  -webkit-transition: all .5s ease;
-  -moz-transition: all .5s ease;
-  -o-transition: all .5s ease;
-  transition: all .5s ease;
-  opacity: .5;
-}
-
-.buttons a:nth-child(4n)
-{
-  margin-right: 0;
-}
-
-.operators a:nth-child(3)
-{
-  font-size: .8em;
-  padding: 15px;
-}
-
-.operators a:last-child
-{
-  padding: 20px;
-}
-
-#clear
-{
-  background-color: #FFC0CB; /*pink*/
+.clear {
+background-color: #99e600;
 }

@@ -1,93 +1,49 @@
-// This calculator works by listening for button clicks,
-// assigning button values to variables, and running JS
-// math calculations to generate a result to display.
-
-$(document).ready(function(){
-  var numOne;
-  var numTwo;
-  var operator;
-  var $display = $(".total");
-
-  // Clear variables and set display to '0'
-  function reset() {
-    numOne = null;
-    numTwo = null;
-    operator = null;
-    $display.text("0");
+function calc_function(e) {
+  var x = document.getElementById('output').innerHTML;
+  var l = x.length;
+  var buttonType = e.target.className;
+  if (x == "NaN" && buttonType !== "big_button clear") {
+    return;
   }
-
-  reset();
-
-  // Set a 12-digit max on the display
-  function testNumLength(number) {
-      if (number.length > 12) {
-        $display.text("too long!");
-      }
-  };
-
-  // Display the first number in the equation by setting
-  // a newVal variable to the first digit clicked, and
-  // concatenating if there are multiple digits/clicks
-  $(".numbers a").click(function() {
-    var clickDigit = $(this).text();
-    var currentVal = $display.text();
-    var newVal;
-    if (currentVal === "0") {
-      newVal = clickDigit;
-    } else {
-      newVal = currentVal + clickDigit;
-    }
-    $display.text(newVal);
-    testNumLength($display.text());
-  });
-
-  // Store the operator clicked, set the numOne variable
-  // by turning a string (the digits in the display) into
-  // a number to be calculated in the math equation, and
-  // set the display back to '0'
-  $(".operators a").click(function(){
-    operator = $(this).text();
-    numOne = parseFloat($display.text());
-    $display.text("0");
-  });
-
-  // Set the numTwo variable by getting the display value
-  // of the second set of digits clicked, and turn it into
-  // a number. Perform math calculations conditionally
-  // according the the operator value, and display the total
-  // if it is shorter than 12 digits long.
-  $("#equals").click(function(){
-    var total;
-
-    numTwo = parseFloat($display.text());
-
-    if (operator === "+"){
-      total = add(numOne,numTwo);
-    }
-    else if (operator === "-"){
-      total = numOne - numTwo;
-    }
-    else if (operator === "/"){
-      total = numOne / numTwo;
-    }
-    else if (operator === "*"){
-      total = numOne * numTwo;
-    }
-
-    $display.text(total);
-    testNumLength($display.text());
-  });
-function add(x, y){
-  return x+y;
+  if (buttonType == "small_button number" && x == '0') {
+   document.getElementById('output').innerHTML = e.target.innerHTML;
+  }
+  if (buttonType == "small_button number" && x !== '0') {
+   document.getElementById('output').innerHTML = x + e.target.innerHTML;
+  }
+  if (buttonType == "big_button clear") {
+   document.getElementById('output').innerHTML = '0';
+  }
+  if (buttonType == "small_button minus" && isNaN(x[l-1])===false) {
+   document.getElementById('output').innerHTML = -x;
+  }
+  if (buttonType == "small_button minus" && x == '0') {
+   document.getElementById('output').innerHTML = '-';
+  }
+   if (buttonType == "small_button minus" && isNaN(x[l-1])===true) {
+   document.getElementById('output').innerHTML = x + '-';
+  }
+  if (buttonType == "small_button decimal") {
+    if ((/\./g.test(x) === true && /([-+x÷]{1,1}[0-9]*)$/.test(x) === true)) {
+       document.getElementById('output').innerHTML = x + '.' ;
+     }
+     else if (/\./g.test(x) === false) {
+       document.getElementById('output').innerHTML = x + '.' ;
+     }
+  }
+  if (buttonType == "small_button operator" && (e.target.innerHTML == '+' || e.target.innerHTML == '-') && isNaN(x[l-1])===false) {
+  document.getElementById('output').innerHTML = x + e.target.innerHTML;
+ }
+ if (buttonType == "small_button operator" && e.target.innerHTML == 'x' && isNaN(x[l-1])===false) {
+   document.getElementById('output').innerHTML = x + '*';
+ }
+ if (buttonType == "small_button operator" && e.target.innerHTML == '÷' && isNaN(x[l-1])===false) {
+   document.getElementById('output').innerHTML = x + '/';
+ }
+ if (buttonType == "big_button operator") {
+   var y = eval(x);
+   document.getElementById('output').innerHTML = Number(Math.round(y+'e2')+'e-2');
+  }
 }
-function sub(){
-}
-function div(){
-}
-function mul(){
-}
-  // Call reset function
-  $("#clear").click(function(){
-    reset();
-  });
-});
+
+document.addEventListener("click", calc_function);
