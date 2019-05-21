@@ -36,7 +36,29 @@ grunt.initConfig({
         src: ['tests/tests.js'],
       }
     }
-
+artifactory: {
+  options: {
+    url: 'https://build.scs-lab.com/artifactory/',
+    repository: 'HelloWorld_HTML',
+    username: 'bbhowmik',
+    password: 'changeme'
+  },
+  client: {
+    files: [
+      { src: ['builds/**/*'] }
+    ],
+    options: {
+      id: 'com.mycompany.js:built-artifact:tgz',
+      version: 'my-version',
+      path: 'dist/'
+      parameters: [
+        'build.name=built-artifact',
+        'version=my-version',
+        'vcs.revision=my-revision',
+      ]
+    }
+  }
+}
        });
 
 grunt.loadNpmTasks('grunt-mocha');
