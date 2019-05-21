@@ -36,6 +36,7 @@ grunt.initConfig({
         src: ['tests/tests.js'],
       }
     }
+publish: {
 artifactory: {
  options: {
     url: 'https://build.scs-lab.com/artifactory/',
@@ -49,6 +50,7 @@ artifactory: {
     ],
  
   },
+}
 }
        });
 
