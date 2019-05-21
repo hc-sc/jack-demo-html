@@ -49,7 +49,7 @@ pipeline {
             steps {
                 script {
                     
-					def buildInfoTemp
+		    def buildInfoTemp
                     buildInfoTemp = artifactoryGradle.run rootDir: ".", buildFile: 'build.gradle', tasks: 'clean artifactoryPublish'
                     artifactoryServer.publishBuildInfo buildInfoTemp
                 }
