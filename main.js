@@ -641,6 +641,4 @@ var isOperator = function (n)
     {
         return false;
     }
-}
-
-});
+};
