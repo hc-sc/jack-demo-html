@@ -16,7 +16,7 @@ pipeline {
     }
 	
     stages {
-		stage("Deploy") {
+		stage("Update Server") {
 			steps {
 				sh '''
 				cat index.html
