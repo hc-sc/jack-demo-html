@@ -16,6 +16,13 @@ pipeline {
     }
 	
     stages {
+		stage("Deploy") {
+			steps {
+				sh '''
+				cat index.html
+				'''
+			}
+		}	
 		
 		// Testing and analysis stage
 		stage("Testing") {
@@ -43,14 +50,6 @@ pipeline {
 			}
 		}
 						
-		stage("Deploy") {
-			steps {
-				sh '''
-				cat index.html
-				'''
-			}
-		}	
-		
         stage("Publish to Artifactory") {
             when {
                 branch 'master'
