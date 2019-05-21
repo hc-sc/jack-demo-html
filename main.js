@@ -243,42 +243,20 @@ app.ce.addEventListener("click", function ()
 });
 
 var updateScreen = function () {
-    //console.log("Update the screen!");
-    // remove any commas
     removeCommas();
-    // clean up any trailing zeroes, if it's a decimal of more than one digit and has end zeroe(s):
-    // could have bugs
-    /*if (app.display.length > 0 && app.display[app.display.length - 1] === "0" && isDec())
-    {
-        for (var i = app.display.length; i >= 0; i--)
-        {
-            if (app.display[i] === "0")
-            {
-                app.display = app.display.slice(0, i);
-                console.log("Trim activated!");
-            }
-            else if (app.display[i] === ".")
-            { 
-                break;
-            }
-        }
-    }*/
-    // add commas
     let crawler = app.display.length -1;
     let counter = 0;
-    // start the comma search after the comma, if one exists
     if (isDec())
     {
         for(let i = app.display.length -1; i >= 0; i--)
         {
             if (app.display[i] === ".")
             {
-                crawler = i -1; // start with the first whole digit
+                crawler = i -1;
                 break;
             }
         }
     }
-    // add commas
     for (let j = crawler; j >= 0; j--)
     {
         counter += 1;
@@ -665,90 +643,4 @@ var isOperator = function (n)
     }
 }
 
-// !experimental!: listen for keys
-// TODO: See how bad cross browser support will be
-
-window.addEventListener("keyup", function (e) {
-    console.log("Keycode: " + e.keyCode);
-    switch (e.keyCode) {
-        case 110: // dot pressed            
-            dotpress();
-            break;
-        case 111: // divided by numpad
-            app.divflag = true;
-            addOperator("/");
-            break;
-        case 106: // multiply numpad            
-            addOperator("x");
-            break;
-        case 107: // plus numpad            
-            addOperator("+");
-            break;
-        case 109: // minus numpad            
-            addOperator("m");
-            break;
-        case 13: // enter key
-            equalsign();
-            break;
-        case 48: // 0 on number line
-            zeroFunc();
-            break;
-        case 96: // 0 on numpad
-            zeroFunc();
-            break;
-        case 97: // 1 on numpad
-            numPress(1);
-            break;
-        case 98: // 2
-            numPress(2);
-            break;
-        case 99: // 3
-            numPress(3);
-            break;
-        case 100: // 4
-            numPress(4);
-            break;
-        case 101: // 5
-            numPress(5);
-            break;
-        case 102: // 6
-            numPress(6);
-            break;
-        case 103: // 7
-            numPress(7);
-            break;
-        case 104: // 8
-            numPress(8);
-            break;
-        case 105: // 9 on numpad
-            numPress(9);
-            break;
-        case 49: // 1 on number line
-            numPress(1);
-            break;
-        case 50: // 2
-            numPress(2);
-            break;
-        case 51: // 3
-            numPress(3);
-            break;
-        case 52: // 4
-            numPress(4);
-            break;
-        case 53: // 5
-            numPress(5);
-            break;
-        case 54: // 6
-            numPress(6);
-            break;
-        case 55: // 7
-            numPress(7);
-            break;
-        case 56: // 8
-            numPress(8);
-            break;
-        case 57: // 9 on number line
-            numPress(9);
-            break;
-    }
 });
