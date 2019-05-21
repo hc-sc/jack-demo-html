@@ -1,51 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-<title>Calculator</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<link href="style.css" rel="stylesheet"/>
-<script src="main.js"></script>
+    <meta charset="UTF-8">
+    <title>Calculator - EQMVII</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+    <div id="container">
+        <div id="calculator">
+            <div id="screen">
+                0
+            </div>
+            <p>
+                <button class="calcbutton" id="ac">AC</button>
+                <button class="calcbutton" id="ce">CE</button>
+                <button class="calcbutton" id="sign">+/-</button>
+                <button class="calcbutton" id="percent">%</button>
+            </p>
+            <p>
+                <button class="calcbutton" id="seven">7</button>
+                <button class="calcbutton" id="eight">8</button>
+                <button class="calcbutton" id="nine">9</button>
+                <button class="calcbutton" id="divide">/</button>
+            </p>
+            <p>
+                <button class="calcbutton" id="four">4</button>
+                <button class="calcbutton" id="five">5</button>
+                <button class="calcbutton" id="six">6</button>
+                <button class="calcbutton" id="multiply">x</button>
+            </p>
+            <p>
+                <button class="calcbutton" id="one">1</button>
+                <button class="calcbutton" id="two">2</button>
+                <button class="calcbutton" id="three">3</button>
+                <button class="calcbutton" id="minus">-</button>
+            </p>
+            <p>
+                <button class="calcbutton" id="zero">0</button>
+                <button class="calcbutton" id="dot">.</button>
+                <button class="calcbutton equals" id="equals">=</button>
+                <button class="calcbutton" id="plus">+</button>
+            </p>
+        </div>
+            <p class="madeby">Made by <a href="https://github.com/eqmvii">eqmvii</a></p>
+    </div>
 
+    <script src="js/index.js"></script>
 
-  <div class="calc_body">
-  <header class="display"><span id="output">0</span></header>
-  <h2> </h2>
-  <section class="row">
-    <button class="small_button number">1</button>
-    <button class="small_button number">2</button>
-    <button class="small_button number">3</button>
-    <button class="small_button operator">+</button>
-  </section>
-  <h2> </h2>
-  <section class="row">
-    <button class="small_button number">4</button>
-    <button class="small_button number">5</button>
-    <button class="small_button number">6</button>
-    <button class="small_button operator">-</button>
-  </section>
-  <h2> </h2>
-  <section class="row">
-    <button class="small_button number">7</button>
-    <button class="small_button number">8</button>
-    <button class="small_button number">9</button>
-    <button class="small_button operator">÷</button>
-  </section>
-  <h2> </h2>
-  <section class="row">
-    <button class="small_button number">0</button>
-    <button class="small_button decimal">.</button>
-    <button class="small_button minus">+/-</button>
-    <button class="small_button operator">x</button>
-  </section>
-  <h2> </h2>
-  <section class="last_row">
-    <button class="big_button clear">AC</button>
-    <button class="big_button operator">=</button>
-  </section>
-  </div>
 </body>
 </html>
