@@ -1,115 +1,48 @@
-body
-{
-    font-size: 14px;
-    font-family: arial, sans-serif;
-    /* image from pexels.com thank you pexels.com */
-    background-image: url('../img/calcbg.jpg');
-    background-repeat: no-repeat;
-    background-size: 100%;
-}
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
 
-@media screen and (max-width: 700px) {
 body {
-    background-image: none !important;
-}
-}
-
-#screen
-{
-    width: 80%;
-    height: 40px;
-    border: 1px solid black;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    margin-bottom: 50px;
-    text-align: right;
-    font-size: 32px;
-    font-weight: bold;
-    padding: 4px;
-    background-color: #f4fcc7;
-    border-radius: 6px;
-    font-family: monospace;
-
+  background: #3e4149;
+  color: rgba(255,255,255,.2);
+  font: 200% Montserrat;
+  height: 100vh;
+  margin: 0;
+  text-align: center;
 }
 
-#calculator
-{
-    width: 320px;
-    border: 1px solid black;
-    height: 380px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    background: #cedce7; /* Old browsers */
-    background: -moz-linear-gradient(top, #cedce7 0%, #596a72 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #cedce7 0%,#596a72 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #cedce7 0%,#596a72 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72',GradientType=0 ); /* IE6-9 */
-    border-radius: 6px;
-    box-shadow: 8px 6px 5px #585757;
-    padding-left: 10px;
-    padding-right: 10px;
+.calculator {
+  height: 100%;
+  margin: 0 auto;
+  max-width: 375px;
 }
 
-.calcbutton
-{
-    font-size: 18px;
-    font-weight: bold;    
-    width: 20%;
-    height: 30px;
-    margin-left: 6px;
-    margin-right: 6px; 
-    margin-bottom: 6px;       
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;    
-    border-radius: 4px;
-    border: 1px solid white;
-    color: white;
-    background-color: rgb(44, 41, 41); 
+.output {
+  box-sizing: border-box;
+  color: #fd999a;
+  font-size: 48pt;
+  height: 25%;
+  padding: 10% 5% 5%;
+  text-align: right;
 }
 
-.calcbutton:hover {
-    cursor: pointer;
-    background-color: rgb(85, 79, 79); 
+.button {
+  box-sizing: border-box;
+  cursor: pointer;
+  float: left;
+  height: 15%;
+  padding: 5%;
+  transition: .5s;
+  width: 25%;
 }
-
-.calcbutton:active {
-box-shadow: 0 2px rgb(37, 37, 37);
-transform: translateY(2px);
+.button:hover {
+  background: #444f59;
+  color: #fff;
 }
-
-.equals
-{
-    background-color: #38aa42;
+.double {
+  width: 50%;
 }
-
-.equals:hover {
-    background-color: #5acf64 !important;    
-
+.accent:hover {
+  color: #fd999a;
 }
-
-.hidden{
-    display: none;
-}
-
-#about
-{
-    width: 300px;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right:auto;
-
-}
-
-li 
-{
-    margin-top: 4px;
-}
-
-.madeby {
-    text-align: center;
-    font-size: 20px;
+.submit:hover {
+  background: #fd999a;
 }
