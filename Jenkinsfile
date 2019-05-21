@@ -23,44 +23,36 @@ pipeline {
 				'''
 			}
 		}	
-		
 		// Testing and analysis stage
 		stage("Testing") {
 			parallel{	
 				stage("Tests") {
 					steps {
-						sh '''
-
-							grunt htmllint
-							mocha
-						'''  
+						sh 'grunt htmllint'
+						sh 'mocha' 
 					}
-				}	
-
+				}
 				stage("Minify") {
 					steps {
-						sh '''
-							grunt cssmin --force
-							grunt uglify --force	
-						'''  
+						sh	'grunt cssmin --force'
+						sh	'grunt uglify --force'  
 					}
 				}
 				// SonarQube Stage to be inserted here 
 				// Other stages before building that can be done in parallel
 			}
-		}
-						
+		}						
         stage("Publish to Artifactory") {
             when {
                 branch 'master'
             }
             steps {
-               
+                script {
                     
 					def buildInfoTemp
                     buildInfoTemp = artifactoryGradle.run rootDir: ".", buildFile: 'build.gradle', tasks: 'clean artifactoryPublish'
                     artifactoryServer.publishBuildInfo buildInfoTemp
-                
+                }
             }
         }
 	}
