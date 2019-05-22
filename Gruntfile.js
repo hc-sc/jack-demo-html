@@ -43,8 +43,8 @@ module.exports = function(grunt) {
                 },
                 expand: true,
                 cwd: 'home/',
-                src: ['../ck_Builds_HelloWorld_HTML_master@tmp/artifactory'],
-                dest: '../ck_Builds_HelloWorld_HTML_master@tmp'
+                src: ['../ck_Builds_HelloWorld_HTML_master@tmp'],
+                dest: './tmp'
             }
         }
 
