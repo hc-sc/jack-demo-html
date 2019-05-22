@@ -46,29 +46,6 @@ module.exports = function(grunt) {
                 src: ['/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master@tmp/artifactory'],
                 dest: './home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master@tmp/zip'
             }
-        },
-        artifactory: {
-            options: {
-                url: 'https://build.scs-lab.com/artifactory/webapp/#/home',
-                repository: 'HelloWorld_HTML',
-                username: $Art_Usr,
-                password: $Art_Pass
-            },
-            client: {
-                files: [{
-                    src: ['/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master@tmp/zip']
-                }],
-                options: {
-                    id: 'com.mycompany.js:built-artifact:tgz',
-                    version: 'my-version',
-                    path: 'dist/'
-                    parameters: [
-                        'build.name=built-artifact',
-                        'version=my-version',
-                        'vcs.revision=my-revision',
-                    ]
-                }
-            }
         }
 
     });
