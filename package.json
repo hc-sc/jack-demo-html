@@ -13,6 +13,7 @@
     "grunt-artifactory-publish": "0.8.0",
     "grunt-mocha": "~0.4.0",
     "mocha": "~1.14.0",
+    "grunt-contrib-compress": "1.4.3",
     "chai": "~1.8.1"
   },
   "scripts": {
