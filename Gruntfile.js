@@ -75,7 +75,7 @@ module.exports = function (grunt)
                         },
                         client: {
                             files: [{
-                                    src: ['/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master@tmp/artifactory'] }],
+                                    src: ['/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master/artifactory.zip'] }],
                                     options: {
                                         id: 'com.mycompany.js:built-artifact:tgz',
                                         version: 'my-version',
