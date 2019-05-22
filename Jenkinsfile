@@ -9,10 +9,10 @@ pipeline {
 	options { disableConcurrentBuilds() }   	
 	
     environment {
-        containerRegistryCredentials = credentials('ARTIFACTORY_PUBLISH')
+        Art_Usr = credentials('UserID_Artifactory')
+		Art_Pass = credentials('Pass_Artifactory')
         containerRegistry = 'build.scs-lab.com:5000'
         containerRegistryPull = 'build.scs-lab.com'
-        appUri = 'cfg-classification-webapp'
     }
 	
     stages {
@@ -47,12 +47,7 @@ pipeline {
                 branch 'master'
             }
             steps {
-                script {
-                    
-		    def buildInfoTemp
-                    buildInfoTemp = artifactoryGradle.run rootDir: ".", buildFile: 'build.gradle', tasks: 'clean artifactoryPublish'
-                    artifactoryServer.publishBuildInfo buildInfoTemp
-                }
+				ssh 'ls'
             }
         }
 	}
