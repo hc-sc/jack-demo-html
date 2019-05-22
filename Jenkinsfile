@@ -30,8 +30,8 @@ pipeline {
             }
             steps {
 				sh '''
-					sudo npm install grunt-artifactory-publish --save-dev
-					grunt artifactory:/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master@tmp/artifactory:https://build.scs-lab.com/artifactory/webapp/#/home
+					cd ..
+					grunt compress
 				'''
             }
         }
