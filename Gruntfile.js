@@ -42,8 +42,7 @@ module.exports = function(grunt) {
                     mode: 'gzip'
                 },
                 expand: true,
-                cwd: '../',
-                src: ['ck_Builds_HelloWorld_HTML_master@tmp'],
+                src: ['/ck_Builds_HelloWorld_HTML_master@tmp/artifactory'],
                 dest: './tmp'
             }
         }
