@@ -39,7 +39,7 @@ module.exports = function(grunt) {
         compress: {
             main: {
                 options: {
-                    archive: 'artifacts.zip'
+                    archive: 'artifacts.tgz'
                 },
                 files: [{
                     expand: true,
@@ -48,35 +48,12 @@ module.exports = function(grunt) {
                     dest: './home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master'
                 }]
             }
-        },
-        artifactory: {
-            options: {
-                url: 'https://build.scs-lab.com/artifactory/webapp/#/home',
-                repository: 'HelloWorld_HTML',
-                username: $Art_Usr,
-                password: $Art_Pass
-            },
-            client: {
-                files: [{
-                    src: ['/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master/artifactory.zip']
-                }],
-                options: {
-                    id: 'com.mycompany.js:built-artifact:tgz',
-                    version: 'my-version',
-                    path: 'dist/'
-                    parameters: [
-                        'build.name=built-artifact',
-                        'version=my-version',
-                        'vcs.revision=my-revision',
-                    ]
-                }
-            }
-        },
+        }
     });
     grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-mocha');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-html');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-artifactory-publish');
+    grunt.loadNpmTasks('grunt-artifactory-deploy');
 }
