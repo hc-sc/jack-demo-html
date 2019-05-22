@@ -49,7 +49,7 @@ module.exports = function(grunt) {
         }
 
     });
-
+    grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-mocha');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-html');
