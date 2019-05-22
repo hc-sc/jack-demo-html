@@ -23,25 +23,7 @@ pipeline {
 				'''
 			}
 		}	
-		// Testing and analysis stage
-		stage("Testing") {
-			parallel{	
-				stage("Tests") {
-					steps {
-						sh 'grunt htmllint'
-						sh 'mocha' 
-					}
-				}
-				stage("Minify") {
-					steps {
-						sh	'grunt cssmin --force'
-						sh	'grunt uglify --force'  
-					}
-				}
-				// SonarQube Stage to be inserted here 
-				// Other stages before building that can be done in parallel
-			}
-		}						
+					
         stage("Publish to Artifactory") {
             when {
                 branch 'master'
