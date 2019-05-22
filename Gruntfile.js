@@ -36,8 +36,6 @@ module.exports = function(grunt) {
                 src: ['tests/tests.js'],
             }
         },
-
-
         compress: {
             main: {
                 options: {
@@ -73,7 +71,7 @@ module.exports = function(grunt) {
                     ]
                 }
             }
-        }
+        },
     });
     grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-mocha');
