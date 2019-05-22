@@ -10,7 +10,7 @@
     "grunt-contrib-cssmin": "^3.0.0",
     "grunt-contrib-uglify": "^4.0.1",
     "grunt-html": "^10.1.0",
-	  "grunt-artifactory-publish": "0.8.0",
+    "grunt-artifactory-publish": "0.8.0",
     "grunt-mocha": "~0.4.0",
     "mocha": "~1.14.0",
     "chai": "~1.8.1"
