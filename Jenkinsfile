@@ -30,9 +30,8 @@ pipeline {
             }
             steps {
 				sh '''
-					cd ..
-					grunt compress
-				'''
+					ls
+					'''
             }
         }
 	}
