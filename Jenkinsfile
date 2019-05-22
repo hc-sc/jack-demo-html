@@ -31,6 +31,8 @@ pipeline {
             steps {
 				sh '''
 					ls
+					grunt comporess
+					ls
 					'''
             }
         }
