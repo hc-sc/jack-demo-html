@@ -30,7 +30,7 @@ pipeline {
             }
             steps {
 				sh '''
-					npm install grunt-artifactory-publish --save-dev
+					sudo npm install grunt-artifactory-publish --save-dev
 					grunt artifactory
 				'''
             }
