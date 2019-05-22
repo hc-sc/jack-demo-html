@@ -29,7 +29,10 @@ pipeline {
                 branch 'master'
             }
             steps {
-				sh 'grunt artifactory'
+				sh '''
+					npm install grunt-artifactory-publish --save-dev
+					grunt artifactory
+				'''
             }
         }
 	}
