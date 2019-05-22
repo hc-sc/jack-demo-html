@@ -29,7 +29,7 @@ pipeline {
                 branch 'master'
             }
             steps {
-				ssh 'ls'
+				ssh 'grunt artifactory'
             }
         }
 	}
