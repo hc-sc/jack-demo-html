@@ -40,14 +40,13 @@ module.exports = function(grunt) {
             main: {
                 options: {
                     archive: 'artifacts.tgz',
-		    createEmptyArchive: false
+                    createEmptyArchive: false
                 },
                 files: [{
-                        src: ['../ck_Builds_HelloWorld_HTML_master@tmp/artifactory'],
-                        dest: '/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master',
-                        filter: 'isFile'
-                    }
-                ]
+                    src: ['../ck_Builds_HelloWorld_HTML_master@tmp/artifactory'],
+                    dest: '/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master',
+                    filter: 'isFile'
+                }]
             }
         },
         artdeploy: {
@@ -55,7 +54,7 @@ module.exports = function(grunt) {
                 apiKey: "AKCp5ccuuJiQjQvh2UxspNpYJ1R64TFGqjFgN9QVBiqoHx133zy4KoXR3hCXwV4hCmEHkU7zK",
                 repositoryPath: "https://build.scs-lab.com/artifactory/HelloWorld_HTML/",
                 targetPath: "artifacts",
-                packagePath: '../ck_Builds_HelloWorld_HTML_master@tmp/artifactory'
+                packagePath: "../ck_Builds_HelloWorld_HTML_master/artifacts.tgz"
             }
         }
     });
