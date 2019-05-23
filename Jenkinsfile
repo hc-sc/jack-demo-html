@@ -10,8 +10,6 @@ pipeline {
 	
     environment {
         API_KEY = credentials('UserID_Artifactory')
-        containerRegistry = 'build.scs-lab.com:5000'
-        containerRegistryPull = 'build.scs-lab.com'
     }
 	
     stages {
