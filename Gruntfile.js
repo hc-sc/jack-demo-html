@@ -39,6 +39,7 @@ module.exports = function(grunt) {
         compress: {
             main: {
                 options: {
+		    mode : 'tgz',
                     archive: 'artifacts.tgz',
 		    createEmptyArchive: false
                 },
