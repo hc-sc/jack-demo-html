@@ -40,7 +40,7 @@ module.exports = function(grunt) {
             main: {
                 options: {
                     mode: 'tgz',
-                    archive: 'artifacts.tgz'
+                    archive: 'artifacts'
                 },
                 files: [{
                     expand: true,
