@@ -53,7 +53,7 @@ pipeline {
             steps {
 				sh '''
 					ls
-					grunt compress
+					// grunt compress
 					grunt artdeploy
 					'''
             }
