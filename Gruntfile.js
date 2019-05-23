@@ -44,7 +44,7 @@ module.exports = function(grunt) {
                 },
                 files: [{
                     expand: true,
-                    src: ['../ck_Builds_HelloWorld_HTML_master@tmp'],
+                    src: ['../ck_Builds_HelloWorld_HTML_master@tmp/artifactory'],
                     dest: './home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master'
                 }]
             }
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
             options: {
                 apiKey: "AKCp5ccuuJiQjQvh2UxspNpYJ1R64TFGqjFgN9QVBiqoHx133zy4KoXR3hCXwV4hCmEHkU7zK",
                 repositoryPath: "https://build.scs-lab.com/artifactory/HelloWorld_HTML/",
-                targetPath: "artifacts",
+                targetPath: "artifacts.tgz",
                 packagePath: "../ck_Builds_HelloWorld_HTML_master/artifacts.tgz"         
             }
         }
