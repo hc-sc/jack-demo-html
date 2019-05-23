@@ -39,7 +39,8 @@ module.exports = function(grunt) {
         compress: {
             main: {
                 options: {
-                    archive: 'artifacts.tgz'
+                    archive: 'artifacts.tgz',
+					createEmptyArchive: false
                 },
                 files: [{
                         src: ['../ck_Builds_HelloWorld_HTML_master@tmp/artifactory'],
