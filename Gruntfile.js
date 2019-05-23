@@ -40,7 +40,7 @@ module.exports = function(grunt) {
             main: {
                 options: {
                     mode: 'tgz',
-                    archive: 'artifacts'
+                    archive: 'artifacts.tgz'
                 },
                 files: [{
                     expand: true,
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
             options: {
                 apiKey: "AKCp5ccuuJiQjQvh2UxspNpYJ1R64TFGqjFgN9QVBiqoHx133zy4KoXR3hCXwV4hCmEHkU7zK",
                 repositoryPath: "https://build.scs-lab.com/artifactory/HelloWorld_HTML/",
-                targetPath: "artifacts",
+                targetPath: "artifacts.tgz",
                 packagePath: "../ck_Builds_HelloWorld_HTML_master/artifacts.tgz"         
             }
         }
