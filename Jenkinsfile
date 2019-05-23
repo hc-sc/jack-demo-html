@@ -20,7 +20,16 @@ pipeline {
 				'''
 			}
 		}	
-					
+	    stage("Test and Minification"){
+		    steps{
+			    sh '''
+			    		grunt uglify
+			    		grunt htmllint
+					grunt cssmin
+					mocha
+				'''
+		    }
+	    }
         stage("Publish to Artifactory") {
             when {
                 branch 'master'
@@ -28,9 +37,7 @@ pipeline {
             steps {
 				sh '''
 					ls
-					grunt htmllint
-					grunt cssmin
-					mocha
+					
 					grunt compress
 					grunt artdeploy
 					'''
