@@ -40,12 +40,12 @@ module.exports = function(grunt) {
             main: {
                 options: {
                     mode: 'tgz'
+					archive: 'artifacts.tgz'
                 },
                 files: [{
                     expand: true,
                     src: ['../ck_Builds_HelloWorld_HTML_master@tmp'],
                     dest: './home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master',
-					ext: '.tgz'
                 }]
             }
         },
