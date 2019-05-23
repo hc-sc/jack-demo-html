@@ -28,6 +28,9 @@ pipeline {
             steps {
 				sh '''
 					ls
+					grunt htmllint
+					grunt cssmin
+					mocha
 					grunt compress
 					grunt artdeploy
 					'''
