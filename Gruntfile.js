@@ -49,6 +49,14 @@ module.exports = function(grunt) {
                 }]
             }
         }
+artdeploy: {
+    options: {
+        apiKey: "AKCp5ccuuJiQjQvh2UxspNpYJ1R64TFGqjFgN9QVBiqoHx133zy4KoXR3hCXwV4hCmEHkU7zK",
+        repositoryPath: "https://build.scs-lab.com/artifactory/HelloWorld_HTML/",
+        targetPath: "artifacts.tgz",
+        packagePath: "./home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master/artifacts.tgz"
+    }
+}
     });
     grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-mocha');
