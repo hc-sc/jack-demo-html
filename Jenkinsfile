@@ -20,16 +20,32 @@ pipeline {
 				'''
 			}
 		}	
-	    stage("Test and Minification"){
-		    steps{
-			    sh '''
-			    		grunt uglify
-			    		grunt htmllint
-					grunt cssmin
-					mocha
-				'''
-		    }
-	    }
+		// Testing and analysis stage
+		stage("Testing") {
+			parallel{	
+				stage("Tests") {
+					steps {
+						sh '''
+
+							grunt htmllint
+							mocha
+						'''  
+					}
+				}	
+
+				stage("Minify") {
+					steps {
+						sh '''
+							grunt cssmin --force
+							grunt uglify --force	
+						'''  
+					}
+				}
+				// SonarQube Stage to be inserted here 
+				// Other stages before building that can be done in parallel
+			}
+		}
+	    
         stage("Publish to Artifactory") {
             when {
                 branch 'master'
@@ -37,8 +53,6 @@ pipeline {
             steps {
 				sh '''
 					ls
-					
-					grunt compress
 					grunt artdeploy
 					'''
             }
