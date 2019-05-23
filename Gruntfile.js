@@ -48,7 +48,7 @@ module.exports = function(grunt) {
                     dest: './home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master'
                 }]
             }
-        }
+        },
 artdeploy: {
     options: {
         apiKey: "AKCp5ccuuJiQjQvh2UxspNpYJ1R64TFGqjFgN9QVBiqoHx133zy4KoXR3hCXwV4hCmEHkU7zK",
