@@ -9,8 +9,7 @@ pipeline {
 	options { disableConcurrentBuilds() }   	
 	
     environment {
-        Art_Usr = credentials('UserID_Artifactory')
-		Art_Pass = credentials('Pass_Artifactory')
+        API_KEY = credentials('UserID_Artifactory')
         containerRegistry = 'build.scs-lab.com:5000'
         containerRegistryPull = 'build.scs-lab.com'
     }
