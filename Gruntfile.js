@@ -45,7 +45,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     src: ['../ck_Builds_HelloWorld_HTML_master@tmp'],
-                    dest: './home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master',
+                    dest: './home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master'
                 }]
             }
         },
