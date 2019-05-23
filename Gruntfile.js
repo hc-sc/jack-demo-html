@@ -33,14 +33,14 @@ module.exports = function(grunt) {
                     clearCacheFilter: (key) => true,
                     noFail: false,
                 },
-                src: ['tests/tests.js'],
+                src: ['tests/tests.js']
             }
         },
         compress: {
             main: {
                 options: {
-                    mode: 'tgz'
-					archive: 'artifacts.tgz'
+                    mode: 'tgz',
+		archive: 'artifacts.tgz'
                 },
                 files: [{
                     expand: true,
