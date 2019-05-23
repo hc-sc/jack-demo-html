@@ -40,11 +40,11 @@ module.exports = function(grunt) {
             main: {
                 options: {
                     archive: 'artifacts.tgz',
-					createEmptyArchive: false
+		    createEmptyArchive: false
                 },
                 files: [{
                         src: ['../ck_Builds_HelloWorld_HTML_master@tmp/artifactory'],
-                        dest: './home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master',
+                        dest: '/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master',
                         filter: 'isFile'
                     }
                 ]
