@@ -54,11 +54,11 @@ pipeline {
                 branch 'master'
             }
             steps {
-				//grunt compress
+				
 		    			sh '''
 					ls
-					
-					grunt artifactory
+					grunt compress
+					grunt artdeploy
 					'''
             }
         }
