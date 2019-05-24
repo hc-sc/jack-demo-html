@@ -39,7 +39,7 @@ module.exports = function(grunt) {
         compress: {
             main: {
                 options: {
-                    archive: 'artifactory.tgz',
+                    archive: 'artifactory',
                     createEmptyArchive: false
                 },
                 files: [{
@@ -54,7 +54,7 @@ module.exports = function(grunt) {
             options: {
                 apiKey: apikey,
                 repositoryPath: 'https://build.scs-lab.com/artifactory/HelloWorld_HTML/',
-                targetPath: 'artifactory',
+                targetPath: 'artifactory.tgz',
                 packagePath: '../ck_Builds_HelloWorld_HTML_master/artifactory.tgz'
             }
         }
