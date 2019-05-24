@@ -55,6 +55,7 @@ pipeline {
 				
 		    			sh '''
 					ls
+					grunt artdeploy
 					'''
             }
         }
