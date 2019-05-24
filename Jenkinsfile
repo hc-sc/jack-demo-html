@@ -58,7 +58,7 @@ pipeline {
 		    			sh '''
 					ls
 					
-					grunt artifactory:client:publish
+					grunt artifactory
 					'''
             }
         }
