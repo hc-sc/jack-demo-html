@@ -52,6 +52,7 @@ module.exports = function(grunt) {
             options: {
                 apiKey: apikey,
                 repositoryPath: 'https://build.scs-lab.com/artifactory/HelloWorld_HTML/',
+                targetPath: 'artifactory',
                 packagePath: '../ck_Builds_HelloWorld_HTML_master/artifacts.tgz'
             }
         }
