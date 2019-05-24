@@ -36,20 +36,21 @@ module.exports = function(grunt) {
                 src: ['tests/tests.js'],
             }
         },
-        compress: {
+       compress: {
             main: {
                 options: {
-                    archive: 'artifactory.tgz',
+                    archive: 'artifacts.tgz',
                     createEmptyArchive: false
                 },
                 files: [{
-                    src: ['../ck_Builds_HelloWorld_HTML_master@tmp/artifactory'],
+                    src: ['index.html'],
+					src: ['main.min.js'],
+					src: ['style.min.css'],
                     dest: '/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master',
                     filter: 'isFile'
                 }]
             }
         },
-
         artdeploy: {
             options: {
                 apiKey: apikey,
