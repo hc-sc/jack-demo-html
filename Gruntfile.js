@@ -52,32 +52,15 @@ module.exports = function(grunt) {
                 }]
             }
         },
-        artifactory: {
-            options: {
-                url: 'https://build.scs-lab.com/artifactory/',
-                repository: 'HelloWorld_HTML/',
-                username: usrArt,
-                password: passArt
-            },
-            client: {
-                files: [{
-                    src: ['../ck_Builds_HelloWorld_HTML_master@tmp/artifactory']
-                }],
-                options: {
-                    // id: 'com.mycompany.js:built-artifact:tgz',
-//                     version: 'my-version',
-//                     path: '/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master'
+        
+               artdeploy: {
+                   options: {
+                        apiKey: apikey,
+                        repositoryPath: 'https://build.scs-lab.com/artifactory/HelloWorld_HTML/',
+                        targetPath: 'artifacts.tgz',
+                        packagePath: '../ck_Builds_HelloWorld_HTML_master/artifacts.tgz'
+                    }
                 }
-            }
-        }
-        //        artdeploy: {
-        //            options: {
-        //                apiKey: apikey,
-        //                repositoryPath: 'https://build.scs-lab.com/artifactory/HelloWorld_HTML/',
-        //                targetPath: 'artifacts.tgz',
-        //                packagePath: '../ck_Builds_HelloWorld_HTML_master/artifacts.tgz'
-        //            }
-        //        }
     });
     grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-mocha');
