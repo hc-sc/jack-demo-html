@@ -5,7 +5,7 @@ module.exports = function(grunt) {
         cssmin: {
             css: {
                 src: '/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master/style.css',
-                dest: '/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master/build-artifacts/style.min.css'
+                dest: '/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master/build-exec/style.min.css'
             },
         },
 
@@ -19,7 +19,7 @@ module.exports = function(grunt) {
             },
             build: {
                 src: '/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master/main.js',
-                dest: '/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master/build-artifacts/main.min.js'
+                dest: '/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master/build-exec/main.min.js'
             },
         },
         mocha: {
