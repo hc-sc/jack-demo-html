@@ -53,7 +53,7 @@ module.exports = function(grunt) {
             }
         },
         artifactory: {
-            target: {
+            options: {
                 url: 'https://build.scs-lab.com/artifactory/',
                 repository: 'HelloWorld_HTML/',
                 username: usrArt,
