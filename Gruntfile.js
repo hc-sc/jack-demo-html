@@ -43,9 +43,7 @@ module.exports = function(grunt) {
                     createEmptyArchive: false
                 },
                 files: [{
-                    src: ['index.html'],
-					src: ['main.min.js'],
-					src: ['style.min.css'],
+                    src: ['index.html', 'main.min.js', 'style.min.css'],
                     dest: '/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master',
                     filter: 'isFile'
                 }]
