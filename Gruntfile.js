@@ -1,7 +1,4 @@
 const apikey = process.env.API_KEY;
-const usrArt = process.env.UserNameArt;
-const passArt = process.env.PassArt;
-
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master/package.json'),
@@ -52,15 +49,15 @@ module.exports = function(grunt) {
                 }]
             }
         },
-        
-               artdeploy: {
-                   options: {
-                        apiKey: 'AKCp5ccuuJiQjQvh2UxspNpYJ1R64TFGqjFgN9QVBiqoHx133zy4KoXR3hCXwV4hCmEHkU7zK',
-                        repositoryPath: 'https://build.scs-lab.com/artifactory/HelloWorld_HTML/',
-                        targetPath: 'artifacts.tgz',
-                        packagePath: '../ck_Builds_HelloWorld_HTML_master/artifacts.tgz'
-                    }
-                }
+
+        artdeploy: {
+            options: {
+                apiKey: apikey,
+                repositoryPath: 'https://build.scs-lab.com/artifactory/HelloWorld_HTML/',
+                targetPath: 'artifacts.tgz',
+                packagePath: '../ck_Builds_HelloWorld_HTML_master/artifacts.tgz'
+            }
+        }
     });
     grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-mocha');
