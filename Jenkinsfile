@@ -55,8 +55,6 @@ pipeline {
 				
 		    			sh '''
 					ls
-					grunt compress
-					grunt artdeploy
 					'''
             }
         }
