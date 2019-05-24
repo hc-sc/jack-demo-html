@@ -56,8 +56,8 @@ module.exports = function(grunt) {
 //   target: {
 //     url: 'https://build.scs-lab.com/artifactory/',
 //     repository: 'HelloWorld_HTML/',
-//     username: 'bbhowmik',
-//     password: 'changeme'
+//     username: usrArt,
+//     password: passArt
 //   },
 //   client: {
 //     files: [
