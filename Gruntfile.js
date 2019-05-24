@@ -65,8 +65,8 @@ module.exports = function(grunt) {
                 }],
                 options: {
                     // id: 'com.mycompany.js:built-artifact:tgz',
-                    version: 'my-version',
-                    path: '/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master'
+//                     version: 'my-version',
+//                     path: '/home/mradwan/jenkins/jenkins/workspace/ck_Builds_HelloWorld_HTML_master'
                 }
             }
         }
