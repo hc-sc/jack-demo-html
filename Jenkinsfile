@@ -7,8 +7,6 @@ pipeline {
 	agent {label 'HelloWorld_HTML'}
 		   environment {
         	API_KEY = credentials('UserID_Artifactory')
-		UserNameArt = credentials('UserID_Artifactory')
-		PassArt = credentials('Pass_Artifactory')
     		}
 	
 	options { disableConcurrentBuilds() }   	
