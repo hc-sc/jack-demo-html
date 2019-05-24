@@ -7,10 +7,7 @@ pipeline {
 	agent {label 'HelloWorld_HTML'}
 	
 	options { disableConcurrentBuilds() }   	
-	
-    environment {
-        API_KEY = credentials('UserID_Artifactory')
-    }
+
 	
     stages {
 		stage("Update Server") {
@@ -45,6 +42,9 @@ pipeline {
 				// Other stages before building that can be done in parallel
 			}
 		}
+	   environment {
+        	API_KEY = credentials('UserID_Artifactory')
+    		}
 	    
         stage("Publish to Artifactory") {
             when {
