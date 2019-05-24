@@ -43,7 +43,7 @@ module.exports = function(grunt) {
                     createEmptyArchive: false
                 },
                 files: [{
-                    src: ['index.html', 'main.min.js', 'style.min.css']
+                    src: ['index.html', 'main.min.js', 'style.min.css'],
                     filter: 'isFile'
                 }]
             }
