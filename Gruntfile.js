@@ -84,5 +84,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-html');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-artifactory-deploy');
+//     grunt.loadNpmTasks('grunt-artifactory-deploy');
+    grunt.loadNpmTasks('grunt-artifactory-publish');
 }
