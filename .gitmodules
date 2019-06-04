@@ -1,0 +1,3 @@
+[submodule "GCWeb"]
+	path = GCWeb
+	url = https://github.com/wet-boew/GCWeb.git
