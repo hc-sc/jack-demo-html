@@ -4,9 +4,8 @@ body {
   font: 200% Montserrat;
   height: 100vh;
   margin: 0;
-  text-align: center;
+  text-align: center;  
 }
-
 .calculator {
   height: 100%;
   margin: 0 auto;
@@ -44,3 +43,4 @@ body {
 .submit:hover {
   background: #fd999a;
 }
+
