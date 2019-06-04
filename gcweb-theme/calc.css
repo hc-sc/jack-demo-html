@@ -5,8 +5,8 @@ body {
   height: 100vh;
   margin: 0;
   text-align: left;
-}
 
+}
 .calculator {
   height: 100%;
   margin: 0 auto;
@@ -44,3 +44,4 @@ body {
 .submit:hover {
   background: #fd999a;
 }
+
