@@ -1,9 +1,3 @@
 [submodule "themes-cdn"]
 	path = themes-cdn
 	url = https://github.com/wet-boew/themes-cdn
-[submodule "GCWeb"]
-	path = GCWeb
-	url = https://github.com/wet-boew/themes-cdn
-[submodule "wet-boew"]
-	path = wet-boew
-	url = https://github.com/wet-boew/themes-dist
