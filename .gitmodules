@@ -1,6 +1,6 @@
 [submodule "GCweb"]
 	path = GCweb
-	url = https://github.com/wet-boew/themes-cdn/tree/GCWeb
+	url = https://github.com/wet-boew/themes-cdn
 [submodule "wet-boew"]
 	path = wet-boew
 	url = https://github.com/wet-boew/wet-boew-cdn
