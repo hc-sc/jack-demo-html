@@ -1,0 +1,3 @@
+[submodule "GCweb"]
+	path = GCweb
+	url = https://github.com/wet-boew/themes-cdn
