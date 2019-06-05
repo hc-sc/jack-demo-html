@@ -1,5 +1,5 @@
-[submodule "themes-cdn"]
-	path = themes-cdn
+[submodule "GCweb"]
+	path = GCweb
 	url = https://github.com/wet-boew/themes-cdn
 [submodule "wet-boew"]
 	path = wet-boew
