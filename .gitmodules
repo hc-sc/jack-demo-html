@@ -1,8 +1,3 @@
-[submodule "GCWeb"]
-	path = GCWeb
-	url = https://github.com/wet-boew/themes-cdn/tree/theme-gcwu-fegc
-	branch = master
-[submodule "GCWebSub"]
-	path = GCWebSub
-	url = https://github.com/wet-boew/GCWeb
-	branch = master
+[submodule "themes-cdn"]
+	path = themes-cdn
+	url = https://github.com/wet-boew/themes-cdn
