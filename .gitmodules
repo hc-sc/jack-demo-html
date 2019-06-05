@@ -1,3 +1,6 @@
 [submodule "themes-cdn"]
 	path = themes-cdn
 	url = https://github.com/wet-boew/themes-cdn
+[submodule "wet-boew"]
+	path = wet-boew
+	url = https://github.com/wet-boew/wet-boew-cdn
