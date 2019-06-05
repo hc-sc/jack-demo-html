@@ -1,6 +1,6 @@
 [submodule "GCWeb"]
 	path = GCWeb
-	url = https://github.com/wet-boew/GCWeb
+	url = https://github.com/wet-boew/themes-cdn/tree/theme-gcwu-fegc
 	branch = master
 [submodule "GCWebSub"]
 	path = GCWebSub
