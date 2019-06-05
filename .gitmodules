@@ -1,3 +1,7 @@
 [submodule "GCWeb"]
 	path = GCWeb
-	url = https://github.com/wet-boew/GCWeb/src.git
+	url = https://github.com/wet-boew/GCWeb
+[submodule "GCWebSub"]
+	path = GCWebSub
+	url = https://github.com/wet-boew/GCWeb
+	branch = master
