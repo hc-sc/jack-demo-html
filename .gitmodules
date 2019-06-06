@@ -4,3 +4,6 @@
 [submodule "GCweb"]
 	path = GCweb
 	url = https://github.com/wet-boew/themes-cdn
+[submodule "public/assets/GCWeb"]
+	path = public/assets/GCWeb
+	url = https://github.com/wet-boew/themes-cdn
