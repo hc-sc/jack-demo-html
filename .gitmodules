@@ -1,9 +1,8 @@
-[submodule "wet-boew"]
-	path = wet-boew
-	url = https://github.com/wet-boew/wet-boew-cdn
-[submodule "GCweb"]
-	path = GCweb
-	url = https://github.com/wet-boew/themes-cdn
 [submodule "public/assets/GCWeb"]
+	
 	path = public/assets/GCWeb
+	
 	url = https://github.com/wet-boew/themes-cdn
+[submodule "public/assets/wet-boew"]
+	path = public/assets/wet-boew
+	url = https://github.com/wet-boew/wet-boew-cdn
