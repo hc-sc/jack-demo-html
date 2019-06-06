@@ -3,18 +3,12 @@
   "version": "1.0.0",
   "description": "CSS Minifier, HTML Validator and runs tests",
   "main": "index.html",
-  "dependencies": {},
+  "dependencies": {
+	"react": "15.6.1",
+	"react-dom": "15.6.1" 
+  },
   "devDependencies": {
-    "grunt": "~0.4.0",
-    "grunt-contrib-concat": "^1.0.1",
-    "grunt-contrib-cssmin": "^3.0.0",
-    "grunt-contrib-uglify": "^4.0.1",
-    "grunt-html": "^10.1.0",
-    "grunt-artifactory-deploy": "0.0.3",
-    "grunt-contrib-compress": "1.4.3",
-    "grunt-mocha": "~0.4.0",
-    "mocha": "~1.14.0",
-    "chai": "~1.8.1"
+	
   },
   "scripts": {
     "test": "grunt mocha"
