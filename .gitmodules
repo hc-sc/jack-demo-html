@@ -1,8 +1,8 @@
 [submodule "public/assets/GCWeb"]
-	
 	path = public/assets/GCWeb
-	
 	url = https://github.com/wet-boew/themes-cdn
-[submodule "public/assets/wet-boew"]
+
+[submodule "dist/assets/wet-boew"]
 	path = public/assets/wet-boew
+	
 	url = https://github.com/wet-boew/wet-boew-cdn
