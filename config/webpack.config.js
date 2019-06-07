@@ -6,5 +6,14 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   }
+  module: {
+        loaders: [
+            {
+                test: /\.scss$/,
+                loader: "sass-loader",
+                
+            },
+        ]
+    }
     watch: true
 }
