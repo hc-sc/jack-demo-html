@@ -7,13 +7,9 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   }
   module: {
-        loaders: [
-            {
-                test: /\.scss$/,
-                loader: "sass-loader",
-                
-            },
-        ]
-    }
+    rules: [
+      { test: /\.scss$/, use: 'sass-loader' }
+    ]
+  }
     watch: true
 }
