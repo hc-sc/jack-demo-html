@@ -5,6 +5,7 @@ var WebpackShellPlugin = require('webpack-shell-plugin');
 
 
 module.exports = {
+<<<<<<< HEAD
  mode: "production"
  entry: ['../src/calc/calc.js', '../src/wet-boew/js/wet-boew.min.js', '../src/GCWeb/js/theme.min.js'],
 
@@ -23,3 +24,17 @@ module.exports = {
     ],
   },
 };
+=======
+  entry: ['/assets/calc/calc.js','/assets/wet-boew/js/wet-boew.min.js','/assets/GCWeb/js/theme.min.js'],
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  }
+  module: {
+    rules: [
+      { test: /\.scss$/, use: 'sass-loader' }
+    ]
+  }
+    watch: true
+}
+>>>>>>> dd5a62c0aaba92e52022c2253759567630f8cf4c
