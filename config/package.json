@@ -5,13 +5,15 @@
   "main": "index.html",
   "dependencies": {
 	"react": "15.6.1",
-	"react-dom": "15.6.1" 
+	"react-dom": "15.6.1"
   },
   "devDependencies": {
-	
+
   },
   "scripts": {
-    "test": "grunt mocha"
+    "test": "mocha-webpack",
+    "test:watch": "npm run test -- --watch",
+    "test:debug": "webpack-dev-server --config webpack/testDebug.js --hot --inline"
   },
   "repository": {
     "type": "git",

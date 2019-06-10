@@ -1,54 +1,61 @@
-var buttons = document.querySelectorAll('.button');
-var output = document.querySelector('.output');
+// Get dom objects for calculator buttons and screen
+var buttons = document.body.querySelectorAll('.buttons > button');
+var output = document.querySelector('.window');
+// Assigned variables
+var operator = ['×', '÷', '-', '+', '%'];
+var input = '';
+var dotFlag = false;
+var equation = '';
+var result = '';
 
-var action = null;
-var current = 0;
+//Initiate event listener for all buttons objects
+for (var i = 0; i < buttons.length; i++) {
+ buttons[i].onclick = function(e) {
+  var btnText = this.innerHTML;
+   // Takes care of the extra zero from AC and CE
+  if ((input == '0' && btnText != '.' && operator.indexOf(btnText) == -1 ) || input == 'NaN') input = '';
 
-var actions = {
-  '±': ' - ',
-  '%': ' % ',
-  '÷': ' / ',
-  '×': ' * ',
-  '−': ' - ',
-  '+': ' + ',
-};
+  if (btnText === 'AC') {
+   clearAC();
 
-for (button in buttons) {
-  buttons[button].onclick = function (e) {
-    var input = e.target.innerText;
-    var num = parseInt(input);
-    if (isNaN(num)) {
-      if (input === 'C') {
-        console.log('clear');
-        action = null;
-        current = 0;
-        output.innerText = 0;
-      } else {
-        if (action && action !== '=') {
-          var calculation = current + actions[action] + output.innerText;
-          console.log('calculate', calculation);
-          output.innerText = eval(calculation);
-        }
-        current = parseInt(output.innerText);
-        action = input;
-      }
-    } else {
-      if (current === parseInt(output.innerText)) {
-        output.innerText = num;
-      } else {
-        output.innerText += num;
-      }
-    }
-    console.log({
-      action: action,
-      current: current,
-      input: input,
-    });
-  };
+  } else if (btnText === 'CE') {
+
+   input = clearCE(input.length);
+
+  } else if (btnText === '.') {
+   if (input.indexOf('.') === -1 || dotFlag) {
+    input += '.';
+    dotFlag = false;
+   }
+  } else if (btnText === '=') {
+   input = calculate(input);
+  } else {
+    input += btnText;
+  }
+  output.innerHTML = input;
+ }
 }
 
-document.addEventListener('keypress', function (e) {
-  if (e.which > 47 && e.which < 58) {
-    console.log('numbers!');
-  }
-});
+
+function clearAC() {
+ input = 0;
+ operatorFlag = false;
+ equation = '';
+}
+
+function clearCE(length) {
+ if (length > 1) {
+  return input.slice(0, input.length - 1);
+ }
+ return 0;
+}
+
+function calculate(sequence) {
+ equation = sequence.replace(/×/g, '*');
+ equation = equation.replace(/÷/g, '/');
+ try {
+  return Math.round(eval(equation) * 1000000) / 1000000;
+ } catch (error) {
+  return 'NaN';
+ }
+}

@@ -12,7 +12,7 @@ body {
   max-width: 400px;
 }
 
-.output {
+.window {
   box-sizing: border-box;
   color: #ff0000;
   font-size: 48pt;
@@ -22,6 +22,12 @@ body {
 }
 
 .button {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
   box-sizing: border-box;
   cursor: pointer;
   float: left;
