@@ -50,7 +50,9 @@ function clearCE(length) {
  return 0;
 }
 
-function calculate(sequence) {
+let calc = {};
+
+calc.calculate = function calculate(sequence) {
  equation = sequence.replace(/×/g, '*');
  equation = equation.replace(/÷/g, '/');
  try {
@@ -59,3 +61,5 @@ function calculate(sequence) {
   return 'NaN';
  }
 }
+
+module.exports = calc;
