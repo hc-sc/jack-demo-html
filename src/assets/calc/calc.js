@@ -5,6 +5,7 @@ var output = document.querySelector('.window');
 var operator = ['×', '÷', '-', '+', '%'];
 var input = '';
 var dotFlag = false;
+var result = false;
 var equation = '';
 var result = '';
 
@@ -13,7 +14,10 @@ for (var i = 0; i < buttons.length; i++) {
  buttons[i].onclick = function(e) {
   var btnText = this.innerHTML;
    // Takes care of the extra zero from AC and CE
-  if ((input == '0' && btnText != '.' && operator.indexOf(btnText) == -1 ) || input == 'NaN') input = '';
+  if ((input == '0' && btnText != '.' && operator.indexOf(btnText) == -1 ) || input == 'NaN' || (result && operator.indexOf(btnText) == -1)) {
+     result = false;
+     input ='';
+  }
 
   if (btnText === 'AC') {
    clearAC();
@@ -28,8 +32,10 @@ for (var i = 0; i < buttons.length; i++) {
     dotFlag = false;
    }
   } else if (btnText === '=') {
+    result = true;
    input = calc.calculate(input);
   } else {
+     result = false;
     input += btnText;
   }
   output.innerHTML = input;
@@ -62,4 +68,3 @@ calc.calculate = function calculate(sequence) {
  }
 }
 
-module.exports = calc;
