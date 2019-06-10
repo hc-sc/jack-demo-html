@@ -9,7 +9,7 @@ describe('Calculator Tests', function() {
 		done();
 		});
 	it('returns 2*2=4', function(done) {
-		assert.equal("2*2", 4);
+		assert.equal(calc.calculate("2*2"), 4);
 		done();
 		});
 });
