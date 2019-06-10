@@ -28,7 +28,7 @@ for (var i = 0; i < buttons.length; i++) {
     dotFlag = false;
    }
   } else if (btnText === '=') {
-   input = calculate(input);
+   input = calc.calculate(input);
   } else {
     input += btnText;
   }
