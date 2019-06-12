@@ -1,6 +1,6 @@
 var assert = require('assert');
-
-var calc = require('../assets/calc/calc.js');
+var rewire = require('rewire');
+var calc = rewire('../assets/calc/calc.js');
 
 describe('Calculator Tests', function() {
 
