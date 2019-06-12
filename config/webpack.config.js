@@ -7,7 +7,7 @@ var WebpackShellPlugin = require('webpack-shell-plugin');
 module.exports = {
 
  mode: "production"
- entry: ['../src/calc/calc.js', '../src/wet-boew/js/wet-boew.min.js', '../src/GCWeb/js/theme.min.js'],
+ entry: ['../src/calc/calc.js', '../src/wet-boew/js/wet-boew.min.js', '../src/GCWeb/js/theme.js'],
 
  output: {
   path: path.resolve(__dirname, 'dist'),
@@ -25,7 +25,7 @@ module.exports = {
   },
 };
 
-  entry: ['/assets/calc/calc.js','/assets/wet-boew/js/wet-boew.min.js','/assets/GCWeb/js/theme.min.js'],
+  entry: ['/assets/calc/calc.js','/assets/wet-boew/js/wet-boew.min.js','/assets/GCWeb/js/theme.js'],
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
