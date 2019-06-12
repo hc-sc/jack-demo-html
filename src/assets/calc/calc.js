@@ -61,6 +61,7 @@ let calc = {};
 calc.calculate = function calculate(sequence) {
  equation = sequence.replace(/×/g, '*');
  equation = equation.replace(/÷/g, '/');
+ eval(equation);
  try {
   return Math.round(eval(equation) * 1000000) / 1000000;
  } catch (error) {
