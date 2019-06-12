@@ -1,5 +1,5 @@
 var assert = require('assert');
-var rewire = require('rewire');
+import rewire = require('rewire');
 var calc = rewire('../assets/calc/calc.js');
 var calculate = calc.__get__('calculate');
 describe('Calculator Tests', function() {
