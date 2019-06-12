@@ -67,4 +67,4 @@ calc.calculate = function calculate(sequence) {
   return 'NaN';
  }
 }
-
+module.exports=calc;
