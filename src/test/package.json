@@ -1,0 +1,27 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "Testing calc.js",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hc-sc/jack-demo-html.git"
+  },
+  "keywords": [
+    "test",
+    "mocha",
+    "calculator"
+  ],
+  "author": "bitopibhowmik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hc-sc/jack-demo-html/issues"
+  },
+  "homepage": "https://github.com/hc-sc/jack-demo-html#readme"
+}
