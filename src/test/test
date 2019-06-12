@@ -1,11 +1,10 @@
 var assert = require('assert');
-import rewire = require('rewire');
-var calc = rewire('../assets/calc/calc.js');
-var calculate = calc.__get__('calculate');
+var calc = require('../assets/calc/calc.js');
+
 describe('Calculator Tests', function() {
 
 	it('returns 1+1=2', function(done) {
-		assert.equal(calculate("1+1"), 2);
+		assert.equal(calc.calculate("1+1"), 2);
 		done();
 		});
 	it('returns 6-4=2', function(done) {
