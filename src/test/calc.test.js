@@ -20,3 +20,14 @@ describe('Calculator Tests', function() {
 		done();
 		});
 });
+
+describe('Error Tests', function() {
+	it('returns error for missing operator (90*)', function(done){
+		assert.equal(calc.calculate("90*"), "NaN");
+		done();
+		});
+	it('returns error for letter in equation', function(done){
+		assert.equal(calc.calculate("x+4"), "NaN");
+		done();
+		});
+});
