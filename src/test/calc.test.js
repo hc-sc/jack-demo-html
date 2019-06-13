@@ -20,3 +20,10 @@ describe('Calculator Tests', function() {
 		done();
 		});
 });
+
+describe('Error Tests', function() {
+	it('missing operator', function(done){
+		assert.equal(calc.calculate("90*"), "NaN");
+		done();
+		});
+});
