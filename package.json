@@ -2,7 +2,7 @@
   "name": "package.json",
   "version": "1.0.0",
   "description": "CSS Minifier, HTML Validator and runs tests",
-  "main": "index.js",
+  "private": true,
   "dependencies": {
     "react": "15.6.1",
     "react-dom": "15.6.1",
