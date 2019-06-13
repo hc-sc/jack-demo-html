@@ -4,21 +4,20 @@
   "description": "CSS Minifier, HTML Validator and runs tests",
   "main": "index.html",
   "dependencies": {
-	"react": "15.6.1",
-	"react-dom": "15.6.1"
+    "react": "15.6.1",
+    "react-dom": "15.6.1",
+    "webpack": "*",
+    "webpack-cli": "*"
   },
   "devDependencies": {
-
+    "html-webpack-plugin": "^3.2.0"
   },
   "scripts": {
-    "build": "webpack",
-    "test": "mocha-webpack",
-    "test:watch": "npm run test -- --watch",
-    "test:debug": "webpack-dev-server --config webpack/testDebug.js --hot --inline"
+    "build": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.scs-lab.com/Jack/HelloWorld_HTML"
+    "url": "https://github.com/hc-sc/jack-demo-html/"
   },
   "author": "",
   "license": ""
