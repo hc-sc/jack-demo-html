@@ -22,8 +22,12 @@ describe('Calculator Tests', function() {
 });
 
 describe('Error Tests', function() {
-	it('missing operator', function(done){
+	it('returns error for missing operator (90*)', function(done){
 		assert.equal(calc.calculate("90*"), "NaN");
+		done();
+		});
+	it('returns error for letter in equation', function(done){
+		assert.equal(calc.calculate("x+4"), "NaN");
 		done();
 		});
 });
