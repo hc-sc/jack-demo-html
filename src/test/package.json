@@ -23,5 +23,6 @@
   "bugs": {
     "url": "https://github.com/hc-sc/jack-demo-html/issues"
   },
-  "homepage": "https://github.com/hc-sc/jack-demo-html#readme"
+  "homepage": "https://github.com/hc-sc/jack-demo-html#readme",
+  "devDependencies": {}
 }
