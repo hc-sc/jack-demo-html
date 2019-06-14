@@ -9,8 +9,7 @@
   },
   "devDependencies": {
     "webpack": "*",
-    "webpack-cli": "*",
-
+    "webpack-cli": "*"
   },
   "scripts": {
     "build": "webpack --config webpack.config.js"
