@@ -12,6 +12,7 @@
     "webpack-cli": "*"
   },
   "scripts": {
+    "build-test": "webpack",
     "build": "webpack --config webpack.config.js"
   },
   "repository": {
