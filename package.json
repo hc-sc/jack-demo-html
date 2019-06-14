@@ -8,16 +8,9 @@
     "react-dom": "15.6.1"
   },
   "devDependencies": {
-    "@babel/core": "*",
-    "@babel/preset-env": "*",
     "webpack": "*",
     "webpack-cli": "*",
-    "webpack-dev-server": "*",
-    "html-webpack-plugin": "*",
-    "sass-loader":"*",
-    "node-sass":"*",
-    "babel-loader": "*",
-    "babel-core": "*"
+
   },
   "scripts": {
     "build": "webpack --config webpack.config.js"
