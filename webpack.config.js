@@ -3,7 +3,7 @@ module.exports = {
   module:{
     rules:[
       {
-        test: /\.html$/,
+        test: "main-en.html",
         use: [
           {
              loader : "html-loader",
