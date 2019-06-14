@@ -7,14 +7,14 @@ module.exports = {
     path: __dirname + '/public',
     filename: 'index_bundle.js'
   },
-  module: {
-        rules: [{
-            test: /\.scss$/,
-            use: [
-                "sass-loader" // compiles Sass to CSS, using Node Sass by default
-            ]
-        }]
-    },
+   module:{
+     rules:[
+             {
+                 test:/\.scss$/,
+                 use:['style-loader','css-loader', 'sass-loader']
+              }
+      ]
+   },
   plugins: [
     new HtmlWebpackPlugin()
   ]
