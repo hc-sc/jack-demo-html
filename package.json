@@ -8,6 +8,8 @@
     "react-dom": "15.6.1"
   },
   "devDependencies": {
+    "@babel/core": "*",
+    "@babel/preset-env": "*",
     "webpack": "*",
     "webpack-cli": "*",
     "webpack-dev-server": "*",
