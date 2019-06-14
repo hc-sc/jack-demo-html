@@ -9,7 +9,8 @@
   },
   "devDependencies": {
     "webpack": "*",
-    "webpack-cli": "*"
+    "webpack-cli": "*",
+    "svg-inline-loader": "^0.8.0"
   },
   "scripts": {
     "build-test": "webpack",
