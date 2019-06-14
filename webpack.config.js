@@ -36,11 +36,6 @@ module.exports = {
         "sass-loader" // compiles Sass to CSS, using Node Sass by default
       ]},
 
-
-
-
-
-
   ]},
   plugins:[
     new HtmlWebPackPlugin({

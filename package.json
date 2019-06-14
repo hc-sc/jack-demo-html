@@ -12,7 +12,9 @@
     "webpack-cli": "*",
     "svg-inline-loader": "*",
     "sass-loader": "*",
-    "sass": "*"
+    "sass": "*",
+    "html-webpack-plugin": "*",
+    "uglifyjs-webpack-plugin": "*"
   },
   "scripts": {
     "build-test": "webpack",
