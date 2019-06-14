@@ -8,7 +8,9 @@
     "react-dom": "15.6.1",
     "webpack": "*",
     "webpack-cli": "*",
-    "html-webpack-plugin": "*"
+    "html-webpack-plugin": "*",
+    "sass-loader":"*",
+    "node-sass":"*"
   },
   "devDependencies": {
     "html-webpack-plugin": "^3.2.0"
