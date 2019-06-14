@@ -1,35 +1,38 @@
-var path = require("path");
-
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
-  entry: "./src/index.js",
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
-    publicPath: "/dist"
-  },
   module: {
     rules: [
       {
         test: /\.js$/,
+        exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
-          options: { presets: ["es2015"] }
+          loader: "babel-loader"
         }
       },
       {
-        test: /\.scss$/,
+        test: /\.html$/,
         use: [
           {
-            loader: "style-loader" // creates style nodes from JS strings
-          },
-          {
-            loader: "css-loader" // translates CSS into CommonJS
-          },
-          {
-            loader: "sass-loader" // compiles Sass to CSS
+            loader: "html-loader",
+            options: { minimize: true }
           }
         ]
+      },
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader"]
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: "./src/main-en.html",
+      filename: "./index.html"
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    })
+  ]
 };
