@@ -3,12 +3,15 @@ module.exports = {
   module:{
     rules:[
       {
-        test: "main-en.html",
+        test: /\.html$/,
         use: [
           {
              loader : "html-loader",
-             options : {minimize: true}
-
+             options : {
+                removeComments: true,
+                collapseWhitespace: true,
+                minimize: true
+            }
           }
         ]
       },
