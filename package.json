@@ -6,15 +6,16 @@
   "dependencies": {
     "react": "15.6.1",
     "react-dom": "15.6.1",
-    "webpack": "*",
-    "webpack-cli": "*",
-    "html-webpack-plugin": "*"
-
   },
   "devDependencies": {
-    "html-webpack-plugin": "^3.2.0",
+    "webpack": "*",
+    "webpack-cli": "*",
+    "webpack-dev-server": "*",
+    "html-webpack-plugin": "*",
     "sass-loader":"*",
-    "node-sass":"*"
+    "node-sass":"*",
+    "babel-loader": "*",
+    "babel-core": "*"
   },
   "scripts": {
     "build": "webpack --config webpack.config.js"
