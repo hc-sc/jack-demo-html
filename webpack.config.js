@@ -4,7 +4,7 @@ module.exports = {
     rules:[
       {
         test: /\.html$/,
-        use [
+        use: [
           {
              loader : "html-loader",
              options : {minimize: true}
