@@ -1,47 +1,41 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-
 module.exports = {
-  optimization: {
-    minimizer: [new UglifyJsPlugin()],
+  entry: [
+    '.src/assets/calc/calc.js',
+    './src/assets/wet-boew/js/wet-boew.min.js',
+    './src/assets/GCWeb/js/theme.min.js'
+  ],
+  output: {
+    path: __dirname,
+    publicPath: '/',
+    filename: 'bundle.js'
   },
-  module:{
-    rules:[
+  module: {
+    rules: [
       {
-        test: /\.html$/,
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "script-loader"
+        }
+      },
+      {
+        test: /\.css$/,
         use: [
           {
-             loader : "html-loader",
-             options : {
-                removeComments: true,
-                collapseWhitespace: true,
-                minimize: true
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+              importLoaders: 1,
+              localIdentName: "[name]_[local]_[hash:base64]",
+              sourceMap: true,
+              minimize: true
             }
           }
         ]
-      },
-      {
-      test: /\.svg$/,
-        use: [
-          {
-             loader : "svg-inline-loader",
-          }
-        ]
-      },
-      {
-       test: /\.scss$/,
-        use: [
-        "style-loader", // creates style nodes from JS strings
-        "css-loader", // translates CSS into CommonJS
-        "sass-loader" // compiles Sass to CSS, using Node Sass by default
-      ]},
-
-  ]},
-  plugins:[
-    new HtmlWebPackPlugin({
-      template: "./src/main-en.html",
-      filename:"./dist/main-en.html"
-    }),
-  ]
-}
-
+      }
+    ]
+  }
+};
