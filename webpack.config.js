@@ -18,6 +18,6 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "./src/main-en.html",
       filename:"./index.html"
-    }
+    }),
   ]
 }
