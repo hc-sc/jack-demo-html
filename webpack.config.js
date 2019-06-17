@@ -5,7 +5,7 @@ module.exports = {
 	mode:'production',
   output: {
     path: __dirname,
-    publicPath: '/',
+    publicPath: '/src',
     filename: 'bundle.js'
   },
   module: {
@@ -14,7 +14,7 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "raw-loader"
+          loader: "script-loader"
         }
       },
       {
