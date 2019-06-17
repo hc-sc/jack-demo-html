@@ -8,22 +8,13 @@
     "react-dom": "15.6.1"
   },
   "devDependencies": {
-    "babel-minify-webpack-plugin": "^0.3.1",
-    "webpack": "*",
-    "webpack-cli": "*",
-    "webpack-dev-server": "*",
-    "style-loader": "*",
     "css-loader": "*",
-    "script-loader": "*",
-    "svg-inline-loader": "*",
-    "uglifyjs-webpack-plugin": "*",
-    "sass-loader": "*",
-    "sass": "*",
-    "html-webpack-plugin": "*",
-    "jest-webpack": "*"
+    "style-loader": "*",
+    "webpack": "*",
+    "webpack-cli": "*"
   },
   "scripts": {
-    "build-test": "webpack",
+    "build-test": "webpack --mode production",
     "build": "webpack --config webpack.config.js"
   },
   "repository": {
