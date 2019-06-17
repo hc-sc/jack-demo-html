@@ -19,7 +19,8 @@
     "uglifyjs-webpack-plugin": "*",
     "sass-loader": "*",
     "sass": "*",
-    "html-webpack-plugin": "*"
+    "html-webpack-plugin": "*",
+    "jest-webpack":"*"
   },
   "scripts": {
     "build-test": "webpack",
