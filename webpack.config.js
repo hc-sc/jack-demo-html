@@ -1,28 +1,16 @@
-var webpack = require('webpack')
+const MinifyPlugin = require("babel-minify-webpack-plugin");
 module.exports = {
-    entry: {
-        entry: __dirname + [
+  entry: [
     './src/assets/calc/calc.js',
     './src/assets/wet-boew/js/wet-boew.min.js',
     './src/assets/GCWeb/js/theme.min.js'
   ],
-    },
-    output: {
-        filename: 'bundle.js'
-    },
-    module: {
-        loaders: [
-            {
-                test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/,
-                query: {
-                    presets: ['es2015']
-                }
-            }
-        ]
-    },
-    plugins: [
-        new webpack.optimize.UglifyJsPlugin()
-    ]
+  output:{
+    path: __dirname,
+    publicPath: '/',
+    filename: 'bundle.js'
+  },
+  plugins: [
+    new MinifyPlugin(minifyOpts, pluginOpts)
+  ]
 }
