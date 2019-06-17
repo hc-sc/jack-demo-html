@@ -1,7 +1,9 @@
 module.exports = {
   entry: [
+    './src/assets/calc/calc.js',
     './src/assets/wet-boew/js/wet-boew.min.js',
-    './src/assets/GCWeb/js/theme.min.js'
+    './src/assets/GCWeb/js/theme.min.js',
+    'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js'
   ],
 	mode:'production',
   output: {
@@ -17,24 +19,6 @@ module.exports = {
         use: {
           loader: "script-loader"
         }
-      },
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: "style-loader"
-          },
-          {
-            loader: "css-loader",
-            options: {
-              modules: true,
-              importLoaders: 1,
-              localIdentName: "[name]_[local]_[hash:base64]",
-              sourceMap: true,
-              minimize: true
-            }
-          }
-        ]
       }
     ]
   }
