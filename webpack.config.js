@@ -1,6 +1,6 @@
 module.exports = {
   entry: [
-    '.src/assets/calc/calc.js',
+    './src/assets/calc/calc.js',
     './src/assets/wet-boew/js/wet-boew.min.js',
     './src/assets/GCWeb/js/theme.min.js'
   ],
