@@ -1,6 +1,6 @@
 module.exports = {
   entry: [
-    'app.js'
+    './app.js'
   ],
 	mode:'production',
   output: {
