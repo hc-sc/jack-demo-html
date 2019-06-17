@@ -4,6 +4,7 @@
   "description": "CSS Minifier, HTML Validator and runs tests",
   "private": true,
   "dependencies": {
+    "raw-loader": "^3.0.0",
     "react": "15.6.1",
     "react-dom": "15.6.1"
   },
