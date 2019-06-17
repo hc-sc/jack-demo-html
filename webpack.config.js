@@ -3,12 +3,12 @@ module.exports = {
     './src/assets/calc/calc.js',
     './src/assets/wet-boew/js/wet-boew.min.js',
     './src/assets/GCWeb/js/theme.min.js',
-    'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js'
+    './src/assets/jquery.js'
   ],
 	mode:'production',
   output: {
     path: __dirname,
-    publicPath: '/',
+    publicPath: '/src',
     filename: 'bundle.js'
   },
   module: {
