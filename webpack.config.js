@@ -4,6 +4,7 @@ module.exports = {
     './src/assets/wet-boew/js/wet-boew.min.js',
     './src/assets/GCWeb/js/theme.min.js'
   ],
+	mode:'production',
   output: {
     path: __dirname,
     publicPath: '/',
