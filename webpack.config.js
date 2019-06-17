@@ -1,10 +1,26 @@
+const path = require('path');
 module.exports = {
-  entry:[ './src/assets/calc/calc.js',
-	'./src/assets/GCWeb/js/theme.js'],
-mode:'production',
+  entry: './src/assets/calc/calc.js',
+  mode:'production',
   output: {
-    path: __dirname,
-    publicPath: './src/assets/GCWeb/js',
-    filename: 'bundle.js'
-  }
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  },
+    module: {
+        rules: [{
+            test: /\.scss$/,
+            use: [{
+                loader: "style-loader"
+            }, {
+                loader: "css-loader"
+            }, {
+                loader: "sass-loader",
+                options: {
+                    includePaths: ["./src/assets/calc/calc.scss"]
+                }
+            }]
+        }]
+    }
 };
+
+

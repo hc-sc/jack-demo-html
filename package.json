@@ -13,7 +13,9 @@
     "css-loader": "*",
     "style-loader": "*",
     "webpack": "*",
-    "webpack-cli": "*"
+    "webpack-cli": "*",
+    "sass-loader": "*",
+    "sass": "*"
   },
   "scripts": {
     "build-test": "webpack --mode production",
