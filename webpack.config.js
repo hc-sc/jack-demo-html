@@ -1,26 +1,32 @@
-const path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 module.exports = {
-  entry: './src/assets/calc/calc.js',
-  mode:'production',
+  entry: ['./src/assets/calc/calc.js', './src/assets/calc/calc.css'],
   output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    filename: 'dist/bundle.js'
   },
-    module: {
-        rules: [{
-            test: /\.scss$/,
-            use: [{
-                loader: "style-loader"
-            }, {
-                loader: "css-loader"
-            }, {
-                loader: "sass-loader",
-                options: {
-                    includePaths: ["./src/assets/calc/calc.scss"]
-                }
-            }]
-        }]
-    }
+  module: {
+
+    rules: [
+      /*
+      your other rules for JavaScript transpiling go in here
+      */
+      { // regular css files
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract({
+          loader: 'css-loader?importLoaders=1',
+        }),
+      },
+      { // sass / scss loader for webpack
+        test: /\.(sass|scss)$/,
+        loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+      }
+    ]
+  },
+  plugins: [
+    new ExtractTextPlugin({ // define where to save the file
+      filename: 'dist/[name].bundle.css',
+      allChunks: true,
+    }),
+  ],
 };
-
-
