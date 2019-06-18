@@ -19,7 +19,8 @@
   },
   "scripts": {
     "build-test": "webpack --mode production",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "test":"jest calc.test.js"
   },
   "repository": {
     "type": "git",
