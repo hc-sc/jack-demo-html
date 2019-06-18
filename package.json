@@ -12,6 +12,7 @@
   "devDependencies": {
     "css-loader": "*",
     "style-loader": "*",
+    "jest-webpack": "*",
     "webpack": "*",
     "webpack-cli": "*",
     "sass-loader": "*",
