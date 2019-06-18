@@ -11,7 +11,7 @@ module.exports = {
 
   rules: [{
    test: /\.scss$/,
-   use: mini-css-extract-plugin.extract({
+   use: MiniCssExtractPlugin.extract({
     fallbackLoader: 'style-loader',
     loader: ['css-loader', 'sass-loader'],
     publicPath: '/dist'
@@ -27,7 +27,7 @@ module.exports = {
    hash: true,
    template: './src/main-en.html',
   }),
-  new mini-css-extract-plugin({
+  new MiniCssExtractPlugin({
    filename: 'main.css',
    disable: false,
    allChunks: true
