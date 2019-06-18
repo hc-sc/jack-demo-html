@@ -1,20 +1,18 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const mode = process.env.NODE_ENV || "development";
+
+const entry = {
+  "calc": "./index.js"
+
+}
+
+const output = {
+  filename: "[name].bundle.js",
+  path: __dirname+ "/dist"
+}
+
 
 module.exports = {
- entry: './src/assets/calc/calc.js',
- output: {
-  filename: 'main.js'
- },
-  module: {
-    rules: [
-      {
-        test: /\.s?css/,
-        use:[
-            "style-loader",
-            "css-loader",
-            "sass-loader"
-        ]
-      }
-    ],
-  },
-};
+  entry,
+  mode,
+  output
+}

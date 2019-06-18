@@ -21,6 +21,7 @@
     "webpack-cli": "*"
   },
   "scripts": {
+    "setMode":"set NODE_ENV=development&&webpack --progress",
     "build": "webpack --config webpack.config.js",
     "test": "jest calc.test.js",
     "sass": "sass src/assets/calc/calc.scss"
