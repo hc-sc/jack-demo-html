@@ -11,11 +11,13 @@
   },
   "devDependencies": {
     "css-loader": "*",
+    "jest-webpack": "^0.5.1",
+    "node-sass": "*",
+    "sass": "*",
+    "sass-loader": "*",
     "style-loader": "*",
     "webpack": "*",
-    "webpack-cli": "*",
-    "sass-loader": "*",
-    "sass": "*"
+    "webpack-cli": "*"
   },
   "scripts": {
     "build-test": "webpack --mode production",
