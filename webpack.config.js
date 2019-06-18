@@ -1,4 +1,4 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
  entry: ['./src/assets/calc/calc.js',
@@ -7,31 +7,20 @@ module.exports = {
  output: {
   filename: 'main.js'
  },
- module: {
-
-  rules: [{
-   test: /\.scss$/,
-   use: mini-css-extract-plugin.extract({
-    fallbackLoader: 'style-loader',
-    loader: ['css-loader', 'sass-loader'],
-    publicPath: '/dist'
-   })
-  }]
- },
- plugins: [
-  new HtmlWebpackPlugin({
-   title: 'Project Demo',
-   // minify: {
-   //     collapseWhitespace: true
-   // },
-   hash: true,
-   template: './src/main-en.html',
-  }),
-  new mini-css-extract-plugin({
-   filename: 'main.css',
-   disable: false,
-   allChunks: true
-  })
- ],
- mode: 'production',
+  module: {
+    rules: [
+      {
+        loader: "babel-loader",
+        test: /\.js/
+      },
+      {
+        test: /\.s?css/,
+        use:[
+            "style-loader",
+            "css-loader",
+            "sass-loader"
+        ]
+      }
+    ],
+  },
 };
