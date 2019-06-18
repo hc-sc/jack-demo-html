@@ -1,7 +1,7 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: ['./src/assets/calc/calc.js', './src/assets/calc/calc.css'],
+  entry: ['./src/assets/calc/calc.js', './src/assets/calc/calc.scss'],
   output: {
     filename: 'dist/bundle.js'
   },
