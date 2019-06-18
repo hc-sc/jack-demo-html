@@ -11,7 +11,6 @@
   },
   "devDependencies": {
     "css-loader": "*",
-    "jest-webpack": "^0.5.1",
     "jest":"*",
     "node-sass": "*",
     "sass": "*",
