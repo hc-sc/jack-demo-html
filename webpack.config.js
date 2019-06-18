@@ -1,8 +1,12 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
-  entry: ['./src/assets/calc/calc.js', './src/assets/calc/calc.scss'],
+  entry:{
+    calc :'./src/assets/calc/calc.js',
+    style:'./src/assets/calc/calc.scss',
+  },
   output: {
-    filename: 'dist/bundle.js'
+    filename: '[name].js',
+    path: __dirname + '/dist'
   },
   module: {
 
@@ -21,7 +25,7 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: 'dist/bundle.js',
+              publicPath: 'dist/style.js',
               hmr: process.env.NODE_ENV === 'development',
             },
           },
@@ -32,7 +36,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'dist/[name].css',
+      filename: '[name].css',
       chunkFilename: '[id].css',
     }),
   ],
