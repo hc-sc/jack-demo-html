@@ -23,5 +23,6 @@ const _module = {
 module.exports = {
   entry,
   mode,
+  module: _module,
   output
 }
