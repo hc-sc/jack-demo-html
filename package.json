@@ -10,20 +10,12 @@
     "script-loader": "^0.7.2"
   },
   "devDependencies": {
-<<<<<<< HEAD
     "css-loader": "*",
     "jest":"*",
-=======
-    "css-loader": "^3.0.0",
-    "jest": "^24.8.0",
-    "jest-webpack": "^0.5.1",
->>>>>>> 058456a612cbeeda3ae88fe31b24a59f7e6ab9d7
     "node-sass": "*",
     "sass": "*",
     "sass-loader": "*",
     "style-loader": "*",
-    "ts-loader": "^6.0.3",
-    "jest-webpack": "*",
     "webpack": "*",
     "webpack-cli": "*"
   },
