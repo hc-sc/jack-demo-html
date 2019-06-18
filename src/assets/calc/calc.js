@@ -63,7 +63,7 @@ calc.calculate = function(sequence) {
  equation = equation.replace(/÷/g, '/');
 
  try {
-  return Math.round(eval(equation) * 1000000) / 1000000;
+  return Math.round(eval(equation) * 1000) / 1000;
  } catch (error) {
   return 'NaN';
  }

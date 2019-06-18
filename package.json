@@ -21,7 +21,8 @@
   },
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "test": "jest calc.test.js"
+    "test": "jest calc.test.js",
+    "sass": "sass"
   },
   "repository": {
     "type": "git",
