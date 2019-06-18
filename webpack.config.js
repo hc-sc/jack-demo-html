@@ -1,5 +1,4 @@
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   entry: ['./src/assets/calc/calc.js', './src/assets/calc/calc.scss'],
   output: {
@@ -8,25 +7,25 @@ module.exports = {
   module: {
 
     rules: [
-      /*
-      your other rules for JavaScript transpiling go in here
-      */
-      { // regular css files
+      {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract({
-          loader: 'css-loader?importLoaders=1',
-        }),
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: 'dist/bundle.js',
+              hmr: process.env.NODE_ENV === 'development',
+            },
+          },
+          'css-loader',
+        ],
       },
-      { // sass / scss loader for webpack
-        test: /\.(sass|scss)$/,
-        loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
-      }
     ]
   },
   plugins: [
-    new ExtractTextPlugin({ // define where to save the file
-      filename: 'dist/[name].bundle.css',
-      allChunks: true,
+    new MiniCssExtractPlugin({
+      filename: 'dist/[name].css',
+      chunkFilename: '[id].css',
     }),
   ],
 };
