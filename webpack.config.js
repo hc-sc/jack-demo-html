@@ -1,9 +1,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
- entry: ['./src/assets/calc/calc.js',
-          './src/assets/calc/calc.scss'
-  ],
+ entry: './src/assets/calc/calc.js',
  output: {
   filename: 'main.js'
  },
