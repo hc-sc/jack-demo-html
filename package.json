@@ -18,6 +18,7 @@
     "sass-loader": "*",
     "style-loader": "*",
     "ts-loader": "^6.0.3",
+    "jest-webpack": "*",
     "webpack": "*",
     "webpack-cli": "*"
   },
