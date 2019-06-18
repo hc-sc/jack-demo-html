@@ -1,19 +1,18 @@
-@import "https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=latin,latin-ext";
-@import "https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin,latin-ext";
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=latin,latin-ext);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin,latin-ext);
 body {
-  font: 200%;
+  font: 200% ;
   height: 100vh;
   margin: 0;
-  font-family: Lato, sans-serif;
+	font-family: Lato, sans-serif;
 }
-
 .calculator {
   height: 100%;
   margin: 0 auto;
   max-width: 400px;
 }
 
-.output {
+.window {
   box-sizing: border-box;
   color: #ff0000;
   font-size: 48pt;
@@ -23,29 +22,30 @@ body {
 }
 
 .button {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
   box-sizing: border-box;
   cursor: pointer;
   float: left;
   height: 15%;
   padding: 5%;
-  transition: 0.5s;
+  transition: .5s;
   width: 25%;
 }
 .button:hover {
   background: #444f59;
   color: #fff;
 }
-
 .double {
   width: 50%;
 }
-
 .accent:hover {
   color: #ff0000;
 }
-
 .submit:hover {
   background: #ff0000;
 }
-
-/*# sourceMappingURL=calc.css.map */
