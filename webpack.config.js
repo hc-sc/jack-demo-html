@@ -8,10 +8,6 @@ module.exports = {
   module: {
     rules: [
       {
-        loader: "babel-loader",
-        test: /\.js/
-      },
-      {
         test: /\.s?css/,
         use:[
             "style-loader",
