@@ -1,11 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=latin,latin-ext);
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin,latin-ext);
-
-body {
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin,latin-ext);body {
 	font: 200%;
 	height: 100vh;
 	margin: 0;
-	font-family: Lato, sans-serif;
+	font-family: Lato,sans-serif;
 }
 .calculator {
 	height: 100%;
@@ -13,21 +11,21 @@ body {
 	max-width: 400px;
 }
 .window {
-	box-sizing: border-box;
-	color: #ff0000;
+	color: red;
 	font-size: 48pt;
 	height: 25%;
 	padding: 10% 5% 5%;
 	text-align: right;
 }
+.button,.window {
+	box-sizing: border-box;
+}
 .button {
-	background-color: Transparent;
+	background-color: transparent;
 	background-repeat: no-repeat;
 	border: none;
-	cursor: pointer;
 	overflow: hidden;
 	outline: none;
-	box-sizing: border-box;
 	cursor: pointer;
 	float: left;
 	height: 15%;
@@ -44,11 +42,11 @@ body {
 }
 .accent {
 	&:hover {
-		color: #ff0000;
+		color: red;
 	}
 }
 .submit {
 	&:hover {
-		background: #ff0000;
+		background: red;
 	}
 }
