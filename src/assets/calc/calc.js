@@ -61,7 +61,9 @@ function clearCE(length) {
  return 0;
 }
 
-let calc.calculate = function(sequence) {
+let calc = {};
+
+calc.calculate = function(sequence) {
  equation = sequence.replace(/×/g, '*');
  equation = equation.replace(/÷/g, '/');
  try {
