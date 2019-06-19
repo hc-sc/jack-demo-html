@@ -12,7 +12,7 @@
   "devDependencies": {
     "css-loader": "*",
     "jest": "*",
-    "mini-css-extract-plugin": "^0.7.0",
+    "mini-css-extract-plugin": "*",
     "node-sass": "*",
     "sass": "*",
     "sass-loader": "*",
