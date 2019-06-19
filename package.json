@@ -10,9 +10,6 @@
     "script-loader": "^0.7.2"
   },
   "devDependencies": {
-    "@babel/core": "*",
-    "@babel/preset-env": "*",
-    "babel-loader": "*",
     "css-loader": "*",
     "jest": "*",
     "mini-css-extract-plugin": "*",
@@ -29,11 +26,12 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "test": "jest calc.test.js",
-    "test-1": "jest-webpack
     "sass": "sass src/assets/calc/calc.scss"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/hc-sc/jack-demo-html/"
-  }
+  },
+  "author": "",
+  "license": ""
 }
