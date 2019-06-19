@@ -1,4 +1,4 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const entry = {
   "calc": ["./src/assets/calc/calc.js", "./src/assets/calc/calc.scss"]
@@ -10,20 +10,19 @@ const output = {
 }
 
 const _module = {
-   rules: [{
-      test: /\.scss$/,
-      use: [
-        MiniCssExtractPlugin.loader,
-         "style-loader",
-         "css-loader",
-         "sass-loader"
-       ]
-    }]
+  rules: [{
+    test: /\.s?css$/,
+    use: [
+       MiniCssExtractPlugin.loader,
+       'css-loader',
+       'sass-loader'
+     ]
+  }]
 }
 
 const plugins = [
-  new MiniCssExtractPlugin({
-      filename: "../new.css"
+    new MiniCssExtractPlugin({
+      filename: "styles.css"
     })
 ]
 
