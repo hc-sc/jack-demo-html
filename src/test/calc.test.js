@@ -1,5 +1,5 @@
 var assert = require('assert');
-var calc = require('../dist/calc.min.js');
+var calc = require('../../dist/calc.min.js');
 
 describe('Calculator Tests', function() {
 
