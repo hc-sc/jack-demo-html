@@ -1,4 +1,4 @@
-import "./calc.scss";
+import './calc.scss';
 // Get dom objects for calculator buttons and screen
 var buttons = document.body.querySelectorAll('.buttons > button');
 var output = document.querySelector('.window');
