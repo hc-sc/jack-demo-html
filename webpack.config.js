@@ -1,11 +1,17 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const TerserJSPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const entry = {
   "calc": ["./src/assets/calc/calc.js", "./src/assets/calc/calc.scss"]
 }
 
+const optimization = {
+  minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+}
+
 const output = {
-  filename: "[name].new.js",
+  filename: "calc.min.js",
   path: __dirname+ "/dist"
 }
 
@@ -22,7 +28,7 @@ const _module = {
 
 const plugins = [
     new MiniCssExtractPlugin({
-      filename: "styles.css"
+      filename: "calc.min.css"
     })
 ]
 
