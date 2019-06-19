@@ -43,11 +43,7 @@ for (var i = 0; i < buttons.length; i++) {
       input += btnText;
     }
   }
-   if (oversize){
-     output.innerHTML = 'NaN';
-   }else{
      output.innerHTML = input;
-   }
  }
 }
 
@@ -70,10 +66,13 @@ let calc = {};
 calc.calculate = function(sequence) {
  equation = sequence.replace(/×/g, '*');
  equation = equation.replace(/÷/g, '/');
-
  try {
   var equal = Math.round(eval(equation) * 100) / 100;
-   return equal;
+   if (equal > 8){
+     return 'NaN';
+   }else{
+      return equal;
+   }
  } catch (error) {
   return 'NaN';
  }
