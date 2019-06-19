@@ -11,7 +11,7 @@ const output = {
 
 const _module = {
    rules: [{
-      test: /\.scss$/,
+      test: /\.css$/,
       use: [
         loader: MiniCssExtractPlugin.loader,
          "style-loader",
