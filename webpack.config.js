@@ -29,8 +29,8 @@ const plugins = [
 
 module.exports = {
   entry,
-  mode,
+  mode: 'production',
   module: _module,
   output,
-  plugins
+  plugins,
 }
