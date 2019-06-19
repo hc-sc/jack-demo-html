@@ -47,7 +47,7 @@ const _module = {
 const plugins = [
 	new MiniCssExtractPlugin({
 		filename: "calc.min.css"
-	})
+	}),
   new sassLintPlugin(
 
   )
