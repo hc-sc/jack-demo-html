@@ -22,9 +22,8 @@ const _module = {
 			use: [
 				MiniCssExtractPlugin.loader,
 				'css-loader',
-				'sass-loader',
-        SassLintPlugin.loader
-			]
+				'sass-loader'
+        ]
 		},
 /* 		{
 			test: /(htm|html|xhtml|hbs|handlebars|php|ejs)$/,
