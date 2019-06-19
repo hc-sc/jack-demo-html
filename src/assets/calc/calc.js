@@ -62,7 +62,7 @@ function clearCE(length) {
 }
 
 /* let calc = {};
-
+ */
 calc.calculate = function(sequence) {
  equation = sequence.replace(/×/g, '*');
  equation = equation.replace(/÷/g, '/');
@@ -77,4 +77,4 @@ calc.calculate = function(sequence) {
   return 'NaN';
  }
 }
-module.exports=calc; */
+module.exports=calc;
