@@ -7,7 +7,7 @@ var input = '';
 var dotFlag = false;
 var result = false;
 var oversize = false;
-var size;
+var size = 0;
 var equation = '';
 var result = '';
 
@@ -43,7 +43,11 @@ for (var i = 0; i < buttons.length; i++) {
       input += btnText;
     }
   }
-  output.innerHTML = input;
+   try {
+     print(input, oversize);
+   }catch(e){
+     console.log(e);
+     return 'NaN';
  }
 }
 
@@ -61,6 +65,14 @@ function clearCE(length) {
  return 0;
 }
 
+function print(input, oversize){
+  if(oversize){
+    throw "this number is too large";
+  }else {
+    output.innerHTML = input;
+  }
+}
+
 let calc = {};
 
 calc.calculate = function(sequence) {
@@ -71,7 +83,8 @@ calc.calculate = function(sequence) {
   var equal = Math.round(eval(equation) * 100) / 100;
    return equal;
  } catch (error) {
-  return 'NaN';
+   console.log(error);
+    return 'NaN';
  }
 }
 module.exports=calc;
