@@ -43,7 +43,11 @@ for (var i = 0; i < buttons.length; i++) {
       input += btnText;
     }
   }
-  output.innerHTML = input;
+   if (oversize){
+     output.innerHTML = 'NaN';
+   }else{
+     output.innerHTML = input;
+   }
  }
 }
 
