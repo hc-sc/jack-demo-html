@@ -10,6 +10,9 @@
     "script-loader": "^0.7.2"
   },
   "devDependencies": {
+    "@babel/core": "*",
+    "@babel/preset-env": "*",
+    "babel-loader": "*",
     "css-loader": "*",
     "jest": "*",
     "mini-css-extract-plugin": "*",
