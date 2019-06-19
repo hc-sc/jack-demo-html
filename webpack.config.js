@@ -1,6 +1,8 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const sassLintPlugin = require('sasslint-webpack-plugin');
+
 
 const entry = {
 	"calc": ["./src/assets/calc/calc.js", "./src/assets/calc/calc.scss"]
@@ -21,7 +23,8 @@ const _module = {
 			use: [
 				MiniCssExtractPlugin.loader,
 				'css-loader',
-				'sass-loader'
+				'sass-loader',
+        sassLintPlugin.loader
 			]
 		},
 /* 		{
@@ -45,6 +48,9 @@ const plugins = [
 	new MiniCssExtractPlugin({
 		filename: "calc.min.css"
 	})
+  new sassLintPlugin(
+
+  )
 ]
 
 module.exports = {

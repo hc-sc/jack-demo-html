@@ -16,6 +16,8 @@
     "eslint": "*",
     "babel-eslint": "*",
     "babel-loader": "*",
+    "sass-lint": "*",
+    "sasslint-webpack-plugin": "*",
     "mini-css-extract-plugin": "*",
     "node-sass": "*",
     "sass": "*",
