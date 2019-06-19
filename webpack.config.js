@@ -1,4 +1,3 @@
-const mode = process.env.NODE_ENV || "development";
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const entry = {
