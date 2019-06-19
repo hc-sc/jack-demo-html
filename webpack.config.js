@@ -25,11 +25,11 @@ const _module = {
 				'sass-loader'
         ]
 		},
-/* 		{
+		{
 			test: /(htm|html|xhtml|hbs|handlebars|php|ejs)$/,
-			loader: 'htmllint-loader',
 			exclude: /(node_modules)/,
-		}, */
+      loader: 'htmllint-loader',
+		},
 		{
 			test: /\.js$/,
 			exclude: /node_modules/,
