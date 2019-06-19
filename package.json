@@ -21,7 +21,7 @@
     "webpack": "*",
     "webpack-cli": "*",
     "terser-webpack-plugin": "*",
-    "optimize-css-assets-webpack-plugin": "*",
+    "optimize-css-assets-webpack-plugin": "*"
   },
   "scripts": {
     "build": "webpack --config webpack.config.js",
