@@ -22,6 +22,10 @@ describe('Calculator Tests', function() {
 });
 
 describe('Error Tests', function() {
+  it('returns error for large numbers (999999999999*999999)', function(done){
+		assert.equal(calc.calculate("999999999999*999999"), "NaN");
+		done();
+		});
 	it('returns error for missing operator (90*)', function(done){
 		assert.equal(calc.calculate("90*"), "NaN");
 		done();
