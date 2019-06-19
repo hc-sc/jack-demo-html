@@ -3,7 +3,8 @@ const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const entry = {
-  "calc": ["./src/assets/calc/calc.js", "./src/assets/calc/calc.scss"]
+  "calc": ["./src/assets/calc/calc.js", "./src/assets/calc/calc.scss"],
+  "test": ["./src/test/calc.test.js"]
 }
 
 const optimization = {
@@ -11,10 +12,16 @@ const optimization = {
 }
 
 const output = {
-  filename: "calc.min.js",
+  filename: "[name].min.js",
   path: __dirname+ "/dist"
 }
 
+const resolve:{
+      alias: {
+      config$: './configs/app-config.js',
+      react: './vendor/react-master',
+      }
+}
 const _module = {
   rules: [{
     test: /\.s?css$/,
