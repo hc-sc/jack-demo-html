@@ -14,13 +14,10 @@ const _module = {
       test: /\.css$/,
       use: [
         MiniCssExtractPlugin.loader,
-        {
-        loader: MiniCssExtractPlugin.loader,
          "style-loader",
          "css-loader",
          "sass-loader"
-        },
-        ]
+       ]
     }]
 }
 
