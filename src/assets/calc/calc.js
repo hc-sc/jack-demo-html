@@ -87,4 +87,5 @@ calc.calculate = function(sequence) {
     return 'NaN';
  }
 }
+
 module.exports=calc;
