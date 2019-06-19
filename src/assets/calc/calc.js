@@ -6,6 +6,8 @@ var operator = ['×', '÷', '-', '+', '%'];
 var input = '';
 var dotFlag = false;
 var result = false;
+var oversize = false;
+var size;
 var equation = '';
 var result = '';
 
@@ -13,20 +15,21 @@ var result = '';
 for (var i = 0; i < buttons.length; i++) {
  buttons[i].onclick = function(e) {
   var btnText = this.innerHTML;
-   // Takes care of the extra zero from AC and CE
+  var size = output.innerHTML.length;
+  if(size > 9){
+    oversize = true;
+  }else{
+    oversize = false;
+  }
   if ((input == '0' && btnText != '.' && operator.indexOf(btnText) == -1 ) || input == 'NaN' || (result && operator.indexOf(btnText) == -1)) {
      result = false;
      input ='';
   }
-
   if (btnText === 'AC') {
    clearAC();
-
   } else if (btnText === 'CE') {
-
    input = clearCE(input.length);
-
-  } else if (btnText === '.') {
+  } else if (btnText === '.' && !oversize) {
    if (input.indexOf('.') === -1 || dotFlag) {
     input += '.';
     dotFlag = false;
@@ -35,8 +38,10 @@ for (var i = 0; i < buttons.length; i++) {
     result = true;
    input = calc.calculate(input);
   } else {
-     result = false;
-    input += btnText;
+    if(!oversize){
+      result = false;
+      input += btnText;
+    }
   }
   output.innerHTML = input;
  }
@@ -63,7 +68,8 @@ calc.calculate = function(sequence) {
  equation = equation.replace(/÷/g, '/');
 
  try {
-  return Math.round(eval(equation) * 1000) / 1000;
+  var equal = Math.round(eval(equation) * 100) / 100;
+   return equal;
  } catch (error) {
   return 'NaN';
  }

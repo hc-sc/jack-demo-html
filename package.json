@@ -12,7 +12,6 @@
   "devDependencies": {
     "css-loader": "*",
     "jest": "*",
-    "jest-webpack": "*",
     "mini-css-extract-plugin": "*",
     "node-sass": "*",
     "sass": "*",
@@ -26,7 +25,7 @@
   },
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "test": "jest-webpack",
+    "test": "jest calc.test.js",
     "sass": "sass src/assets/calc/calc.scss"
   },
   "repository": {
