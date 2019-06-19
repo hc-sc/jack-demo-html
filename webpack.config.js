@@ -37,5 +37,6 @@ module.exports = {
   mode: 'production',
   module: _module,
   output,
-  plugins
+  plugins,
+  optimization
 }
