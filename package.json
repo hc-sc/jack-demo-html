@@ -29,6 +29,7 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "test": "jest calc.test.js",
+    "test:watch": "jest calc.test.js --watch",
     "sass": "sass src/assets/calc/calc.scss"
   },
   "repository": {

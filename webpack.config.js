@@ -31,7 +31,12 @@ const _module = {
             use: {
                 loader: "babel-loader"
             }
-        }
+        },
+        {
+            test: /(htm|html|xhtml|hbs|handlebars|php|ejs)$/,
+            loader: 'htmllint-loader',
+            exclude: /(node_modules)/,
+        },
 
     ]
 }
