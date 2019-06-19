@@ -16,7 +16,7 @@ for (var i = 0; i < buttons.length; i++) {
  buttons[i].onclick = function(e) {
   var btnText = this.innerHTML;
   var size = output.innerHTML.length;
-  if(size > 9){
+  if(size > 8){
     oversize = true;
   }else{
     oversize = false;
