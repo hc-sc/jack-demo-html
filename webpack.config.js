@@ -1,5 +1,3 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
 const entry = {
   "calc": ["./src/assets/calc/calc.js", "./src/assets/calc/calc.scss"]
 }
@@ -13,7 +11,6 @@ const _module = {
    rules: [{
       test: /\.scss$/,
       use: [
-        MiniCssExtractPlugin.loader,
         "style-loader", // creates style nodes from JS strings
         "css-loader", // translates CSS into CommonJS
         "sass-loader" // compiles Sass to CSS, using Node Sass by default
@@ -21,16 +18,10 @@ const _module = {
     }]
 }
 
-const plugins = [
-  new MiniCssExtractPlugin({
-      filename: "[name].new.css"
-    })
-]
 
 module.exports = {
   entry,
   mode: 'production',
   module: _module,
-  output,
-  plugins,
+  output
 }
