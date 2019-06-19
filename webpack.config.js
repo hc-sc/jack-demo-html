@@ -11,19 +11,22 @@ const output = {
 
 const _module = {
    rules: [{
-      test: /\.scss$/,
+      test: /\.css$/,
       use: [
         MiniCssExtractPlugin.loader,
+        {
+        loader: MiniCssExtractPlugin.loader,
          "style-loader",
          "css-loader",
          "sass-loader"
+        },
         ]
     }]
 }
 
 const plugins = [
   new MiniCssExtractPlugin({
-      filename: "[name].new.css"
+      filename: "../new.css"
     })
 ]
 
