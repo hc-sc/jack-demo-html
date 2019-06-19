@@ -61,7 +61,7 @@ function clearCE(length) {
  return 0;
 }
 
-let calc = {};
+/* let calc = {};
 
 calc.calculate = function(sequence) {
  equation = sequence.replace(/×/g, '*');
@@ -77,4 +77,4 @@ calc.calculate = function(sequence) {
   return 'NaN';
  }
 }
-module.exports=calc;
+module.exports=calc; */
