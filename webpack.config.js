@@ -32,7 +32,10 @@ const _module = {
 		{
 			test: /\.js$/,
 			exclude: /node_modules/,
-			loader: "eslint-loader",
+			loader: [
+        'babel-loader',
+        'eslint-loader'
+      ],
 		}
 
 	]
