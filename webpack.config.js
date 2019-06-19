@@ -24,14 +24,6 @@ const _module = {
                 'sass-loader'
             ]
         },
-
-        {
-            test: /\.js$/,
-            exclude: /node_modules/,
-            use: {
-                loader: "babel-loader"
-            }
-        },
         {
             test: /(htm|html|xhtml|hbs|handlebars|php|ejs)$/,
             loader: 'htmllint-loader',
