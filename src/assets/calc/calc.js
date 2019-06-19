@@ -7,7 +7,7 @@ var input = '';
 var dotFlag = false;
 var result = false;
 var oversize = false;
-var size = 0;
+var size;
 var equation = '';
 var result = '';
 
@@ -16,7 +16,7 @@ for (var i = 0; i < buttons.length; i++) {
  buttons[i].onclick = function(e) {
   var btnText = this.innerHTML;
   var size = output.innerHTML.length;
-  if(size > 8){
+  if(size > 9){
     oversize = true;
   }else{
     oversize = false;
@@ -43,11 +43,7 @@ for (var i = 0; i < buttons.length; i++) {
       input += btnText;
     }
   }
-   try {
-     print(input, oversize);
-   }catch(e){
-     console.log(e);
-     return 'NaN';
+  output.innerHTML = input;
  }
 }
 
@@ -65,14 +61,6 @@ function clearCE(length) {
  return 0;
 }
 
-function print(input, oversize){
-  if(oversize){
-    throw "this number is too large";
-  }else {
-    output.innerHTML = input;
-  }
-}
-
 let calc = {};
 
 calc.calculate = function(sequence) {
@@ -83,9 +71,7 @@ calc.calculate = function(sequence) {
   var equal = Math.round(eval(equation) * 100) / 100;
    return equal;
  } catch (error) {
-   console.log(error);
-    return 'NaN';
+  return 'NaN';
  }
 }
-
 module.exports=calc;
