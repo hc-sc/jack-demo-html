@@ -17,7 +17,7 @@ const optimization = {
 }
 
 const output = {
-	filename: "main.js",
+	filename: "main.min.js",
 	path: path.resolve(__dirname + "/dist")
 }
 
@@ -55,7 +55,7 @@ const _module = {
 
 const plugins = [
 	new MiniCssExtractPlugin({
-		filename: "calc.min.css"
+		filename: "main.min.css"
 	}),
 	new SassLintPlugin(),
 	new HtmlMinifierPlugin()

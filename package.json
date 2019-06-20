@@ -16,8 +16,6 @@
 		"eslint": "*",
 		"babel-eslint": "*",
 		"babel-loader": "*",
-		"sass-lint": "*",
-		"sasslint-webpack-plugin": "*",
 		"mini-css-extract-plugin": "*",
 		"node-sass": "*",
 		"sass": "*",
@@ -27,7 +25,6 @@
 		"webpack-cli": "*",
 		"terser-webpack-plugin": "*",
 		"optimize-css-assets-webpack-plugin": "*",
-		"html-minifier-webpack-plugin": "*",
 		"sass-lint-webpack": "*"
 	},
 	"scripts": {
