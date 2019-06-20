@@ -1,3 +1,5 @@
+$color_1: #f00;
+$color_2: #fff;
 body {
 	font:	200%;
 	height:	100vh;
@@ -11,7 +13,7 @@ body {
 }
 .window {
 	box-sizing:	border-box;
-	color:	#f00;
+	color:	$color_1;
 	font-size:	48pt;
 	height:	25%;
 	padding:	10%	5%	5%;
@@ -32,7 +34,7 @@ body {
 	width: 25%;
 	&:hover {
 		background: #444f59;
-		color: #fff;
+		color: $color_2;
 	}
 }
 .double {
@@ -40,11 +42,11 @@ body {
 }
 .accent {
 	&:hover {
-		color: #f00;
+		color: $color_1;
 	}
 }
 .submit {
 	&:hover {
-		background: #f00;
+		background: $color_1;
 	}
 }
