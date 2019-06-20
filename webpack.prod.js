@@ -60,7 +60,8 @@ const plugins = [
 	}),
 	new SassLintPlugin(),
 	new HtmlMinifierPlugin(),
-	new HtmlWebpackPlugin()
+	new HtmlWebpackPlugin({
+	})
 ]
 
 module.exports = {
