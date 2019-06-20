@@ -53,11 +53,21 @@ const plugins = [
 	///new HtmlMinifierPlugin(),
 	new HtmlWebpackPlugin({
 		filename: 'index-en.html',
-		template: './src/main-en.html'
+		template: './src/main-en.html',
+		minify:{
+			removeAttributeQuotes:true,
+			collapseWhitespace: true,
+			removeComments: true
+		}
 	}),
 	new HtmlWebpackPlugin({
 		filename: 'index-fr.html',
-		template: './src/main-fr.html'
+		template: './src/main-fr.html',
+		minify:{
+			removeAttributeQuotes:true,
+			collapseWhitespace: true,
+			removeComments: true
+		}
 	}),
 	new CleanWebpackPlugin()
 ]
