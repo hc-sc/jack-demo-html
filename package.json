@@ -28,7 +28,6 @@
 		"optimize-css-assets-webpack-plugin": "*",
 		"sass-lint-webpack": "*",
 		"sass-lint": "*",
-		"html-minifier-webpack-plugin": "*",
 		"html-webpack-plugin": "*",
 		"file-loader": "*",
 		"extract-loader": "*",

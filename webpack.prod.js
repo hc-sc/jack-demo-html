@@ -2,7 +2,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const SassLintPlugin = require('sass-lint-webpack');
-const HtmlMinifierPlugin = require('html-minifier-webpack-plugin');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require("clean-webpack-plugin");
@@ -41,7 +40,11 @@ const _module = {
 				'eslint-loader'
 			],
 		},
-		
+		 {
+        test: /(htm|html|xhtml|hbs|handlebars|php|ejs)$/,
+        loader: 'htmllint-loader',
+        exclude: /(node_modules)/,
+      },
 	]
 }
 
@@ -50,12 +53,11 @@ const plugins = [
 		filename: '[name]-[contentHash].css'
 	}),
 	new SassLintPlugin(),
-	new HtmlMinifierPlugin(),
 	new HtmlWebpackPlugin({
 		filename: 'index-en.html',
 		template: './src/main-en.html',
-		minify:{
-			removeAttributeQuotes:true,
+		minify: {
+			removeAttributeQuotes: true,
 			collapseWhitespace: true,
 			removeComments: true
 		}
@@ -63,8 +65,8 @@ const plugins = [
 	new HtmlWebpackPlugin({
 		filename: 'index-fr.html',
 		template: './src/main-fr.html',
-		minify:{
-			removeAttributeQuotes:true,
+		minify: {
+			removeAttributeQuotes: true,
 			collapseWhitespace: true,
 			removeComments: true
 		}
