@@ -53,7 +53,7 @@ const plugins = [
 
 module.exports = {
 	entry,
-	mode: 'production',
+	mode: 'development',
 	module: _module,
 	output,
 	plugins,
