@@ -23,20 +23,20 @@ const _module = {
 				MiniCssExtractPlugin.loader,
 				'css-loader',
 				'sass-loader'
-        ]
+			]
 		},
 		{
 			test: /(htm|html|xhtml|hbs|handlebars|php|ejs)$/,
 			exclude: /(node_modules)/,
-      loader: 'htmllint-loader',
+			loader: 'htmllint-loader',
 		},
 		{
 			test: /\.js$/,
 			exclude: /node_modules/,
 			loader: [
-        'babel-loader',
-        'eslint-loader'
-      ],
+				'babel-loader',
+				'eslint-loader'
+			],
 		}
 
 	]
@@ -46,7 +46,9 @@ const plugins = [
 	new MiniCssExtractPlugin({
 		filename: "calc.min.css"
 	}),
-  new SassLintPlugin()
+	new SassLintPlugin(){
+		 ignoreFiles: [node_modules]
+	}
 ]
 
 module.exports = {
