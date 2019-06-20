@@ -47,7 +47,7 @@ const plugins = [
 		filename: "calc.min.css"
 	}),
 	new SassLintPlugin({
-		 ignoreFiles: ['node_modules']
+		 ignoreFiles: ['node_modules/node-sass/test/fixtures/compressed/index.scss']
 	})
 ]
 
