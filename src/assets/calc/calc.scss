@@ -1,5 +1,6 @@
 $color1: #f00;
 $color2: #fff;
+$color3: #444f59;
 
 body {
 	font:	200%;
@@ -37,7 +38,7 @@ body {
 	transition: 0.5s;
 	width: 25%;
 	&:hover {
-		background: #444f59;
+		background: $color3;
 		color: $color2;
 	}
 }
