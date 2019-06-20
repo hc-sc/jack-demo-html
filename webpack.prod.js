@@ -5,7 +5,7 @@ const SassLintPlugin = require('sass-lint-webpack');
 const HtmlMinifierPlugin = require('html-minifier-webpack-plugin');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const entry = {
 	'main': './src/index.js'
 }
@@ -40,22 +40,7 @@ const _module = {
 				'eslint-loader'
 			],
 		},
-		{
-			test: /\.(html)$/,
-			use: {
-				loader: 'html-loader'
-			}
-		},
-		{
-			test: /\.(svg|png|jpe?g|gif)$/,
-			use: [{
-				loader: 'file-loader',
-				options: {
-					name: '[name].[ext]',
-					outputPath: 'imgs'
-				},
-			}, ],
-		}
+		
 	]
 }
 
@@ -69,12 +54,11 @@ const plugins = [
 		filename: 'index-en.html',
 		template: './src/main-en.html'
 	}),
-	/**
 	new HtmlWebpackPlugin({
 		filename: 'index-fr.html',
 		template: './src/main-fr.html'
-	})
-	**/
+	}),
+	new CleanWebpackPlugin()
 ]
 
 module.exports = {
