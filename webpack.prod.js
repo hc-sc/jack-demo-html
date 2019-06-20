@@ -66,12 +66,12 @@ const plugins = [
 	///new HtmlMinifierPlugin(),
 	new HtmlWebpackPlugin({
 		filename: 'index-en.html',
-		template: "./src/calc/main-en.html"
+		template: "./src/main-en.html"
 	}),
 	/**
 	new HtmlWebpackPlugin({
 		filename: 'index-fr.html',
-		template: "./src/calc/main-fr.html"
+		template: "./src/main-fr.html"
 	})
 	**/
 ]
