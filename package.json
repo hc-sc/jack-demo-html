@@ -33,7 +33,7 @@
 		"extract-loader": "*",
 		"html-loader": "*",
 		"htmllint-loader": "*",
-		"clean-webpack-plugin"
+		"clean-webpack-plugin": "*"
 	},
 	"scripts": {
 		"build-prod": "webpack --config webpack.prod.js",
