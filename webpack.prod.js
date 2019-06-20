@@ -6,14 +6,14 @@ const HtmlMinifierPlugin = require('html-minifier-webpack-plugin');
 const path = require("path");
 
 const entry = {
-	"calc": ["./src/assets/calc/calc.js", "./src/assets/calc/calc.scss"]
+	"main": "./src/index.j"
 }
-///Optimization happens when the mode is set to production
+
 const optimization = {
 	minimizer: [
 		new TerserJSPlugin(),
 		new OptimizeCSSAssetsPlugin()
-	],
+	]
 }
 
 const output = {
@@ -33,11 +33,7 @@ const _module = {
 		},
 		{
 			test: /(htm|html|xhtml|hbs|handlebars|php|ejs)$/,
-			exclude: [
-				/(node_modules)/,
-				/(GCWeb)/,
-				/(wet-boew)/,
-			],
+			exclude: /(node_modules)/,
 			loader: [
 				'file-loader?name=[name].min.html',
 				'extract-loader',
