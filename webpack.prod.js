@@ -33,18 +33,6 @@ const _module = {
 				'sass-loader'
 			]
 		},
-		/**
-		{
-			test: /(htm|html|xhtml|hbs|handlebars|php|ejs)$/,
-			exclude: /(node_modules)/,
-			loader: [
-				'file-loader?name=[name].min.html',
-				'extract-loader',
-				'html-loader',
-				'htmllint-loader'
-			],
-		},
-		**/
 		{
 			test: /\.js$/,
 			exclude: /node_modules/,
@@ -52,6 +40,20 @@ const _module = {
 				'babel-loader',
 				'eslint-loader'
 			],
+		},
+		{
+			test: /\.html$/,
+			use: ["html-loader"]
+		},
+		{
+			test: /\.(svg|png|jpg|gif)$/,
+			use: {
+				loader: "file-loader",
+				options: {
+					name: "[name].[hash].[ext]",
+					outputPath: "imgs"
+				}
+			}
 		}
 	]
 }

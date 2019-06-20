@@ -28,7 +28,11 @@
 		"sass-lint-webpack": "*",
 		"sass-lint": "*",
 		"html-minifier-webpack-plugin": "*",
-		"html-webpack-plugin": "*"
+		"html-webpack-plugin": "*",
+		"file-loader": "*",
+		"extract-loader": "*",
+		"html-loader": "*",
+		"htmllint-loader": "*"
 	},
 	"scripts": {
 		"build-prod": "webpack --config webpack.prod.js",
