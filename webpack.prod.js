@@ -17,7 +17,7 @@ const optimization = {
 }
 
 const output = {
-	filename: "main.min.js",
+	filename: "main.[contentHash].js",
 	path: path.resolve(__dirname + "/dist")
 }
 
@@ -49,13 +49,12 @@ const _module = {
 				'eslint-loader'
 			],
 		}
-
 	]
 }
 
 const plugins = [
 	new MiniCssExtractPlugin({
-		filename: "main.min.css"
+		filename: "[name].css"
 	}),
 	new SassLintPlugin(),
 	new HtmlMinifierPlugin()
@@ -63,6 +62,7 @@ const plugins = [
 
 module.exports = {
 	entry,
+	devtool: 'none',
 	mode: 'production',
 	module: _module,
 	output,
