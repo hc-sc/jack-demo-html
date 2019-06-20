@@ -63,7 +63,12 @@ const plugins = [
 	new SassLintPlugin(),
 	///new HtmlMinifierPlugin(),
 	new HtmlWebpackPlugin({
+		filename: 'index-en.html',
 		template: "./src/calc/main-en.html"
+	}),
+	new HtmlWebpackPlugin({
+		filename: 'index-fr.html',
+		template: "./src/calc/main-fr.html"
 	})
 ]
 
