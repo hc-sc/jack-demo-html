@@ -46,7 +46,12 @@ const plugins = [
 	new MiniCssExtractPlugin({
 		filename: "calc.min.css"
 	}),
-  new SassLintPlugin()
+  new SassLintPlugin({
+	  
+	  exclude: /(node_modules)/
+  }
+  )
+	
 ]
 
 module.exports = {
