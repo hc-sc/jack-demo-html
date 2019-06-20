@@ -5,11 +5,11 @@
 			<title>Jack Demo</title>
 			<meta content="width=device-width,initial-scale=1" name="viewport">
 				<meta name="description" content="Web Experience Toolkit (WET) includes reusable components for building and maintaining innovative Web sites that are accessible, usable, and interoperable. These reusable components are open source software and free for use by departments and external Web communities">
-					<link href="assets/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon">
-						<link rel="stylesheet" href="assets/GCWeb/css/theme.min.css">
-							<link rel="stylesheet" href="../dist/calc.min.css">
+					<link href="../theme/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon">
+						<link rel="stylesheet" href="../theme/GCWeb/css/theme.min.css">
+							<link rel="stylesheet" href="../../dist/calc.min.css">
 								<noscript>
-									<link rel="stylesheet" href="assets/wet-boew/css/noscript.min.css" />
+									<link rel="stylesheet" href="../theme/wet-boew/css/noscript.min.css" />
 								</noscript>
 							</head>
 							<body vocab="http://schema.org/" typeof="WebPage">
@@ -34,9 +34,8 @@
 										<div class="row">
 											<div class="brand col-xs-5 col-md-4">
 												<a href="https://www.canada.ca/en.html">
-													<img src="assets/GCWeb/assets/sig-blk-en.svg" alt="">
+													<img src="../theme/GCWeb/assets/sig-blk-en.svg" alt="">
 														<span class="wb-inv"> Government of Canada /
-
 															<span lang="fr">Gouvernement du Canada</span>
 														</span>
 													</a>
@@ -64,7 +63,6 @@
 													<h2 class="wb-inv">Menu</h2>
 													<button type="button" aria-haspopup="true" aria-expanded="false">
 														<span class="wb-inv">Main </span>Menu
-
 														<span class="expicon glyphicon glyphicon-chevron-down"></span>
 													</button>
 													<ul role="menu" aria-orientation="vertical" data-ajax-replace="../ajax/sitemenu-v2-en.html">
@@ -118,36 +116,35 @@
 											</nav>
 										</header>
 										<main property="mainContentOfPage" class="container">
-
-                      <div class="calculator">
-                        <div class="window">0</div>
-                        <div class="buttons">
-                            <button class="button" id="AC">AC</button>
-                            <button class="button double" id="CE">CE</button>
-                            <button class="button accent">÷</button>
-                            <!--   second row   -->
-                            <button class="button" id="seven">7</button>
-                            <button class="button" id="eight">8</button>
-                            <button class="button" id="nine">9</button>
-                            <button class="button accent" id="multiply">×</button>
-                            <!--   third row   -->
-                            <button class="button" id="">4</button>
-                            <button class="button">5</button>
-                            <button class="button">6</button>
-                            <button class="button accent">-</button>
-                            <!--   fourth row   -->
-                            <button class="button">1</button>
-                            <button class="button">2</button>
-                            <button class="button">3</button>
-                            <button class="button accent">+</button>
-                            <!--   fifth row   -->
-                            <button class="button double">0</button>
-                            <button class="button">.</button>
-                            <button class="button submit">=</button>
-                        </div>
-                      </div>
-											</main>
-											<main property="mainContentOfPage" class="container">
+											<div class="calculator">
+												<div class="window">0</div>
+												<div class="buttons">
+													<button class="button" id="AC">AC</button>
+													<button class="button double" id="CE">CE</button>
+													<button class="button accent">÷</button>
+													<!--   second row   -->
+													<button class="button" id="seven">7</button>
+													<button class="button" id="eight">8</button>
+													<button class="button" id="nine">9</button>
+													<button class="button accent" id="multiply">×</button>
+													<!--   third row   -->
+													<button class="button" id="">4</button>
+													<button class="button">5</button>
+													<button class="button">6</button>
+													<button class="button accent">-</button>
+													<!--   fourth row   -->
+													<button class="button">1</button>
+													<button class="button">2</button>
+													<button class="button">3</button>
+													<button class="button accent">+</button>
+													<!--   fifth row   -->
+													<button class="button double">0</button>
+													<button class="button">.</button>
+													<button class="button submit">=</button>
+												</div>
+											</div>
+										</main>
+										<main property="mainContentOfPage" class="container">
 											<div class="pagedetails">
 												<div class="row">
 													<div class="col-sm-6 col-md-5 col-lg-4">
@@ -165,6 +162,7 @@
 																					<label for="problem1">
 																						<input type="checkbox" data-reveal="#broken" name="problem" value="Something is broken" id="problem1">Something is broken
 
+																						
 																						</label>
 																					</div>
 																					<div class="form-group hide" id="broken">
@@ -175,6 +173,7 @@
 																							<label for="problem2">
 																								<input type="checkbox" data-reveal="#spelling" name="problem" value="It has spelling or grammar mistakes" id="problem2">The page has spelling or grammar mistakes
 
+																								
 																								</label>
 																							</div>
 																							<div class="form-group hide" id="spelling">
@@ -185,6 +184,7 @@
 																									<label for="problem3">
 																										<input type="checkbox" data-reveal="#wrong" name="problem" value="The information is wrong" id="problem3">The information is wrong
 
+																										
 																										</label>
 																									</div>
 																									<div class="form-group hide" id="wrong">
@@ -195,6 +195,7 @@
 																											<label for="problem4">
 																												<input type="checkbox" data-reveal="#outdated" name="problem" value="The information is outdated" id="problem4">The information is outdated
 
+																												
 																												</label>
 																											</div>
 																											<div class="form-group hide" id="outdated">
@@ -205,6 +206,7 @@
 																													<label for="problem5">
 																														<input type="checkbox" data-reveal="#find" name="problem" value="I can’t find what I’m looking for" id="problem5">I can’t find what I’m looking for
 
+																														
 																														</label>
 																													</div>
 																													<div class="form-group hide" id="find">
@@ -215,6 +217,7 @@
 																															<label for="problem6">
 																																<input type="checkbox" data-reveal="#confusing" name="problem" value="It’s confusing" id="problem6">Other
 
+																																
 																																</label>
 																															</div>
 																															<div class="form-group hide" id="confusing">
@@ -229,8 +232,10 @@
 																														<h3>Thank you for your help!</h3>
 																														<p>You will not receive a reply. For enquiries, please
 
+																															
 																															<a href="https://www.canada.ca/en/contact.html">contact us</a>.
 
+																														
 																														</p>
 																													</div>
 																												</div>
@@ -308,19 +313,20 @@
 																										<div class="col-xs-6 visible-sm visible-xs tofpg">
 																											<a href="#wb-cont">Top of Page
 
+																												
 																												<span class="glyphicon glyphicon-chevron-up"></span>
 																											</a>
 																										</div>
 																										<div class="col-xs-6 col-md-3 col-lg-2 text-right">
-																											<img src="assets/GCWeb/assets/wmms-blk.svg" alt="Symbol of the Government of Canada">
+																											<img src="../theme/GCWeb/assets/wmms-blk.svg" alt="Symbol of the Government of Canada">
 																											</div>
 																										</div>
 																									</div>
 																								</div>
 																							</footer>
-                                                  <script src="../dist/calc.min.js"></script>
-																									<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
-																									<script src="assets/wet-boew/js/wet-boew.min.js"></script>
-                                                  <script src="assets/GCWeb/js/theme.min.js"></script>
+																							<script src="../../dist/calc.min.js"></script>
+																							<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+																							<script src="../theme/wet-boew/js/wet-boew.min.js"></script>
+																							<script src="../theme/GCWeb/js/theme.min.js"></script>
 																						</body>
 																					</html>

@@ -27,10 +27,12 @@
 		"webpack-cli": "*",
 		"terser-webpack-plugin": "*",
 		"optimize-css-assets-webpack-plugin": "*",
-		"html-minifier-webpack-plugin": "*"
+		"html-minifier-webpack-plugin": "*",
+		"sass-lint-webpack": "*"
 	},
 	"scripts": {
-		"build": "webpack --config webpack.config.js",
+		"build-prod": "webpack --config webpack.prod.js",
+		"build-dev": "webpack --config webpack.dev.js",
 		"test": "jest calc.test.js",
 		"test:watch": "jest calc.test.js --watch",
 		"sass": "sass src/assets/calc/calc.scss"

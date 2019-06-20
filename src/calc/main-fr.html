@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html class="no-js" lang="fr" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+			<title>Jack Demo</title>
+			<meta content="width=device-width,initial-scale=1" name="viewport">
+				<meta name="description" content="La Boîte à outils de l’expérience Web (BOEW) rassemble différents composants réutilisables et prêts-à-utiliser pour la conception et la mise à jour de sites Web innovateurs qui sont à la fois accessibles, conviviaux et interopérables. Tous ces composants réutilisables sont des logiciels libres mis à la disposition des ministères et des collectivités Web externes.">
+					<link href="../theme/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon">
+						<link rel="stylesheet" href="../theme/GCWeb/css/theme.min.css">
+							<link rel="stylesheet" href="../../dist/calc.min.css">
+								<noscript>
+									<link rel="stylesheet" href="../theme/wet-boew/css/noscript.min.css" />
+								</noscript>
+							</head>
+							<header>
+								<div id="wb-bnr" class="container">
+									<section id="wb-lng" class="text-right">
+										<h2 class="wb-inv">Sélection de la langue</h2>
+										<ul class="list-inline margin-bottom-none">
+											<li>
+												<a lang="en" href="main-en.html">English</a>
+											</li>
+										</ul>
+									</section>
+									<div class="row">
+										<div class="brand col-xs-5 col-md-4">
+											<a href="https://www.canada.ca/fr.html">
+												<img src="../theme/GCWeb/assets/sig-blk-fr.svg" alt="">
+													<span class="wb-inv"> Gouvernement du Canada /
+															
+														<span lang="en">Government of Canada</span>
+													</span>
+												</a>
+											</div>
+											<section id="wb-srch" class="col-lg-8 text-right">
+												<h2>Recherche</h2>
+												<form action="#" method="post" name="cse-search-box" role="search" class="form-inline">
+													<div class="form-group">
+														<label for="wb-srch-q" class="wb-inv">Rechercher dans Canada.ca</label>
+														<input id="wb-srch-q" list="wb-srch-q-ac" class="wb-srch-q form-control" name="q" type="search" value="" size="34" maxlength="170" placeholder="Rechercher dans Canada.ca">
+															<datalist id="wb-srch-q-ac"></datalist>
+														</div>
+														<div class="form-group submit">
+															<button type="submit" id="wb-srch-sub" class="btn btn-primary btn-small" name="wb-srch-sub">
+																<span class="glyphicon-search glyphicon"></span>
+																<span class="wb-inv">Recherche</span>
+															</button>
+														</div>
+													</form>
+												</section>
+											</div>
+										</div>
+										<nav class="gcweb-menu" typeof="SiteNavigationElement">
+											<div class="container">
+												<h2 class="wb-inv">Menu</h2>
+												<button type="button" aria-haspopup="true" aria-expanded="false">Menu
+														
+													<span class="wb-inv"> principal</span>
+													<span class="expicon glyphicon glyphicon-chevron-down"></span>
+												</button>
+												<ul role="menu" aria-orientation="vertical" data-ajax-replace="../ajax/sitemenu-v2-fr.html">
+													<li role="presentation">
+														<a role="menuitem" href="https://www.canada.ca/fr/services/emplois.html">Emplois et milieu de travail</a>
+													</li>
+													<li role="presentation">
+														<a role="menuitem" href="https://www.canada.ca/fr/services/immigration-citoyennete.html">Immigration et citoyenneté</a>
+													</li>
+													<li role="presentation">
+														<a role="menuitem" href="https://voyage.gc.ca/">Voyage et tourisme</a>
+													</li>
+													<li role="presentation">
+														<a role="menuitem" href="https://www.canada.ca/fr/services/entreprises.html">Entreprises et industrie</a>
+													</li>
+													<li role="presentation">
+														<a role="menuitem" href="https://www.canada.ca/fr/services/prestations.html">Prestations</a>
+													</li>
+													<li role="presentation">
+														<a role="menuitem" href="https://www.canada.ca/fr/services/sante.html">Santé</a>
+													</li>
+													<li role="presentation">
+														<a role="menuitem" href="https://www.canada.ca/fr/services/impots.html">Impôts</a>
+													</li>
+													<li role="presentation">
+														<a role="menuitem" href="https://www.canada.ca/fr/services/environnement.html">Environnement et ressources naturelles</a>
+													</li>
+													<li role="presentation">
+														<a role="menuitem" href="https://www.canada.ca/fr/services/defense.html">Sécurité nationale et défense</a>
+													</li>
+													<li role="presentation">
+														<a role="menuitem" href="https://www.canada.ca/fr/services/culture.html">Culture, histoire et sport</a>
+													</li>
+													<li role="presentation">
+														<a role="menuitem" href="https://www.canada.ca/fr/services/police.html">Services de police, justice et urgences</a>
+													</li>
+													<li role="presentation">
+														<a role="menuitem" href="https://www.canada.ca/fr/services/transport.html">Transport et infrastructure</a>
+													</li>
+													<li role="presentation">
+														<a role="menuitem" href="http://international.gc.ca/world-monde/index.aspx?lang=fra">Canada et le monde</a>
+													</li>
+													<li role="presentation">
+														<a role="menuitem" href="https://www.canada.ca/fr/services/finance.html">Argent et finances</a>
+													</li>
+													<li role="presentation">
+														<a role="menuitem" href="https://www.canada.ca/fr/services/science.html">Science et innovation</a>
+													</li>
+												</ul>
+											</div>
+										</nav>
+									</header>
+									<main property="mainContentOfPage" class="container">
+										<div class="calculator">
+											<div class="window">0</div>
+											<div class="buttons">
+												<button class="button" id="AC">AC</button>
+												<button class="button double" id="CE">CE</button>
+												<button class="button accent">÷</button>
+												<!--   second row   -->
+												<button class="button" id="seven">7</button>
+												<button class="button" id="eight">8</button>
+												<button class="button" id="nine">9</button>
+												<button class="button accent" id="multiply">×</button>
+												<!--   third row   -->
+												<button class="button" id="">4</button>
+												<button class="button">5</button>
+												<button class="button">6</button>
+												<button class="button accent">-</button>
+												<!--   fourth row   -->
+												<button class="button">1</button>
+												<button class="button">2</button>
+												<button class="button">3</button>
+												<button class="button accent">+</button>
+												<!--   fifth row   -->
+												<button class="button double">0</button>
+												<button class="button">.</button>
+												<button class="button submit">=</button>
+											</div>
+										</div>
+									</main>
+									<main property="mainContentOfPage" class="container">
+										<div class="pagedetails">
+											<div class="row">
+												<div class="col-sm-6 col-md-5 col-lg-4">
+													<details class="brdr-0">
+														<summary class="btn btn-default text-center">Signaler un problème sur cette page</summary>
+														<div class="well row">
+															<div class="gc-rprt-prblm">
+																<div class="gc-rprt-prblm-frm gc-rprt-prblm-tggl">
+																	<form action="#">
+																		<fieldset>
+																			<legend>
+																				<span class="field-name">Veuillez cocher toutes les réponses pertinentes&nbsp;:</span>
+																			</legend>
+																			<div class="checkbox">
+																				<label for="problem1">
+																					<input type="checkbox" data-reveal="#broken" name="problem" value="Something is broken" id="problem1">Quelque chose ne fonctionne pas
+																								
+																					</label>
+																				</div>
+																				<div class="form-group hide" id="broken">
+																					<label for="problem1-detail">Fournissez plus des détails (optionnel)&nbsp;:</label>
+																					<input type="text" class="form-control full-width" id="problem1-detail">
+																					</div>
+																					<div class="checkbox">
+																						<label for="problem2">
+																							<input type="checkbox" data-reveal="#spelling" name="problem" value="It has spelling or grammar mistakes" id="problem2">Il y a des erreurs d’orthographe ou de grammaire
+																										
+																							</label>
+																						</div>
+																						<div class="form-group hide" id="spelling">
+																							<label for="problem2-detail">Fournissez plus des détails (optionnel)&nbsp;:</label>
+																							<input type="text" class="form-control full-width" id="problem2-detail">
+																							</div>
+																							<div class="checkbox">
+																								<label for="problem3">
+																									<input type="checkbox" data-reveal="#wrong" name="problem" value="The information is wrong" id="problem3">L’information est erronée
+																												
+																									</label>
+																								</div>
+																								<div class="form-group hide" id="wrong">
+																									<label for="problem3-detail">Fournissez plus des détails (optionnel)&nbsp;:</label>
+																									<input type="text" class="form-control full-width" id="problem3-detail">
+																									</div>
+																									<div class="checkbox">
+																										<label for="problem4">
+																											<input type="checkbox" data-reveal="#outdated" name="problem" value="The information is outdated" id="problem4">L’information n’est plus à jour
+																														
+																											</label>
+																										</div>
+																										<div class="form-group hide" id="outdated">
+																											<label for="problem4-detail">Fournissez plus des détails (optionnel)&nbsp;:</label>
+																											<input type="text" class="form-control full-width" id="problem4-detail">
+																											</div>
+																											<div class="checkbox">
+																												<label for="problem5">
+																													<input type="checkbox" data-reveal="#find" name="problem" value="I can’t find what I’m looking for" id="problem5">Je ne trouve pas ce que je cherche
+																																
+																													</label>
+																												</div>
+																												<div class="form-group hide" id="find">
+																													<label for="problem5-detail">Décrivez ce que vous cherchez (optionnel)&nbsp;:</label>
+																													<input type="text" class="form-control full-width" id="problem5-detail">
+																													</div>
+																													<div class="checkbox">
+																														<label for="problem6">
+																															<input type="checkbox" data-reveal="#confusing" name="problem" value="It’s confusing" id="problem6">Autre
+																																		
+																															</label>
+																														</div>
+																														<div class="form-group hide" id="confusing">
+																															<label for="problem6-detail">Fournissez plus des détails (optionnel)&nbsp;:</label>
+																															<input type="text" class="form-control full-width" id="problem6-detail">
+																															</div>
+																														</fieldset>
+																														<button type="submit" class="btn btn-primary wb-toggle" data-toggle='{"stateOff": "hide", "stateOn": "show", "selector": ".gc-rprt-prblm-tggl"}'>Soumettre</button>
+																													</form>
+																												</div>
+																												<div class="gc-rprt-prblm-thnk gc-rprt-prblm-tggl hide">
+																													<h3>Merci de votre aide!</h3>
+																													<p>Vous ne recevrez pas de réponse. Pour toute question, s’il vous plaît
+																																	
+																														<a href="https://www.canada.ca/fr/contact.html">contactez-nous</a>.
+																																
+																													</p>
+																												</div>
+																											</div>
+																										</div>
+																									</details>
+																								</div>
+																								<div class="wb-share col-sm-4 col-md-3 col-sm-offset-2 col-md-offset-4 col-lg-offset-5" data-wb-share='{"lnkClass": "btn btn-default btn-block"}'></div>
+																							</div>
+																							<dl id="wb-dtmd">
+																								<dt>Date de modification&#160;:&#32;</dt>
+																								<dd>
+																									<time property="dateModified">2019-06-04</time>
+																								</dd>
+																							</dl>
+																						</div>
+																					</main>
+																					<footer id="wb-info">
+																						<div class="landscape">
+																							<nav class="container wb-navcurr">
+																								<h2 class="wb-inv">Au sujet du gouvernement</h2>
+																								<ul class="list-unstyled colcount-sm-2 colcount-md-3">
+																									<li>
+																										<a href="https://www.canada.ca/fr/contact.html">Contactez-nous</a>
+																									</li>
+																									<li>
+																										<a href="https://www.canada.ca/fr/gouvernement/min.html">Ministères et organismes</a>
+																									</li>
+																									<li>
+																										<a href="https://www.canada.ca/fr/gouvernement/fonctionpublique.html">Fonction publique et force militaire</a>
+																									</li>
+																									<li>
+																										<a href="https://www.canada.ca/fr/nouvelles.html">Nouvelles</a>
+																									</li>
+																									<li>
+																										<a href="https://www.canada.ca/fr/gouvernement/systeme/lois.html">Traités, lois et règlements</a>
+																									</li>
+																									<li>
+																										<a href="https://www.canada.ca/fr/transparence/rapports.html">Rapports à l'échelle du gouvernement</a>
+																									</li>
+																									<li>
+																										<a href="https://pm.gc.ca/fra">Premier ministre</a>
+																									</li>
+																									<li>
+																										<a href="https://www.canada.ca/fr/gouvernement/systeme.html">Comment le gouvernement fonctionne</a>
+																									</li>
+																									<li>
+																										<a href="https://ouvert.canada.ca/">Gouvernement ouvert</a>
+																									</li>
+																								</ul>
+																							</nav>
+																						</div>
+																						<div class="brand">
+																							<div class="container">
+																								<div class="row">
+																									<nav class="col-md-9 col-lg-10 ftr-urlt-lnk">
+																										<h2 class="wb-inv">À propos du site</h2>
+																										<ul>
+																											<li>
+																												<a href="https://www.canada.ca/fr/sociaux.html">Médias sociaux</a>
+																											</li>
+																											<li>
+																												<a href="https://www.canada.ca/fr/mobile.html">Applications mobiles</a>
+																											</li>
+																											<li>
+																												<a href="https://www1.canada.ca/fr/nouveausite.html">À propos de Canada.ca</a>
+																											</li>
+																											<li>
+																												<a href="https://www.canada.ca/fr/transparence/avis.html">Avis</a>
+																											</li>
+																											<li>
+																												<a href="https://www.canada.ca/fr/transparence/confidentialite.html">Confidentialité</a>
+																											</li>
+																										</ul>
+																									</nav>
+																									<div class="col-xs-6 visible-sm visible-xs tofpg">
+																										<a href="#wb-cont">Haut de la page
+																														
+																											<span class="glyphicon glyphicon-chevron-up"></span>
+																										</a>
+																									</div>
+																									<div class="col-xs-6 col-md-3 col-lg-2 text-right">
+																										<img src="../theme/GCWeb/assets/wmms-blk.svg" alt="Symbole du gouvernement du Canada">
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</footer>
+																						<script src="../../dist/calc.min.js"></script>
+																						<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+																						<script src="../theme/wet-boew/js/wet-boew.min.js"></script>
+																						<script src="../theme/GCWeb/js/theme.min.js"></script>
+																					</body>
+																				</html>
