@@ -1,5 +1,6 @@
 $color1: #f00;
 $color2: #fff;
+
 body {
 	font:	200%;
 	height:	100vh;
@@ -25,11 +26,11 @@ body {
 .button {
 	background-color:	transparent;
 	background-repeat: no-repeat;
-	border: none;
+	border: 0;
+	box-sizing: border-box;
 	cursor: pointer;
 	overflow: hidden;
-	outline: none;
-	box-sizing: border-box;
+	outline: 0;
 	float: left;
 	height: 15%;
 	padding: 5%;
