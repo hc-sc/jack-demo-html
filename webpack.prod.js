@@ -33,6 +33,7 @@ const _module = {
 				'sass-loader'
 			]
 		},
+		/**
 		{
 			test: /(htm|html|xhtml|hbs|handlebars|php|ejs)$/,
 			exclude: /(node_modules)/,
@@ -43,6 +44,7 @@ const _module = {
 				'htmllint-loader'
 			],
 		},
+		**/
 		{
 			test: /\.js$/,
 			exclude: /node_modules/,
