@@ -25,38 +25,38 @@ body {
 }
 
 .button {
-    background-color:    transparent;
-    background-repeat: no-repeat;
-    border: 0;
-    box-sizing: border-box;
-    cursor: pointer;
-    float: left;
-    height: 15%;
-    outline: 0;
-    overflow: hidden;
-    padding: 5%;
-    transition: .5s;
-    width: 25%;
+  background-color:    transparent;
+  background-repeat: no-repeat;
+  border: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  float: left;
+  height: 15%;
+  outline: 0;
+  overflow: hidden;
+  padding: 5%;
+  transition: .5s;
+  width: 25%;
 
-    &:hover {
-        background: $color3;
-        color: $color2;
-    }
+  &:hover {
+    background: $color3;
+    color: $color2;
+  }
 
 }
 
 .double {
-    width: 50%;
+  width: 50%;
 }
 
 .accent {
-    &:hover {
-        color: $color1;
-    }
+  &:hover {
+    color: $color1;
+  }
 }
 
 .submit {
-    &:hover {
-        background: $color1;
-    }
+  &:hover {
+    background: $color1;
+  }
 }
