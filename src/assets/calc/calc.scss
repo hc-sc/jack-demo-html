@@ -6,11 +6,13 @@ body {
 	font-family:	Lato,	sans-serif;
 	margin:	0;
 }
+
 .calculator {
 	height:	100%;
 	margin:	0	auto;
 	max-width: 400px;
 }
+
 .window {
 	box-sizing:	border-box;
 	color:	$color1;
@@ -19,6 +21,7 @@ body {
 	padding:	10%	5%	5%;
 	text-align:	right;
 }
+
 .button {
 	background-color:	transparent;
 	background-repeat: no-repeat;
@@ -37,14 +40,17 @@ body {
 		color: $color2;
 	}
 }
+
 .double {
 	width: 50%;
 }
+
 .accent {
 	&:hover {
 		color: $color1;
 	}
 }
+
 .submit {
 	&:hover {
 		background: $color1;
