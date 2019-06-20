@@ -6,7 +6,7 @@ const HtmlMinifierPlugin = require('html-minifier-webpack-plugin');
 const path = require("path");
 
 const entry = {
-	"main": "./src/index.j"
+	"main": "./src/index.js"
 }
 
 const optimization = {
