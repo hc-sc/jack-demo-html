@@ -50,7 +50,7 @@ const plugins = [
 		filename: '[name]-[contentHash].css'
 	}),
 	new SassLintPlugin(),
-	///new HtmlMinifierPlugin(),
+	new HtmlMinifierPlugin(),
 	new HtmlWebpackPlugin({
 		filename: 'index-en.html',
 		template: './src/main-en.html',
