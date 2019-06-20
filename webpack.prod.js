@@ -43,8 +43,10 @@ const _module = {
 			],
 		},
 		{
-			test: /\.html$/,
-			use: ["html-loader"]
+			test: /\.(html)$/,
+			use: {
+				loader : "html-loader"
+			}
 		},
 		{
 			test: /\.(svg|png|jpg|gif|ico)$/,
