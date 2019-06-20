@@ -24,7 +24,8 @@ const output = {
 }
 
 const _module = {
-	rules: [{
+	rules: [
+		{
 			test: /\.s?css$/,
 			exclude: /node_modules/,
 			use: [
@@ -46,7 +47,7 @@ const _module = {
 			use: ["html-loader"]
 		},
 		{
-			test: /\.(svg|png|jpg|gif)$/,
+			test: /\.(svg|png|jpg|gif|ico)$/,
 			use: {
 				loader: "file-loader",
 				options: {
