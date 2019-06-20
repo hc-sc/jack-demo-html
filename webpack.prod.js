@@ -68,10 +68,12 @@ const plugins = [
 		filename: 'index-en.html',
 		template: "./src/calc/main-en.html"
 	}),
+	/**
 	new HtmlWebpackPlugin({
 		filename: 'index-fr.html',
 		template: "./src/calc/main-fr.html"
 	})
+	**/
 ]
 
 module.exports = {
