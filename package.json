@@ -27,7 +27,8 @@
 		"optimize-css-assets-webpack-plugin": "*",
 		"sass-lint-webpack": "*",
 		"sass-lint": "*",
-		"html-minifier-webpack-plugin": "*"
+		"html-minifier-webpack-plugin": "*",
+		"html-webpack-plugin": "*"
 	},
 	"scripts": {
 		"build-prod": "webpack --config webpack.prod.js",

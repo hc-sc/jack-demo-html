@@ -4,6 +4,8 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const SassLintPlugin = require('sass-lint-webpack');
 const HtmlMinifierPlugin = require('html-minifier-webpack-plugin');
 const path = require("path");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 
 const entry = {
 	"main": "./src/index.js"
@@ -17,7 +19,7 @@ const optimization = {
 }
 
 const output = {
-	filename: "main.[contentHash].js",
+	filename: "main-[contentHash].js",
 	path: path.resolve(__dirname + "/dist")
 }
 
@@ -54,10 +56,11 @@ const _module = {
 
 const plugins = [
 	new MiniCssExtractPlugin({
-		filename: "[name].css"
+		filename: "[name]-[contentHash].css"
 	}),
 	new SassLintPlugin(),
-	new HtmlMinifierPlugin()
+	new HtmlMinifierPlugin(),
+	new HtmlWebpackPlugin()
 ]
 
 module.exports = {
