@@ -61,6 +61,7 @@ const plugins = [
 	new SassLintPlugin(),
 	new HtmlMinifierPlugin(),
 	new HtmlWebpackPlugin({
+		template: "./src/calc/main-en.html"
 	})
 ]
 
