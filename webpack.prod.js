@@ -1,14 +1,14 @@
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const SassLintPlugin = require('sass-lint-webpack');
 const HtmlMinifierPlugin = require('html-minifier-webpack-plugin');
-const path = require("path");
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 const entry = {
-	"main": "./src/index.js"
+	'main': './src/index.js'
 }
 
 const optimization = {
@@ -19,8 +19,8 @@ const optimization = {
 }
 
 const output = {
-	filename: "main-[contentHash].js",
-	path: path.resolve(__dirname + "/dist")
+	filename: 'main-[contentHash].js',
+	path: path.resolve(__dirname + '/dist')
 }
 
 const _module = {
@@ -48,33 +48,35 @@ const _module = {
 				loader : "html-loader"
 			}
 		},
+		/**
 		{
 			test: /\.(svg|png|jpg|gif|ico)$/,
 			use: {
-				loader: "file-loader",
+				loader: 'file-loader',
 				options: {
-					name: "[name].[ext]",
-					outputPath: "imgs"
+					name: '[name].[ext]',
+					outputPath: 'imgs'
 				}
 			}
 		}
+		**/
 	]
 }
 
 const plugins = [
 	new MiniCssExtractPlugin({
-		filename: "[name]-[contentHash].css"
+		filename: '[name]-[contentHash].css'
 	}),
 	new SassLintPlugin(),
 	///new HtmlMinifierPlugin(),
 	new HtmlWebpackPlugin({
 		filename: 'index-en.html',
-		template: "./src/main-en.html"
+		template: './src/main-en.html'
 	}),
 	/**
 	new HtmlWebpackPlugin({
 		filename: 'index-fr.html',
-		template: "./src/main-fr.html"
+		template: './src/main-fr.html'
 	})
 	**/
 ]
