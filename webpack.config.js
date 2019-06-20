@@ -47,7 +47,9 @@ const plugins = [
 		filename: "calc.min.css"
 	}),
 	new SassLintPlugin({
-		 ignoreFiles: ['node_modules/**']
+		ignoreFiles: ['node_modules/**'],
+		failOnWarning: false,
+		failOnError: false
 	})
 ]
 
