@@ -1,23 +1,14 @@
 body {
-<<<<<<< HEAD
     font:    200%;
     height:    100vh;
     font-family:    Lato,    sans-serif;
     margin:    0;
-=======
-	font:	200%;
-	font-family:	Lato,	sans-serif;
-	height:	100vh;
-	margin:	0;
->>>>>>> 0692ee7ea4a21755f83e2757d704ae626380a993
 }
-
 .calculator {
     height:    100%;
     margin:    0    auto;
     max-width:    400px;
 }
-
 .window {
     box-sizing:    border-box;
     color:    #f00;
@@ -26,7 +17,6 @@ body {
     padding:    10%    5%    5%;
     text-align:    right;
 }
-
 .button {
     background-color:    transparent;
     background-repeat: no-repeat;
@@ -45,17 +35,14 @@ body {
         color: #fff;
     }
 }
-
 .double {
     width: 50%;
 }
-
 .accent {
     &:hover {
         color: #f00;
     }
 }
-
 .submit {
     &:hover {
         background: #f00;
