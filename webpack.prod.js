@@ -5,7 +5,8 @@ const SassLintPlugin = require('sass-lint-webpack');
 const HtmlMinifierPlugin = require('html-minifier-webpack-plugin');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+
 const entry = {
 	'main': './src/index.js'
 }
