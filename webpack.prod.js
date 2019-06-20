@@ -6,7 +6,6 @@ const HtmlMinifierPlugin = require('html-minifier-webpack-plugin');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
 const entry = {
 	'main': './src/index.js'
 }
@@ -24,8 +23,7 @@ const output = {
 }
 
 const _module = {
-	rules: [
-		{
+	rules: [{
 			test: /\.s?css$/,
 			exclude: /node_modules/,
 			use: [
@@ -42,24 +40,22 @@ const _module = {
 				'eslint-loader'
 			],
 		},
-		/**
 		{
 			test: /\.(html)$/,
 			use: {
-				loader : "html-loader"
+				loader: 'html-loader'
 			}
 		},
 		{
-			test: /\.(svg|png|jpg|gif|ico)$/,
-			use: {
+			test: /\.(svg|png|jpe?g|gif)$/,
+			use: [{
 				loader: 'file-loader',
 				options: {
 					name: '[name].[ext]',
 					outputPath: 'imgs'
-				}
-			}
+				},
+			}, ],
 		}
-		**/
 	]
 }
 
