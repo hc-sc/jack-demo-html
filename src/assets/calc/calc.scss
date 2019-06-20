@@ -1,50 +1,50 @@
 body {
-    font:    200%;
-    height:    100vh;
-    font-family:    Lato,    sans-serif;
-    margin:    0;
+	font:	200%;
+	height:	100vh;
+	font-family:	Lato,	sans-serif;
+	margin:	0;
 }
 .calculator {
-    height:    100%;
-    margin:    0    auto;
-    max-width:    400px;
+	height:	100%;
+	margin:	0	auto;
+	max-width:	400px;
 }
 .window {
-    box-sizing:    border-box;
-    color:    #f00;
-    font-size:    48pt;
-    height:    25%;
-    padding:    10%    5%    5%;
-    text-align:    right;
+	box-sizing:	border-box;
+	color:	#f00;
+	font-size:	48pt;
+	height:	25%;
+	padding:	10%	5%	5%;
+	text-align:	right;
 }
 .button {
-    background-color:    transparent;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
-    outline: none;
-    box-sizing: border-box;
-    float: left;
-    height: 15%;
-    padding: 5%;
-    transition: 0.5s;
-    width: 25%;
-    &:hover {
-        background: #444f59;
-        color: #fff;
-    }
+	background-color:	transparent;
+	background-repeat: no-repeat;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+	outline: none;
+	box-sizing: border-box;
+	float: left;
+	height: 15%;
+	padding: 5%;
+	transition: 0.5s;
+	width: 25%;
+	&:hover {
+		background: #444f59;
+		color: #fff;
+	}
 }
 .double {
-    width: 50%;
+	width: 50%;
 }
 .accent {
-    &:hover {
-        color: #f00;
-    }
+	&:hover {
+		color: #f00;
+	}
 }
 .submit {
-    &:hover {
-        background: #f00;
-    }
+	&:hover {
+		background: #f00;
+	}
 }
