@@ -42,13 +42,13 @@ const _module = {
 				'eslint-loader'
 			],
 		},
+		/**
 		{
 			test: /\.(html)$/,
 			use: {
 				loader : "html-loader"
 			}
 		},
-		/**
 		{
 			test: /\.(svg|png|jpg|gif|ico)$/,
 			use: {
