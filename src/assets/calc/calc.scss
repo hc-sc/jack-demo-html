@@ -3,60 +3,60 @@ $color2: #fff;
 $color3: #444f59;
 
 body {
-	font:	200%;
-	font-family:	Lato,	sans-serif;
-	height:	100vh;
-	margin:	0;
+    font:    200%;
+    font-family:    Lato,    sans-serif;
+    height:    100vh;
+    margin:    0;
 }
 
 .calculator {
-	height:	100%;
-	margin:	0	auto;
-	max-width: 400px;
+    height:    100%;
+    margin:    0    auto;
+    max-width: 400px;
 }
 
 .window {
-	box-sizing:	border-box;
-	color:	$color1;
-	font-size:	48pt;
-	height:	25%;
-	padding:	10%	5%	5%;
-	text-align:	right;
+    box-sizing:    border-box;
+    color:    $color1;
+    font-size:    48pt;
+    height:    25%;
+    padding:    10%    5%    5%;
+    text-align:    right;
 }
 
 .button {
-	background-color:	transparent;
-	background-repeat: no-repeat;
-	border: 0;
-	box-sizing: border-box;
-	cursor: pointer;
-	float: left;
-	height: 15%;
-	outline: 0;
-	overflow: hidden;
-	padding: 5%;
-	transition: .5s;
-	width: 25%;
+    background-color:    transparent;
+    background-repeat: no-repeat;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    float: left;
+    height: 15%;
+    outline: 0;
+    overflow: hidden;
+    padding: 5%;
+    transition: .5s;
+    width: 25%;
 
-	&:hover {
-		background: $color3;
-		color: $color2;
-	}
+    &:hover {
+        background: $color3;
+        color: $color2;
+    }
 
 }
 
 .double {
-	width: 50%;
+    width: 50%;
 }
 
 .accent {
-	&:hover {
-		color: $color1;
-	}
+    &:hover {
+        color: $color1;
+    }
 }
 
 .submit {
-	&:hover {
-		background: $color1;
-	}
+    &:hover {
+        background: $color1;
+    }
 }
