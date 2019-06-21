@@ -32,12 +32,15 @@ const _module = {
 				'sass-loader'
 			]
 		},
+		{
+			test: /\.js$/,
+			exclude: /node_modules/,
+			loader: [
+				'babel-loader',
+				'eslint-loader'
+			],
+		},
 
-		 {
-        test: /(htm|html|xhtml|hbs|handlebars|php|ejs)$/,
-        exclude: /(node_modules)/,
-		loader: 'htmllint-loader'
-      },
 	]
 }
 
