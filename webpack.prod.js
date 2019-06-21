@@ -47,7 +47,6 @@ const _module = {
 }
 
 const plugins = [
-	new config.optimization.minimize(),
     new webpack.optimize.ModuleConcatenationPlugin(),
 	new FriendlyErrorsWebpackPlugin(),
 	new HtmlWebpackPlugin({
