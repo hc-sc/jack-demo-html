@@ -15,10 +15,7 @@ const optimization = {
 	minimizer: [
 		new TerserJSPlugin(),
 		new OptimizeCSSAssetsPlugin()
-	],
-    splitChunks: {
-      chunks: 'all'
-    }
+	]
 }
 
 const output = {
@@ -56,7 +53,15 @@ const plugins = [
 		minify: {
 			removeAttributeQuotes: true,
 			collapseWhitespace: true,
-			removeComments: true
+			removeComments: true,
+			removeRedundantAttributes: true,
+			useShrotDoctype: true,
+			removeEmptyAttributes: true,
+			removeStyleLinkTypeAttributes: true,
+			keepClosingSlash: true,
+			minifyJS: true,
+			minifyCSS: true,
+			minifyURLs: true
 		}
 	}),
 	new HtmlWebpackPlugin({
@@ -65,7 +70,15 @@ const plugins = [
 		minify: {
 			removeAttributeQuotes: true,
 			collapseWhitespace: true,
-			removeComments: true
+			removeComments: true,
+			removeRedundantAttributes: true,
+			useShrotDoctype: true,
+			removeEmptyAttributes: true,
+			removeStyleLinkTypeAttributes: true,
+			keepClosingSlash: true,
+			minifyJS: true,
+			minifyCSS: true,
+			minifyURLs: true
 		}
 	}),
 	new MiniCssExtractPlugin({
