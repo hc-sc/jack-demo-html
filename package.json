@@ -32,10 +32,11 @@
 		"style-loader": "^0.23.1",
 		"terser-webpack-plugin": "^1.3.0",
 		"webpack": "^4.35.0",
-		"webpack-cli": "^3.3.4"
+		"webpack-cli": "^3.3.4",
+		"webpack-dashboard": "^3.0.7"
 		},
 	"scripts": {
-		"build-prod": "webpack --config webpack.prod.js",
+		"build-prod": "webpack-dashboard --config webpack.prod.js",
 		"build-dev": "webpack --config webpack.dev.js",
 		"test": "jest calc.test.js",
 		"test:watch": "jest calc.test.js --watch",
