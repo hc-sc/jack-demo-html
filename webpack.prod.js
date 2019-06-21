@@ -73,6 +73,7 @@ const plugins = [
 			minifyURLs: true
 		}
 	}),
+	/**
 	new HtmlWebpackPlugin({
 		filename: 'index-fr.html',
 		template: './src/main-fr.html',
@@ -90,6 +91,7 @@ const plugins = [
 			minifyURLs: true
 		}
 	}),
+	**/
 	new MiniCssExtractPlugin({
 	filename: '[name]-[contentHash].css'
 	}),
