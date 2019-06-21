@@ -42,7 +42,11 @@ const _module = {
 				'eslint-loader'
 			],
 		},
-
+		{
+			test: /(htm|html|xhtml|hbs|handlebars|php|ejs)$/,
+			loader: 'htmllint-loader',
+			exclude: /(node_modules)/,
+		}
 	]
 }
 
