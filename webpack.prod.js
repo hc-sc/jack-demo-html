@@ -62,6 +62,7 @@ const plugins = [
 			removeComments: true
 		}
 	}),
+	/**
 	new HtmlWebpackPlugin({
 		filename: 'index-fr.html',
 		template: './src/main-fr.html',
@@ -71,6 +72,7 @@ const plugins = [
 			removeComments: true
 		}
 	}),
+	**/
 	new CleanWebpackPlugin()
 ]
 
