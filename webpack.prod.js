@@ -7,7 +7,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const webpack = require('webpack');
-var DashboardPlugin = require("webpack-dashboard/plugin");
 
 const entry = {
 	'main': './src/index.js'
@@ -49,7 +48,7 @@ const _module = {
 
 const plugins = [
     new webpack.optimize.ModuleConcatenationPlugin(),
-	new DashboardPlugin(),
+	new FriendlyErrorsWebpackPlugin(),
 	new HtmlWebpackPlugin({
 		filename: 'index-en.html',
 		template: './src/main-en.html',
