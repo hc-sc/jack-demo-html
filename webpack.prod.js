@@ -27,14 +27,13 @@ const output = {
 
 const _module = {
 	rules: [
-		/**
 		{
 			test: /(htm|html|xhtml|hbs|handlebars|php|ejs)$/,
 			exclude: /node_modules/,
 			use: [
 				'htmllint-loader'
 			],
-		},**/
+		},
 		{
 			test: /\.s?css$/,
 			exclude: /node_modules/,
