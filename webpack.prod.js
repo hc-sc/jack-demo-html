@@ -1,8 +1,8 @@
+const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const SassLintPlugin = require('sass-lint-webpack');
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 
@@ -45,10 +45,6 @@ const _module = {
 }
 
 const plugins = [
-	new MiniCssExtractPlugin({
-		filename: '[name]-[contentHash].css'
-	}),
-	new SassLintPlugin(),
 	new HtmlWebpackPlugin({
 		filename: 'index-en.html',
 		template: './src/main-en.html',
@@ -69,7 +65,11 @@ const plugins = [
 		}
 	}),
 	**/
-	new CleanWebpackPlugin()
+	new MiniCssExtractPlugin({
+	filename: '[name]-[contentHash].css'
+	}),
+	new CleanWebpackPlugin(),
+	new SassLintPlugin()
 ]
 
 module.exports = {
