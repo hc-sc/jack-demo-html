@@ -60,6 +60,7 @@ const plugins = [
 	new HtmlWebpackPlugin({
 		filename: 'index-en.html',
 		template: './src/main-en.html',
+		/**
 		minify: {
 			removeAttributeQuotes: true,
 			collapseWhitespace: true,
@@ -72,7 +73,7 @@ const plugins = [
 			minifyJS: true,
 			minifyCSS: true,
 			minifyURLs: true
-		}
+		}**/
 	}),
 	/**
 	new HtmlWebpackPlugin({
