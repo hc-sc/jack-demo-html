@@ -48,7 +48,6 @@ const _module = {
 
 const plugins = [
     new webpack.optimize.ModuleConcatenationPlugin(),
-	new FriendlyErrorsWebpackPlugin(),
 	new HtmlWebpackPlugin({
 		filename: 'index-en.html',
 		template: './src/main-en.html',
