@@ -38,15 +38,17 @@ const _module = {
 		{
 			test: /\.js$/,
 			exclude: /node_modules/,
-			loader: [
+			use: [
 				'babel-loader',
 				'eslint-loader'
 			],
 		},
 		{
 			test: /(htm|html|xhtml|hbs|handlebars|php|ejs)$/,
-			exclude: /(node_modules)/,
-			loader: 'htmllint-loader',
+			exclude: /node_modules/,
+			use: [
+				'htmllint-loader'
+			],
 		}
 	]
 }
