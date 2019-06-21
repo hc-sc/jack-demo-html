@@ -56,11 +56,10 @@ const _module = {
 
 const plugins = [
 	new FriendlyErrorsWebpackPlugin(),
-    //new webpack.optimize.ModuleConcatenationPlugin(),
+    new webpack.optimize.ModuleConcatenationPlugin(),
 	new HtmlWebpackPlugin({
 		filename: 'index-en.html',
 		template: './src/main-en.html',
-		/**
 		minify: {
 			removeAttributeQuotes: true,
 			collapseWhitespace: true,
@@ -73,9 +72,8 @@ const plugins = [
 			minifyJS: true,
 			minifyCSS: true,
 			minifyURLs: true
-		}**/
+		}
 	}),
-	/**
 	new HtmlWebpackPlugin({
 		filename: 'index-fr.html',
 		template: './src/main-fr.html',
@@ -93,12 +91,11 @@ const plugins = [
 			minifyURLs: true
 		}
 	}),
-	**/
 	new MiniCssExtractPlugin({
 	filename: '[name]-[contentHash].css'
 	}),
 	new CleanWebpackPlugin(),
-	//new SassLintPlugin()
+	new SassLintPlugin()
 ]
 
 module.exports = {
