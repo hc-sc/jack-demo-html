@@ -35,7 +35,7 @@
 		"webpack-cli": "^3.3.4"
 		},
 	"scripts": {
-		"build-prod": "webpack-dashboard --config webpack.prod.js",
+		"build-prod": "webpack --config webpack.prod.js",
 		"build-dev": "webpack --config webpack.dev.js",
 		"test": "jest calc.test.js",
 		"test:watch": "jest calc.test.js --watch",
