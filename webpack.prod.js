@@ -42,8 +42,8 @@ const _module = {
 		},
 		 {
         test: /(htm|html|xhtml|hbs|handlebars|php|ejs)$/,
-        loader: 'htmllint-loader',
         exclude: /(node_modules)/,
+		loader: 'htmllint-loader'
       },
 	]
 }
@@ -78,7 +78,6 @@ const plugins = [
 
 module.exports = {
 	entry,
-	devtool: 'none',
 	mode: 'production',
 	module: _module,
 	output,
