@@ -33,6 +33,9 @@ const _module = {
 			use: [
 				'htmllint-loader'
 			],
+		    options: {
+				attrs: [':data-src']
+			}
 		},
 		{
 			test: /\.s?css$/,
