@@ -57,7 +57,7 @@ const _module = {
 
 const plugins = [
 	new FriendlyErrorsWebpackPlugin(),
-    new webpack.optimize.ModuleConcatenationPlugin(),
+    //new webpack.optimize.ModuleConcatenationPlugin(),
 	new HtmlWebpackPlugin({
 		filename: 'index-en.html',
 		template: './src/main-en.html',
@@ -98,7 +98,7 @@ const plugins = [
 	filename: '[name]-[contentHash].css'
 	}),
 	new CleanWebpackPlugin(),
-	new SassLintPlugin()
+	//new SassLintPlugin()
 ]
 
 module.exports = {
