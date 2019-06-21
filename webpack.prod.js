@@ -2,11 +2,12 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const SassLintPlugin = require('sass-lint-webpack');
+//const SassLintPlugin = require('sass-lint-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const webpack = require('webpack');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const entry = {
 	'main': './src/index.js'
@@ -91,7 +92,10 @@ const plugins = [
 	filename: '[name]-[contentHash].css'
 	}),
 	new CleanWebpackPlugin(),
-	new SassLintPlugin()
+	new StyleLintPlugin({
+      files: ['**/*.{vue,htm,html,css,sss,less,scss,sass}'],
+    })
+	//new SassLintPlugin()
 ]
 
 module.exports = {
