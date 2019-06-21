@@ -32,10 +32,7 @@ const _module = {
 			exclude: /node_modules/,
 			use: [
 				'htmllint-loader'
-			],
-		    options: {
-				attrs: [':data-src']
-			}
+			]
 		},
 		{
 			test: /\.s?css$/,
