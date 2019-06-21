@@ -6,6 +6,7 @@ const SassLintPlugin = require('sass-lint-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const webpack = require('webpack');
 
 const entry = {
 	'main': './src/index.js'
@@ -46,6 +47,7 @@ const _module = {
 }
 
 const plugins = [
+    new webpack.optimize.ModuleConcatenationPlugin(),
 	new FriendlyErrorsWebpackPlugin(),
 	new HtmlWebpackPlugin({
 		filename: 'index-en.html',
