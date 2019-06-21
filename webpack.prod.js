@@ -47,7 +47,7 @@ const _module = {
 }
 
 const plugins = [
-	new webpack.optimize.UglifyJsPlugin(),
+	new config.optimization.minimize(),
     new webpack.optimize.ModuleConcatenationPlugin(),
 	new FriendlyErrorsWebpackPlugin(),
 	new HtmlWebpackPlugin({
