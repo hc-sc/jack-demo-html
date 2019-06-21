@@ -28,11 +28,11 @@
 		"optimize-css-assets-webpack-plugin": "*",
 		"sass-lint-webpack": "*",
 		"sass-lint": "*",
-		"html-webpack-plugin": "^2.24.1",
+		"html-webpack-plugin": "*",
 		"file-loader": "*",
 		"extract-loader": "*",
 		"html-loader": "*",
-		"htmllint-loader": "*"
+		"htmllint-loader": "2.24.1"
 		},
 	"scripts": {
 		"build-prod": "webpack --config webpack.prod.js",
