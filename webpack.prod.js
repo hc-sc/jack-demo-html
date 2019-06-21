@@ -5,6 +5,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const SassLintPlugin = require('sass-lint-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require("clean-webpack-plugin");
+const webpackDashboard = require('webpack-dashboard/plugin');
 
 const entry = {
 	'main': './src/index.js'
@@ -32,7 +33,6 @@ const _module = {
 				'sass-loader'
 			]
 		},
-		
 		{
 			test: /\.js$/,
 			exclude: /node_modules/,
@@ -46,6 +46,7 @@ const _module = {
 }
 
 const plugins = [
+	new webpackDashboard(),
 	new HtmlWebpackPlugin({
 		filename: 'index-en.html',
 		template: './src/main-en.html',
