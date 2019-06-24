@@ -25,18 +25,7 @@ const output = {
 }
 
 const _module = {
-	rules: [{
-			test: /\.html$/,
-			loader: 'htmlhint-loader',
-			exclude: [
-				/theme/,
-				/main-f.html/,
-				/node_modules/,
-			],
-			options: {
-				configFile: '.htmlhintrc'
-			}
-		},
+	rules: [
 		{
 			test: /\.s?css$/,
 			exclude: /node_modules/,
@@ -54,6 +43,18 @@ const _module = {
 				'eslint-loader'
 			],
 		}
+		{
+			test: /\.html$/,
+			loader: 'htmlhint-loader',
+			exclude: [
+				/theme/,
+				/main-f.html/,
+				/node_modules/,
+			],
+			options: {
+				configFile: '.htmlhintrc'
+			}
+		},
 	]
 }
 
