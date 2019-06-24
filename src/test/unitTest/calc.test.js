@@ -1,5 +1,5 @@
 var assert = require('assert');
-var calc = require('../assets/calc/calc.js');
+var calc = require('../../calc-assets/calc.js');
 
 describe('Calculator Tests', function() {
 
@@ -28,3 +28,4 @@ describe('Error Tests', function() {
 		done();
 		});
 });
+
