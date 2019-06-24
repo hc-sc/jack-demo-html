@@ -47,8 +47,6 @@ const _module = {
 			test: /\.html$/,
 			loader: 'htmlhint-loader',
 			exclude: [
-				/main-en.html/,
-				/main-fr.html/,
 				/node_modules/,
 			],
 			options: {
