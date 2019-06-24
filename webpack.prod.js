@@ -98,7 +98,6 @@ const plugins = [
 	}),
 	new CleanWebpackPlugin(),
 	new SassLintPlugin(),
-	new NpmInstallPlugin()
 ]
 
 module.exports = {

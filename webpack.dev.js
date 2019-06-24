@@ -39,9 +39,8 @@ const plugins = [
 	new MiniCssExtractPlugin({
 		filename: '[name]-[contentHash].css'
 	}),
-	new CleanWebpackPlugin(),
-	new NpmInstallPlugin()
-]
+	new CleanWebpackPlugin()
+	]
 
 module.exports = {
 	entry,
