@@ -29,9 +29,9 @@ const _module = {
 			test: /\.html$/,
 			loader: 'htmlhint-loader',
 			exclude: [
-				/node_modules/,
 				/theme/,
-				/main-fr.html/,
+				/main-f.html/,
+				/node_modules/,
 			],
 			options: {
 				configFile: '.htmlhintrc'
