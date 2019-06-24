@@ -26,11 +26,13 @@ const output = {
 
 const _module = {
 	rules: [{
-			test: /(htm|html|xhtml|hbs|handlebars|php|ejs)$/,
+			enforce: 'pre',
+			test: /\.html/,
+			loader: 'htmlhint-loader',
 			exclude: /node_modules/,
-			use: [
-				'htmllint-loader'
-			]
+			options: {
+				configFile: 'path/.htmlhintrc'
+			}
 		},
 		{
 			test: /\.s?css$/,
