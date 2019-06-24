@@ -44,7 +44,7 @@ const _module = {
 			],
 		},
 		{
-          test: /\(htm|html|xhtml|hbs|handlebars|php|ejs)$/,
+          test: /\.html$/,
           loader: 'htmllint-loader',
           include: 'src',
 		  exclude: /node_modules/,
