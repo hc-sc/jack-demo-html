@@ -18,11 +18,10 @@ const optimization = {
 		new OptimizeCSSAssetsPlugin()
 	]
 }
+
 const output = {
 	filename: 'main-[contentHash].js',
-	path: path.resolve(__dirname + '/dist'),
-	chunkFilename: '[name]-chunk-[contentHash].js',
-    publicPath: config.get('publicPath')
+	path: path.resolve(__dirname + '/dist')
 }
 
 const _module = {
