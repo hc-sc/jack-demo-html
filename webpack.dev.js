@@ -15,17 +15,15 @@ const output = {
 }
 
 const _module = {
-	rules: [
-		{
-			test: /\.s?css$/,
-			exclude: /node_modules/,
-			use: [
-				MiniCssExtractPlugin.loader,
-				'css-loader',
-				'sass-loader'
-			]
-		}
-	]
+	rules: [{
+		test: /\.s?css$/,
+		exclude: /node_modules/,
+		use: [
+			MiniCssExtractPlugin.loader,
+			'css-loader',
+			'sass-loader'
+		]
+	}]
 }
 
 const plugins = [

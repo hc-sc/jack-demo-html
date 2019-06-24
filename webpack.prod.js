@@ -25,8 +25,7 @@ const output = {
 }
 
 const _module = {
-	rules: [
-		{
+	rules: [{
 			test: /(htm|html|xhtml|hbs|handlebars|php|ejs)$/,
 			exclude: /node_modules/,
 			use: [
@@ -55,7 +54,7 @@ const _module = {
 
 const plugins = [
 	new FriendlyErrorsWebpackPlugin(),
-    new webpack.optimize.ModuleConcatenationPlugin(),
+	new webpack.optimize.ModuleConcatenationPlugin(),
 	new HtmlWebpackPlugin({
 		filename: 'index-en.html',
 		template: './src/main-en.html',
@@ -91,7 +90,7 @@ const plugins = [
 		}
 	}),
 	new MiniCssExtractPlugin({
-	filename: '[name]-[contentHash].css'
+		filename: '[name]-[contentHash].css'
 	}),
 	new CleanWebpackPlugin(),
 	new SassLintPlugin()
@@ -104,7 +103,7 @@ module.exports = {
 	output,
 	plugins,
 	optimization,
-	 devServer: {
-    quiet: true,
-  },
+	devServer: {
+		quiet: true,
+	},
 }
