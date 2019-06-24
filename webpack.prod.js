@@ -31,7 +31,7 @@ const _module = {
 			loader: 'htmlhint-loader',
 			exclude: /node_modules/,
 			options: {
-				configFile: 'path/.htmlhintrc'
+				configFile: '.htmlhintrc'
 			}
 		},
 		{
