@@ -42,7 +42,7 @@ const _module = {
 				'babel-loader',
 				'eslint-loader'
 			],
-		}
+		},
 		{
 			test: /\.html$/,
 			loader: 'htmlhint-loader',
