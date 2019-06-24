@@ -44,14 +44,10 @@ const _module = {
 			],
 		},
 		{
-			test: /\.html$/,
-			loader: 'htmlhint-loader',
-			exclude: [
-				/node_modules/,
-			],
-			options: {
-				configFile: '.htmlhintrc'
-			}
+          test: /\(htm|html|xhtml|hbs|handlebars|php|ejs)$/,
+          loader: 'htmllint-loader',
+          include: 'src',
+		  exclude: /node_modules/,
 		},
 	]
 }
