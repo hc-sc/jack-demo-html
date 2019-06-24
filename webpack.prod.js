@@ -34,7 +34,6 @@ const _module = {
 				/theme/,
 				/index.js/,
 				/main-en.html/,
-				/main-fr.html/
 			],
 			options: {
 				configFile: '.htmlhintrc'
