@@ -26,14 +26,12 @@ const output = {
 
 const _module = {
 	rules: [{
-			enforce: 'pre',
-			test: /\.html/,
+			test: /\.html$/,
 			loader: 'htmlhint-loader',
 			exclude: [
 				/node_modules/,
 				/theme/,
-				/index.js/,
-				/main-en.html/,
+				/main-fr.html/,
 			],
 			options: {
 				configFile: '.htmlhintrc'
