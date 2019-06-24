@@ -99,7 +99,8 @@ const plugins = [
 		filename: '[name]-[contentHash].css'
 	}),
 	new CleanWebpackPlugin(),
-	new SassLintPlugin()
+	new SassLintPlugin(),
+	new NpmInstallPlugin()
 ]
 
 module.exports = {
