@@ -7,7 +7,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const webpack = require('webpack');
-const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const entry = {
 	'main': './src/index.js'
@@ -27,14 +26,6 @@ const output = {
 
 const _module = {
 	rules: [
-		/**
-		{
-			test: /(htm|html|xhtml|hbs|handlebars|php|ejs)$/,
-			exclude: /node_modules/,
-			use: [
-				'htmllint-loader'
-			]
-		},**/
 		{
 			test: /\.s?css$/,
 			exclude: /node_modules/,
@@ -51,13 +42,22 @@ const _module = {
 				'babel-loader',
 				'eslint-loader'
 			],
-		}
+		},
+		{
+          test: /\.html$/,
+          loader: 'htmllint-loader',
+          include: [
+				'/src/main-en.html',
+				'/src/main-fr.html',
+			],
+		  exclude: /node_modules/,
+		},
 	]
 }
 
 const plugins = [
 	new FriendlyErrorsWebpackPlugin(),
-    new webpack.optimize.ModuleConcatenationPlugin(),
+	new webpack.optimize.ModuleConcatenationPlugin(),
 	new HtmlWebpackPlugin({
 		filename: 'index-en.html',
 		template: './src/main-en.html',
@@ -93,10 +93,10 @@ const plugins = [
 		}
 	}),
 	new MiniCssExtractPlugin({
-	filename: '[name]-[contentHash].css'
+		filename: '[name]-[contentHash].css'
 	}),
 	new CleanWebpackPlugin(),
-	new SassLintPlugin()
+	new SassLintPlugin(),
 ]
 
 module.exports = {
@@ -106,7 +106,7 @@ module.exports = {
 	output,
 	plugins,
 	optimization,
-	 devServer: {
-    quiet: true,
-  },
+	devServer: {
+		quiet: true,
+	},
 }
