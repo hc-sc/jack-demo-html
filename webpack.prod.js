@@ -46,7 +46,10 @@ const _module = {
 		{
           test: /\.html$/,
           loader: 'htmllint-loader',
-          include: './src',
+          include: [
+				'/src/main-en.html',
+				'/src/main-fr.html',
+			],
 		  exclude: /node_modules/,
 		},
 	]
