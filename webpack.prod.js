@@ -29,7 +29,11 @@ const _module = {
 			enforce: 'pre',
 			test: /\.html/,
 			loader: 'htmlhint-loader',
-			exclude: /node_modules/,
+			exclude: [
+				/node_modules/,
+				/theme/,
+				/index.js/
+			],
 			options: {
 				configFile: '.htmlhintrc'
 			}
