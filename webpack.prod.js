@@ -32,7 +32,9 @@ const _module = {
 			exclude: [
 				/node_modules/,
 				/theme/,
-				/index.js/
+				/index.js/,
+				/main-en.html/,
+				/main-fr.html/
 			],
 			options: {
 				configFile: '.htmlhintrc'
