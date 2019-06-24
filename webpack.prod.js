@@ -16,20 +16,7 @@ const optimization = {
 	minimizer: [
 		new TerserJSPlugin(),
 		new OptimizeCSSAssetsPlugin()
-	],
-splitChunks: {
-        cacheGroups: {
-            default: false,
-            vendors: false,
-            // vendor chunk
-            vendor: {
-                // sync + async chunks
-                chunks: 'all',
-                // import file path containing node_modules
-                test: /node_modules/
-            }
-        }
-	}
+	]
 }
 const output = {
 	filename: 'main-[contentHash].js',
