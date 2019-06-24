@@ -1,8 +1,18 @@
-// For a detailed explanation regarding each configuration property, visit:
-// https://jestjs.io/docs/en/configuration.html
-
 module.exports = {
+"projects": [
+    {
+      "displayName": "unit test",
+	"testEnvironment": "jsdom",
+	"testRegex":["/src/test/unitTest"]
+    },
+    {
+      "displayName": "ui test",
+      "preset": "jest-puppeteer",
+      "testRegex": ["/src/test/uiTest/"]
+
+    }
+]   
+
  
-  "roots": ["src/test"],
-   preset: 'jest-puppeteer'  
 };
+
