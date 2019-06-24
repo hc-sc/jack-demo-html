@@ -7,7 +7,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const webpack = require('webpack');
-const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const entry = {
 	'main': './src/index.js'
@@ -27,14 +26,13 @@ const output = {
 
 const _module = {
 	rules: [
-		/**
 		{
 			test: /(htm|html|xhtml|hbs|handlebars|php|ejs)$/,
 			exclude: /node_modules/,
 			use: [
 				'htmllint-loader'
 			]
-		},**/
+		},
 		{
 			test: /\.s?css$/,
 			exclude: /node_modules/,
