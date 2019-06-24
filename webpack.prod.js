@@ -29,8 +29,8 @@ splitChunks: {
                 test: /node_modules/
             }
         }
-    }
-
+	}
+}
 const output = {
 	filename: 'main-[contentHash].js',
 	path: path.resolve(__dirname + '/dist'),
