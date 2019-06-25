@@ -1,9 +1,11 @@
-describe('Google', () => {
+describe('check title', () => {
   beforeAll(async () => {
-    await page.goto('https://google.com')
+    await page.goto('https://wet-boew.github.io/themes-dist/GCWeb/index-en.html')
   })
 
-  it('should display "google" text on page', async () => {
-    await expect(page).toMatch('google')
+  it('should display "Index of /" text on page', async () => {
+    await expect(page).toMatch('Canada.ca theme')
   })
+
+ 
 })
