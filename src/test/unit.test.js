@@ -1,9 +1,7 @@
 var assert = require('assert');
 var calc = require('../calc-assets/calc.js');
-var clear = require('../calc-assets/calc.js');
-var clearALL = require('../calc-assets/calc.js');
-describe('Calculator Tests', function() {
 
+describe('Calculator Tests', function() {
 	it('2 number calculation', function(done) {
 		assert.equal(calc.calculate("1+1"), 2);
 		assert.equal(calc.calculate("6-4"), 2);
