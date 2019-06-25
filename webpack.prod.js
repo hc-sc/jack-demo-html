@@ -73,6 +73,11 @@ const _module = {
 }
 
 const plugins = [
+	new CompressionPlugin({
+		test: /\.js(\?.*)?$/i,
+		cache: true,
+		algorithm: 'gzip',
+	}),
 	new FriendlyErrorsWebpackPlugin(),
 	new webpack.optimize.ModuleConcatenationPlugin(),
 	new HtmlWebpackPlugin({
