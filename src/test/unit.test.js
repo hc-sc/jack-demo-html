@@ -24,13 +24,6 @@ describe('calculations', function() {
 		assert.equal(calculate("-2+2.2"), 0.2);
 		done();
 	});
-	
-	it('multiplication and division char change', function(done) {
-		assert.equal(calculate("2.1?2.8"), 5.88);
-		assert.equal(calculate("4.6?2.3"), 2);
-		done();
-	});
-
 });
 
 describe('Clearing one element', function() {
