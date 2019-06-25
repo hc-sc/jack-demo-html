@@ -5,12 +5,12 @@ describe('Calculator Tests', function() {
 
 	it('Calculating 2 numbers', function(done) {
 		assert.equal(calc.calculate("1+1"), 2);
-    assert.equal(calc.calculate("6-4"), 2);
-    assert.equal(calc.calculate("2*2"), 4);
-    assert.equal(calc.calculate("4/2"), 2);
-    assert.equal(calc.calculate("-2+2"), 0);
+		assert.equal(calc.calculate("6-4"), 2);
+		assert.equal(calc.calculate("2*2"), 4);
+		assert.equal(calc.calculate("4/2"), 2);
+		assert.equal(calc.calculate("-2+2.2"), 0.2);
 		done();
-		});
+	});
 });
 
 

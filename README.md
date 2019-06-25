@@ -13,5 +13,5 @@ Current installed plugins:
   5) [HtmlWebpackPlugin](https://github.com/jantimon/html-webpack-plugin)
   6) [CleanWebpackPlugin](https://github.com/johnagan/clean-webpack-plugin)
   7) [FriendlyErrorsWebpackPlugin](https://github.com/geowarin/friendly-errors-webpack-plugin)
-  
+  8) 
 
