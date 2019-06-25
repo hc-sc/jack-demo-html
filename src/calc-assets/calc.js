@@ -26,9 +26,9 @@ for (var i = 0; i < buttons.length; i++) {
      input ='';
   }
   if (btnText === 'AC') {
-   input = clearAC();
+   input = clearAC(input);
   } else if (btnText === 'CE') {
-   input = clearCE(input.length);
+   input = clearCE(input.length , input);
   } else if (btnText === '.' && !oversize) {
    if (input.indexOf('.') === -1 || dotFlag) {
     input += '.';
@@ -48,13 +48,13 @@ for (var i = 0; i < buttons.length; i++) {
 }
 
 
-function clearAC() {
+function clearAC(input) {
  operatorFlag = false;
  equation = '';
  return 0;
 }
 
-function clearCE(length) {
+function clearCE(length, input) {
  if (length > 1) {
   return input.slice(0, input.length - 1);
  }

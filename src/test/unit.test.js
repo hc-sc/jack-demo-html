@@ -24,15 +24,15 @@ describe('calculations', function() {
 
 describe('Clearing one element', function() {
 	it('clear one element', function(done){
-		assert.equal(clearCE("123456"), "12345");
+		assert.equal(clearCE(6 ,"123456"), "12345");
 		done();
 		});
 	it('clearing the last element', function(done){
-		assert.equal(clearCE("9"), "0");
+		assert.equal(clearCE(1 ,"9"), "0");
 		done();
 		});
 	it('clearing an operator', function(done){
-		assert.equal(clearCE("9+"), "9");
+		assert.equal(clearCE(2, "9+"), "9");
 		done();
 		});
 });
