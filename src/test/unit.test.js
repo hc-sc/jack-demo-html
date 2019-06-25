@@ -3,7 +3,7 @@ var calc = require('../calc-assets/calc.js');
 
 describe('Calculator Tests', function() {
 
-	it('Calculating 2 numbers', function(done) {
+	it('2 number calculation', function(done) {
 		assert.equal(calc.calculate("1+1"), 2);
 		assert.equal(calc.calculate("6-4"), 2);
 		assert.equal(calc.calculate("2*2"), 4);
@@ -12,7 +12,7 @@ describe('Calculator Tests', function() {
 		done();
 	});
 	
-	it('Calculating with decimal', function(done) {
+	it('decimal calculation', function(done) {
 		assert.equal(calc.calculate("1.9+1.1"), 3);
 		assert.equal(calc.calculate("6.7-4.2"), 2.5);
 		assert.equal(calc.calculate("2.1*2.8"), 5.88);
@@ -23,9 +23,9 @@ describe('Calculator Tests', function() {
 });
 
 
-describe('Error Tests', function() {
-  it('returns error for large numbers (999999999999*999999)', function(done){
-		assert.equal(calc.calculate("999999999999*999999"), "NaN");
+describe('error handeling', function() {
+	it('returns error for large numbers (999999999999*999999)', function(done){
+		assert.equal(calc.calculate("999999999999*999999"), "NumberTooLarge");
 		done();
 		});
 	it('returns error for missing operator (90*)', function(done){

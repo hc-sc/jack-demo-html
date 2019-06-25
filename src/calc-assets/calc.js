@@ -21,7 +21,7 @@ for (var i = 0; i < buttons.length; i++) {
   }else{
     oversize = false;
   }
-  if ((input == '0' && btnText != '.' && operator.indexOf(btnText) == -1 ) || input == 'NaN' || (result && operator.indexOf(btnText) == -1)) {
+  if ((input == '0' && btnText != '.' && operator.indexOf(btnText) == -1 ) || input == 'NaN' || input == 'NumberTooLarge' || (result && operator.indexOf(btnText) == -1)) {
      result = false;
      input ='';
   }
@@ -69,7 +69,7 @@ calc.calculate = function(sequence) {
  try {
   var equal = Math.round(eval(equation) * 100) / 100;
    if (equal > 8){
-     return 'NaN';
+     return 'NumberTooLarge';
    }else{
       return equal;
    }
