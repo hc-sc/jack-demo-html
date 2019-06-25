@@ -2,7 +2,7 @@ var assert = require('assert');
 const {
 	calculate,
 	clearAC,
-	clearCE
+	clearCE,
 } = require('../calc-assets/calc.js');
 
 describe('calculations', function() {

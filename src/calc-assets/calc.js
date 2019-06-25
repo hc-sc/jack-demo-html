@@ -1,4 +1,3 @@
-// Get dom objects for calculator buttons and screen
 var buttons = document.body.querySelectorAll('.buttons > button');
 var output = document.querySelector('.window');
 // Assigned variables
@@ -9,7 +8,6 @@ var result = false;
 var oversize = false;
 var size;
 var equation = '';
-var result = '';
 
 for (var i = 0; i < buttons.length; i++) {
 	buttons[i].onclick = function(e) {
