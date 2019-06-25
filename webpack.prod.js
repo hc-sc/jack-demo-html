@@ -9,26 +9,25 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const webpack = require('webpack');
 const CompressionPlugin = require('compression-webpack-plugin');
 
-
 const entry = {
 	'main': './src/index.js'
 }
 
 const optimization = {
 	runtimeChunk: 'single',
-    splitChunks: {
-      chunks: 'all',
-      maxInitialRequests: Infinity,
-      minSize: 0,
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name(module) {
-            const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
-            return `npm.${packageName.replace('@', '')}`;
-          },
-        },
-      },
+	splitChunks: {
+		chunks: 'all',
+		maxInitialRequests: Infinity,
+		minSize: 0,
+		cacheGroups: {
+			vendor: {
+				test: /[\\/]node_modules[\\/]/,
+				name(module) {
+					const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+					return `npm.${packageName.replace('@', '')}`;
+				},
+			},
+		},
 	},
 	minimizer: [
 		new TerserJSPlugin(),
@@ -42,8 +41,7 @@ const output = {
 }
 
 const _module = {
-	rules: [
-		{
+	rules: [{
 			test: /\.s?css$/,
 			exclude: /node_modules/,
 			use: [
@@ -61,22 +59,28 @@ const _module = {
 			],
 		},
 		{
-          test: /\.html$/,
-          loader: 'htmllint-loader',
-          include: [
+			test: /\.html$/,
+			loader: 'htmllint-loader',
+			include: [
 				'/src/main-en.html',
 				'/src/main-fr.html',
 			],
-		  exclude: /node_modules/,
+			exclude: /node_modules/,
 		},
 	]
 }
 
 const plugins = [
 	new CompressionPlugin({
-		test: /\.js(\?.*)?$/i,
-		cache: true,
-		algorithm: 'gzip',
+		filename: '[path].br[query]',
+		algorithm: 'brotliCompress',
+		test: /\.(js|css|html|svg)$/,
+		compressionOptions: {
+			level: 11
+		},
+		threshold: 10240,
+		minRatio: 0.8,
+		deleteOriginalAssets: false,
 	}),
 	new FriendlyErrorsWebpackPlugin(),
 	new webpack.optimize.ModuleConcatenationPlugin(),
