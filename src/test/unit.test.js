@@ -1,6 +1,7 @@
 var assert = require('assert');
 var calc = require('../calc-assets/calc.js');
-
+var clear = require('../calc-assets/calc.js');
+var clearALL = require('../calc-assets/calc.js');
 describe('Calculator Tests', function() {
 
 	it('2 number calculation', function(done) {
@@ -20,6 +21,7 @@ describe('Calculator Tests', function() {
 		assert.equal(calc.calculate("-2+2.2"), 0.2);
 		done();
 	});
+	
 });
 
 
@@ -38,3 +40,13 @@ describe('error handeling', function() {
 		});
 });
 
+describe('clearing', function() {
+	it('clear one charcter (123456)', function(done){
+		assert.equal(clear.calculate("123456"), "12345");
+		done();
+		});
+	it('returns error for missing operator (9)', function(done){
+		assert.equal(clear.calculate("9"), "0");
+		done();
+		});
+});

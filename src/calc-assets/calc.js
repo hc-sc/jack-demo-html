@@ -21,7 +21,7 @@ for (var i = 0; i < buttons.length; i++) {
   }else{
     oversize = false;
   }
-  if ((input == '0' && btnText != '.' && operator.indexOf(btnText) == -1 ) || input == 'NaN' || input == 'NumberTooLarge' || (result && operator.indexOf(btnText) == -1)) {
+  if ((input == '0' && btnText != '.' && operator.indexOf(btnText) == -1 ) || input == 'NaN' || (result && operator.indexOf(btnText) == -1)) {
      result = false;
      input ='';
   }
@@ -47,21 +47,23 @@ for (var i = 0; i < buttons.length; i++) {
  }
 }
 
+let calc = {};
+let clear = {};
+let clearALL = {};
 
-function clearAC() {
+clearALL.clearAC = function() {
  input = 0;
  operatorFlag = false;
  equation = '';
 }
 
-function clearCE(length) {
+clear.clearCE = function(length) {
  if (length > 1) {
   return input.slice(0, input.length - 1);
  }
  return 0;
 }
 
-let calc = {};
 
 calc.calculate = function(sequence) {
  equation = sequence.replace(/×/g, '*');
@@ -77,4 +79,9 @@ calc.calculate = function(sequence) {
   return 'NaN';
  }
 }
-module.exports=calc;
+
+module.exports={
+    calc,
+    clear,
+    clearALL
+}
