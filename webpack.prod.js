@@ -72,7 +72,6 @@ const _module = {
 
 const plugins = [
 	new CompressionPlugin({
-		filename: '[path].br[query]',
 		algorithm: 'gzip',
 		test: /\.(js|css|html|svg)$/,
 	}),
