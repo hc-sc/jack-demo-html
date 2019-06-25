@@ -1,9 +1,7 @@
 var buttons = document.body.querySelectorAll('.buttons > button');
 var output = document.querySelector('.window');
-// Assigned variables
 var operator = ['×', '÷', '-', '+', '%'];
 var input = '';
-var dotFlag = false;
 var result = false;
 var oversize = false;
 var size;
@@ -13,35 +11,47 @@ for (var i = 0; i < buttons.length; i++) {
 	buttons[i].onclick = function(e) {
 		var btnText = this.innerHTML;
 		var size = output.innerHTML.length;
-		if (size > 9) {
+		output.innerHTML = calculator(btnText, size, output);
+	}
+}
+
+function calculator(textButton, size, innerText){
+		if (input == '0' && textButton != '.' && operator.indexOf(textButton) == -1){
+			size = 0;
+			result = false;
+			input = '';
+		}else if (input == 'Err' || input == 'Lrg'){
+			size = 0;
+			result = false;
+			input = '';
+		}else if(result && operator.indexOf(textButton) == -1){
+			size = 0;			
+			result = false;
+			input = '';
+		}	
+		
+		if (size > 8) {
 			oversize = true;
 		} else {
 			oversize = false;
 		}
-		if ((input == '0' && btnText != '.' && operator.indexOf(btnText) == -1) || input == 'NaN' || (result && operator.indexOf(btnText) == -1)) {
-			result = false;
-			input = '';
-		}
-		if (btnText === 'AC') {
+		
+		if (textButton === 'AC') {
 			input = clearAC(input);
-		} else if (btnText === 'CE') {
+		} else if (textButton === 'CE') {
 			input = clearCE(input.length, input);
-		} else if (btnText === '.' && !oversize) {
-			if (input.indexOf('.') === -1 || dotFlag) {
+		} else if (textButton === '.' && !oversize) {
 				input += '.';
-				dotFlag = false;
-			}
-		} else if (btnText === '=') {
+		} else if (textButton === '=') {
 			result = true;
 			input = calculate(input);
 		} else {
 			if (!oversize) {
 				result = false;
-				input += btnText;
+				input += textButton;
 			}
 		}
-		output.innerHTML = input;
-	}
+		return input;
 }
 
 function clearAC(input) {
@@ -62,13 +72,13 @@ function calculate(sequence) {
 	equation = equation.replace(/÷/g, '/');
 	try {
 		var equal = Math.round(eval(equation) * 100) / 100;
-		if (equal > 8) {
-			return 'NumberTooLarge';
+		if (equation.length > 8) {
+			return 'Lrg';
 		} else {
 			return equal;
 		}
 	} catch (error) {
-		return 'NaN';
+		return 'Err';
 	}
 }
 

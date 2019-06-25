@@ -3,6 +3,7 @@ const {
 	calculate,
 	clearAC,
 	clearCE,
+	calculator
 } = require('../calc-assets/calc.js');
 
 describe('calculations', function() {
@@ -21,6 +22,12 @@ describe('calculations', function() {
 		assert.equal(calculate("2.1*2.8"), 5.88);
 		assert.equal(calculate("4.6/2.3"), 2);
 		assert.equal(calculate("-2+2.2"), 0.2);
+		done();
+	});
+	
+	it('multiplication and division char change', function(done) {
+		assert.equal(calculate("2.1?2.8"), 5.88);
+		assert.equal(calculate("4.6?2.3"), 2);
 		done();
 	});
 
@@ -52,17 +59,27 @@ describe('Clearing All', function() {
 	});
 });
 
+describe('button input', function() {
+	it('clearing all elements', function(done) {
+		assert.equal(clearAC("123456"), "0");
+		done();
+	});
+	it('clearing ', function(done) {
+		assert.equal(clearAC("9"), "0");
+		done();
+	});
+});
 describe('error handeling', function() {
 	it('returns error for number larger than 8', function(done) {
-		assert.equal(calculate("999999999999*999999"), "NumberTooLarge");
+		assert.equal(calculate("999999999999*999999"), "Lrg");
 		done();
 	});
 	it('returns error for missing operator (90*)', function(done) {
-		assert.equal(calculate("90*"), "NaN");
+		assert.equal(calculate("90*"), "Err");
 		done();
 	});
 	it('returns error for letter in equation', function(done) {
-		assert.equal(calculate("x+4"), "NaN");
+		assert.equal(calculate("x+4"), "Err");
 		done();
 	});
 });
