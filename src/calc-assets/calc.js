@@ -36,7 +36,7 @@ for (var i = 0; i < buttons.length; i++) {
    }
   } else if (btnText === '=') {
     result = true;
-   input = calc.calculate(input);
+   input = calculate(input);
   } else {
     if(!oversize){
       result = false;
@@ -47,31 +47,27 @@ for (var i = 0; i < buttons.length; i++) {
  }
 }
 
-let calc = {};
-let clear = {};
-let clearALL = {};
 
-clearALL.clearAC = function() {
+function clearAC() {
  input = 0;
  operatorFlag = false;
  equation = '';
 }
 
-clear.clearCE = function(length) {
+function clearCE(length) {
  if (length > 1) {
   return input.slice(0, input.length - 1);
  }
  return 0;
 }
 
-
-calc.calculate = function(sequence) {
+function calculate(sequence) {
  equation = sequence.replace(/×/g, '*');
  equation = equation.replace(/÷/g, '/');
  try {
   var equal = Math.round(eval(equation) * 100) / 100;
    if (equal > 8){
-     return 'NumberTooLarge';
+     return 'NaN';
    }else{
       return equal;
    }
@@ -80,8 +76,19 @@ calc.calculate = function(sequence) {
  }
 }
 
+
 module.exports={
-    calc,
-    clear,
-    clearALL
+    calculate,
+    clearAC,
+    clearCE
 }
+
+
+
+
+
+
+
+
+
+
