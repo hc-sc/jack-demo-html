@@ -26,7 +26,7 @@ for (var i = 0; i < buttons.length; i++) {
      input ='';
   }
   if (btnText === 'AC') {
-   clearAC();
+   input = clearAC();
   } else if (btnText === 'CE') {
    input = clearCE(input.length);
   } else if (btnText === '.' && !oversize) {
@@ -49,9 +49,9 @@ for (var i = 0; i < buttons.length; i++) {
 
 
 function clearAC() {
- input = 0;
  operatorFlag = false;
  equation = '';
+ return 0;
 }
 
 function clearCE(length) {
