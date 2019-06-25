@@ -42,7 +42,7 @@
 		"build-prod": "webpack --config webpack.prod.js",
 		"build-dev": "webpack --config webpack.dev.js",
 		"test": "jest",
-		"test:watch": "jest --coverage calc.test.js",
+		"test:watch": "jest calc.test.js --coverage",
 		"sass": "sass src/assets/calc/calc.scss"
 	},
 	"repository": {
