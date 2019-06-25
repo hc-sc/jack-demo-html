@@ -1,13 +1,21 @@
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const SassLintPlugin = require('sass-lint-webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const webpack = require('webpack');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 const entry = {
-	"calc": ["./src/assets/calc/calc.js", "./src/assets/calc/calc.scss"]
+	'main': './src/index.js'
 }
 
 const output = {
-	filename: "[name].min.js",
-	path: __dirname + "/dist"
+	filename: 'main-[contentHash].js',
+	path: path.resolve(__dirname + '/dist')
 }
 
 const _module = {
@@ -15,6 +23,7 @@ const _module = {
 			test: /\.s?css$/,
 			exclude: /node_modules/,
 			use: [
+				MiniCssExtractPlugin.loader,
 				'css-loader',
 				'sass-loader'
 			]
@@ -23,16 +32,25 @@ const _module = {
 }
 
 const plugins = [
+	new FriendlyErrorsWebpackPlugin(),
+	new HtmlWebpackPlugin({
+		filename: 'index-en.html',
+		template: './src/main-en.html',
+	}),
+	new HtmlWebpackPlugin({
+		filename: 'index-fr.html',
+		template: './src/main-fr.html',
+	}),
 	new MiniCssExtractPlugin({
-		filename: "calc.min.css"
-	})
+		filename: '[name]-[contentHash].css'
+	}),
+	new CleanWebpackPlugin(),
 ]
 
 module.exports = {
 	entry,
-	devtool: 'none',
 	mode: 'development',
 	module: _module,
 	output,
-	plugins
+	plugins,
 }
