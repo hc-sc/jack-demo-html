@@ -43,7 +43,7 @@ describe('Clearing All', function() {
 		done();
 		});
 	it('clearing ', function(done){
-		assert.equal(clearAC("9"), "0");
+		assert.equal(clearAC("9"), undefined);
 		done();
 		});
 });
