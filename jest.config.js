@@ -3,7 +3,9 @@ module.exports = {
     {
       "displayName": "unit test",
 	"testEnvironment": "jsdom",
-	"testRegex":["/src/test/unitTest"]
+	"testRegex":["/src/test/calc.test.js"]
     }
+]   
 
-]};
+ 
+};
