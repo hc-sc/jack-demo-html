@@ -8,6 +8,15 @@ describe('Calculator Tests', function() {
 		assert.equal(calc.calculate("6-4"), 2);
 		assert.equal(calc.calculate("2*2"), 4);
 		assert.equal(calc.calculate("4/2"), 2);
+		assert.equal(calc.calculate("-2+2"), 0);
+		done();
+	});
+	
+	it('Calculating with decimal', function(done) {
+		assert.equal(calc.calculate("1.9+1.1"), 3);
+		assert.equal(calc.calculate("6.7-4.2"), 2.5);
+		assert.equal(calc.calculate("2.1*2.8"), 5.88);
+		assert.equal(calc.calculate("4.6/2.3"), 2);
 		assert.equal(calc.calculate("-2+2.2"), 0.2);
 		done();
 	});
