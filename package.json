@@ -41,9 +41,7 @@
 	"scripts": {
 		"build-prod": "webpack --config webpack.prod.js",
 		"build-dev": "webpack --config webpack.dev.js",
-		"test": "jest",
-		"test:watch": "jest calc.test.js --watch",
-		"sass": "sass src/assets/calc/calc.scss"
+		"test": "jest --coverage"
 	},
 	"repository": {
 		"type": "git",
