@@ -73,14 +73,8 @@ const _module = {
 const plugins = [
 	new CompressionPlugin({
 		filename: '[path].br[query]',
-		algorithm: 'brotliCompress',
+		algorithm: 'gzip',
 		test: /\.(js|css|html|svg)$/,
-		compressionOptions: {
-			level: 11
-		},
-		threshold: 10240,
-		minRatio: 0.8,
-		deleteOriginalAssets: false,
 	}),
 	new FriendlyErrorsWebpackPlugin(),
 	new webpack.optimize.ModuleConcatenationPlugin(),
