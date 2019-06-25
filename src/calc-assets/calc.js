@@ -11,84 +11,71 @@ var size;
 var equation = '';
 var result = '';
 
-//Initiate event listener for all buttons objects
 for (var i = 0; i < buttons.length; i++) {
- buttons[i].onclick = function(e) {
-  var btnText = this.innerHTML;
-  var size = output.innerHTML.length;
-  if(size > 9){
-    oversize = true;
-  }else{
-    oversize = false;
-  }
-  if ((input == '0' && btnText != '.' && operator.indexOf(btnText) == -1 ) || input == 'NaN' || (result && operator.indexOf(btnText) == -1)) {
-     result = false;
-     input ='';
-  }
-  if (btnText === 'AC') {
-   input = clearAC(input);
-  } else if (btnText === 'CE') {
-   input = clearCE(input.length , input);
-  } else if (btnText === '.' && !oversize) {
-   if (input.indexOf('.') === -1 || dotFlag) {
-    input += '.';
-    dotFlag = false;
-   }
-  } else if (btnText === '=') {
-    result = true;
-   input = calculate(input);
-  } else {
-    if(!oversize){
-      result = false;
-      input += btnText;
-    }
-  }
-     output.innerHTML = input;
- }
+	buttons[i].onclick = function(e) {
+		var btnText = this.innerHTML;
+		var size = output.innerHTML.length;
+		if (size > 9) {
+			oversize = true;
+		} else {
+			oversize = false;
+		}
+		if ((input == '0' && btnText != '.' && operator.indexOf(btnText) == -1) || input == 'NaN' || (result && operator.indexOf(btnText) == -1)) {
+			result = false;
+			input = '';
+		}
+		if (btnText === 'AC') {
+			input = clearAC(input);
+		} else if (btnText === 'CE') {
+			input = clearCE(input.length, input);
+		} else if (btnText === '.' && !oversize) {
+			if (input.indexOf('.') === -1 || dotFlag) {
+				input += '.';
+				dotFlag = false;
+			}
+		} else if (btnText === '=') {
+			result = true;
+			input = calculate(input);
+		} else {
+			if (!oversize) {
+				result = false;
+				input += btnText;
+			}
+		}
+		output.innerHTML = input;
+	}
 }
 
-
 function clearAC(input) {
- operatorFlag = false;
- equation = '';
- return 0;
+	operatorFlag = false;
+	equation = '';
+	return 0;
 }
 
 function clearCE(length, input) {
- if (length > 1) {
-  return input.slice(0, input.length - 1);
- }
- return 0;
+	if (length > 1) {
+		return input.slice(0, input.length - 1);
+	}
+	return 0;
 }
 
 function calculate(sequence) {
- equation = sequence.replace(/×/g, '*');
- equation = equation.replace(/÷/g, '/');
- try {
-  var equal = Math.round(eval(equation) * 100) / 100;
-   if (equal > 8){
-     return 'NumberTooLarge';
-   }else{
-      return equal;
-   }
- } catch (error) {
-  return 'NaN';
- }
+	equation = sequence.replace(/×/g, '*');
+	equation = equation.replace(/÷/g, '/');
+	try {
+		var equal = Math.round(eval(equation) * 100) / 100;
+		if (equal > 8) {
+			return 'NumberTooLarge';
+		} else {
+			return equal;
+		}
+	} catch (error) {
+		return 'NaN';
+	}
 }
 
-
-module.exports={
-    calculate,
-    clearAC,
-    clearCE
+module.exports = {
+	calculate,
+	clearAC,
+	clearCE
 }
-
-
-
-
-
-
-
-
-
-
