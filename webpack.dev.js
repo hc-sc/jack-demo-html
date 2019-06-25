@@ -1,49 +1,36 @@
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require("clean-webpack-plugin");
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
-const webpack = require('webpack');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const TerserJSPlugin = require('terser-webpack-plugin');
 
 const entry = {
-	'main': './src/index.js'
+	"calc": ["./src/assets/calc/calc.js", "./src/assets/calc/calc.scss"]
 }
 
 const output = {
-	filename: 'main-[contentHash].js',
-	path: path.resolve(__dirname + '/dist')
+	filename: "[name].min.js",
+	path: __dirname + "/dist"
 }
 
 const _module = {
 	rules: [{
-		test: /\.s?css$/,
-		exclude: /node_modules/,
-		use: [
-			MiniCssExtractPlugin.loader,
-			'css-loader',
-			'sass-loader'
-		]
-	}]
+			test: /\.s?css$/,
+			exclude: /node_modules/,
+			use: [
+				'css-loader',
+				'sass-loader'
+			]
+		}
+	]
 }
 
 const plugins = [
-	new FriendlyErrorsWebpackPlugin()
-	new HtmlWebpackPlugin({
-		filename: 'index-en.html',
-		template: './src/main-en.html'
-	}),
-	new HtmlWebpackPlugin({
-		filename: 'index-fr.html',
-		template: './src/main-fr.html'
-	}),
 	new MiniCssExtractPlugin({
-		filename: '[name]-[contentHash].css'
-	}),
-	new CleanWebpackPlugin()
-	]
+		filename: "calc.min.css"
+	})
+]
 
 module.exports = {
 	entry,
+	devtool: 'none',
 	mode: 'development',
 	module: _module,
 	output,
