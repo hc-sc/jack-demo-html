@@ -38,13 +38,4 @@ describe('error handeling', function() {
 		});
 });
 
-describe('clearing', function() {
-	it('clear one charcter (123456)', function(done){
-		assert.equal(clear.clearCE("123456"), "12345");
-		done();
-		});
-	it('returns error for missing operator (9)', function(done){
-		assert.equal(clear.clearCE("9"), "0");
-		done();
-		});
-});
+
