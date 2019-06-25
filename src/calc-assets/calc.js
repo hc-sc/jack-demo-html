@@ -67,7 +67,7 @@ function calculate(sequence) {
  try {
   var equal = Math.round(eval(equation) * 100) / 100;
    if (equal > 8){
-     return 'NaN';
+     return 'NumberTooLarge';
    }else{
       return equal;
    }

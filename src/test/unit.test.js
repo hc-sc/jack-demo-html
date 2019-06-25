@@ -1,7 +1,7 @@
 var assert = require('assert');
 const {calculate, clearAC, clearCE} = require('../calc-assets/calc.js');
 
-describe('Calculator Tests', function() {
+describe('calculations', function() {
 	it('2 number calculation', function(done) {
 		assert.equal(calculate("1+1"), 2);
 		assert.equal(calculate("6-4"), 2);
@@ -22,9 +22,34 @@ describe('Calculator Tests', function() {
 	
 });
 
+describe('Clearing one element', function() {
+	it('clear one element', function(done){
+		assert.equal(clearCE("123456"), "12345");
+		done();
+		});
+	it('clearing the last element', function(done){
+		assert.equal(clearCE("9"), "0");
+		done();
+		});
+	it('clearing an operator', function(done){
+		assert.equal(clearCE("9+"), "9");
+		done();
+		});
+});
+
+describe('Clearing All', function() {
+	it('clearing all elements', function(done){
+		assert.equal(clearAC("123456"), "0");
+		done();
+		});
+	it('clearing ', function(done){
+		assert.equal(clearAC("9"), "0");
+		done();
+		});
+});
 
 describe('error handeling', function() {
-	it('returns error for large numbers (999999999999*999999)', function(done){
+	it('returns error for number larger than 8', function(done){
 		assert.equal(calculate("999999999999*999999"), "NumberTooLarge");
 		done();
 		});
@@ -37,5 +62,3 @@ describe('error handeling', function() {
 		done();
 		});
 });
-
-
