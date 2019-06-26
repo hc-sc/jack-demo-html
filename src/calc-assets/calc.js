@@ -1,29 +1,25 @@
 var buttons = document.body.querySelectorAll('.buttons > button');
 var output = document.querySelector('.window');
 var operator = ['×', '÷', '-', '+', '%'];
-var input = '';
+
 var result = false;
-var oversize = false;
-var size;
 var equation = '';
 
 for (var i = 0; i < buttons.length; i++) {
 	buttons[i].onclick = function(e) {
 		var btnText = this.innerHTML;
-		size = output.innerHTML.length;
-		errorHandling(btnText, size);
-		output.innerHTML = calculator(btnText, size);
+		var size = output.innerHTML.length;
+		var input = output.innerHTML;
+		input = errorHandling(btnText, size, input);
+		output.innerHTML = calculator(btnText, size, input);
 	}
 }
 
-function calculator(textButton, size){
-	if ((size == 0 && input == '0') || size == 0) input = clearAC(input);
+function calculator(textButton, size, input){
+	var oversize = false;
 	if (size > 8) {
 		oversize = true;
-	} else {
-		oversize = false;
 	}
-	
 	if (textButton === 'AC') {
 		input = clearAC(input);
 	} else if (textButton === 'CE') {
@@ -42,7 +38,7 @@ function calculator(textButton, size){
 	return input;
 }
 
-function errorHandling(textButton, size){
+function errorHandling(textButton, size, input){
 	if (input == '0' && textButton != '.' && operator.indexOf(textButton) == -1){
 		size = 0;
 		result = false;
@@ -55,7 +51,8 @@ function errorHandling(textButton, size){
 		size = 0;			
 		result = false;
 		input = '';
-	}	
+	}
+	return input;	
 }
 
 function clearAC(input) {
