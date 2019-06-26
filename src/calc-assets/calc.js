@@ -17,6 +17,7 @@ for (var i = 0; i < buttons.length; i++) {
 }
 
 function calculator(textButton, size){
+	if ((size == 0 && innerText == '0') || size == 0) input = clearAC(input);
 	if (size > 8) {
 		oversize = true;
 	} else {
