@@ -116,7 +116,7 @@ describe('Checking if all errors will be handled', () => {
     var num = calculate('1+1');
 	expect(errorHandling('1',num)).toBe('')
 	var num2 = calculate('1+1');
-	expect(errorHandling('+',num2)).toBe('2+')
+	expect(errorHandling('+',num2)).toBe(num2)
   })  
   
   test('no errors to handle', () => {	
