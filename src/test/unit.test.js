@@ -49,7 +49,7 @@ describe('Checking for error thrown by the calculate function', () => {
 	expect(calculate('999999999999*999999')).toBe('Lrg')
 	expect(calculate('90*')).toBe('Err')
 	expect(calculate('x+4')).toBe('Err')
-	expect(calculate('=')).toBeNaN()
+	expect(calculate('Err')).toBeNaN()
 	})
 })
 describe('Calculator function', () => {
