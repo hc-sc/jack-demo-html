@@ -121,13 +121,22 @@ describe('Checking if all errors will be handled', function() {
 		//Skiping the if statments 	
 		assert.equal(errorHandling("+","1"), '1');
 		assert.equal(errorHandling("=","12+1"), '12+1');	
-
+		
+		
+		//erase the previous answer if the user doesnt input an operator
+		assert.equal(errorHandling("+","1"), '1');
+		assert.equal(errorHandling("=","12+1"), '12+1');	
+		
 
 		done();
 	});
 });
 
-
+describe('My work', () => {
+  test('works', () => {
+    expect(2).toEqual(2)
+  })
+})
 
 
 
