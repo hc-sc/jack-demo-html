@@ -11,12 +11,12 @@ for (var i = 0; i < buttons.length; i++) {
 	buttons[i].onclick = function(e) {
 		var btnText = this.innerHTML;
 		size = output.innerHTML.length;
-		errorHandling(btnText, size, output.innerHTML);
-		output.innerHTML = calculator(btnText, size, output.innerHTML);
+		errorHandling(btnText, size);
+		output.innerHTML = calculator(btnText, size);
 	}
 }
 
-function calculator(textButton, size, innerText){
+function calculator(textButton, size){
 	if (size > 8) {
 		oversize = true;
 	} else {
@@ -41,7 +41,7 @@ function calculator(textButton, size, innerText){
 	return input;
 }
 
-function errorHandling(textButton, size, innerText){
+function errorHandling(textButton, size){
 	if (input == '0' && textButton != '.' && operator.indexOf(textButton) == -1){
 		size = 0;
 		result = false;
