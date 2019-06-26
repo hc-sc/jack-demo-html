@@ -121,6 +121,6 @@ describe('Checking if all errors will be handled', () => {
   
   test('no errors to handle', () => {	
     expect(errorHandling('+','1')).toBe('1')
-    expect(errorHandling('=','12+1')).toBe('12+1')
+    expect(errorHandling('=','12+1')).toBe('')
   })
 })
