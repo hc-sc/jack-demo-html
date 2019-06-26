@@ -114,7 +114,9 @@ describe('Checking if all errors will be handled', () => {
 	**/
   test('erase the previous answer if the user doesnt input an operator', () => {
     var num = calculate('1+1');
-	expect(errorHandling('1','0')).toBe('')
+	expect(errorHandling('1',num)).toBe('')
+	var num2 = calculate('1+1');
+	expect(errorHandling('+',num2)).toBe('2+')
   })  
   
   test('no errors to handle', () => {	
