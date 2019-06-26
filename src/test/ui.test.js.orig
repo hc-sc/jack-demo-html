@@ -1,0 +1,34 @@
+<<<<<<< HEAD
+describe('check title', () => {
+=======
+describe('UI Tests', () => {
+>>>>>>> a9ad1cd14acd22e715769dd532ee87135b6e3461
+  beforeAll(async () => {
+    await page.goto('https://wet-boew.github.io/themes-dist/GCWeb/index-en.html')
+  })
+
+<<<<<<< HEAD
+  it('should display "Index of /" text on page', async () => {
+    await expect(page).toMatch('Canada.ca theme')
+  })
+=======
+  test('should display "Canada.ca theme" text on page', async () => {
+    await expect(page).toMatch('Canada.ca theme')
+  });
+>>>>>>> a9ad1cd14acd22e715769dd532ee87135b6e3461
+  test("should assert that a div named landscape exists", async () => {
+    const landscape = await page.$eval(".landscape", el => (el ? true : false));
+    expect(landscape).toBe(true);
+  });
+<<<<<<< HEAD
+ 
+})
+=======
+  test("french link should lead to french site", async () => {
+    await page.click('a[lang=fr]');
+    const site = await page.url();
+expect(site).toBe('https://wet-boew.github.io/themes-dist/GCWeb/index-fr.html');
+  });
+     
+})
+>>>>>>> a9ad1cd14acd22e715769dd532ee87135b6e3461

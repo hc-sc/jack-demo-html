@@ -42,10 +42,10 @@
 		"build-prod": "webpack --config webpack.prod.js",
 		"build-dev": "webpack --config webpack.dev.js",
 		"test": "jest --coverage"
+<<<<<<< HEAD
+=======
 
-
-
-
+>>>>>>> a9ad1cd14acd22e715769dd532ee87135b6e3461
 	},
 	"repository": {
 		"type": "git",
