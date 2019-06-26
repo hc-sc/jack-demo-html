@@ -87,8 +87,8 @@ describe('Calculator function', () => {
 		expect(calculator('=',5,'..2+2')).toBe('Err')
 		expect(calculator('=',9,'9*9999999')).toBe('Lrg')
 
-		expect(calculator('=',0,'')).toBeNaN()
-		expect(calculator('=',1,'0')).toBeNaN()
+		expect(calculator('=',0,'')).toBe('NaN')
+		expect(calculator('=',1,'0')).toBe('NaN')
   })
 })
 
