@@ -108,33 +108,26 @@ describe('Calculator function', function() {
 		done();
 	});
 });
-
-describe('Checking if all errors will be handled', function() {
-	it('Check the return with errors present', function(done) {
-		//Checking if the input will clear when inputing a value
-		assert.equal(errorHandling("1","0"), '');
-		//Checking for the second if statment
-		assert.equal(errorHandling(".","Lrg"), '');
-		assert.equal(errorHandling("+","Err"), '');
-		assert.equal(errorHandling("1","Err"), '');
-		assert.equal(errorHandling("1","Lrg"), '');
-		//Skiping the if statments 	
-		assert.equal(errorHandling("+","1"), '1');
-		assert.equal(errorHandling("=","12+1"), '12+1');	
-		
-		
-		//erase the previous answer if the user doesnt input an operator
-		assert.equal(errorHandling("+","1"), '1');
-		assert.equal(errorHandling("=","12+1"), '12+1');	
-		
-
-		done();
-	});
-});
-
-describe('My work', () => {
-  test('works', () => {
-    expect(2).toEqual(2)
+describe('Checking if all errors will be handled', () => {
+  test('inputing values as soon as the page loads', () => {
+    expect(errorHandling("1","0")).toEqual('')
+  })  
+  
+  test('using the calc after an error is displayed', () => {
+	  expect(errorHandling(".","Lrg")).toEqual('')
+	  expect(errorHandling("+","Err")).toEqual('')
+	  expect(errorHandling("1","Err")).toEqual('')
+	  expect(errorHandling("1","Lrg")).toEqual('')
+  })  
+  
+  //need to be implemented
+  test('erase the previous answer if the user doesnt input an operator', () => {
+    expect(errorHandling("1","0")).toEqual('')
+  })  
+  
+  test('no errors to handle', () => {	
+    expect(errorHandling("+","1")).toEqual('1')
+    expect(errorHandling("=","12+1")).toEqual('12+1')
   })
 })
 
