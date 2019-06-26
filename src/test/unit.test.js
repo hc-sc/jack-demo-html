@@ -8,53 +8,53 @@ const {
 
 describe('Testing calculator functions', () => {	
   test('2 number calculation', () => {
-		expect(calculate("1+1").toEqual(2)
-		expect(calculate("6-4").toEqual(2)
-		expect(calculate("2*2").toEqual(4)
-		expect(calculate("4/2").toEqual(2)
-		expect(calculate("-2+2").toEqual(0)
+		expect(calculate("1+1")).toEqual(2)
+		expect(calculate("6-4")).toEqual(2)
+		expect(calculate("2*2")).toEqual(4)
+		expect(calculate("4/2")).toEqual(2)
+		expect(calculate("-2+2")).toEqual(0)
   })    
   test('decimal calculation', () => {
-		expect(calculate("1.9+1.1").toEqual(3)
-		expect(calculate("6.7-4.2").toEqual(2.5)
-		expect(calculate("2.1*2.8").toEqual(5.88)
-		expect(calculate("4.6/2.3").toEqual(2)
-		expect(calculate("-2+2.2").toEqual(0.2)
+		expect(calculate("1.9+1.1")).toEqual(3)
+		expect(calculate("6.7-4.2")).toEqual(2.5)
+		expect(calculate("2.1*2.8")).toEqual(5.88)
+		expect(calculate("4.6/2.3")).toEqual(2)
+		expect(calculate("-2+2.2")).toEqual(0.2)
   })    
 })
 
 
 describe('clear one element', () => {	
   test('clear one number', () => {
-		expect(clearCE(6, "123456").toEqual("12345")
+		expect(clearCE(6, "123456")).toEqual("12345")
   })    
   test('clearing one out of one elements', () => {
-		expect(clearCE(1, "9").toEqual("0")
+		expect(clearCE(1, "9")).toEqual("0")
   })    
   test('clearing an operator', () => {
-		expect(clearCE(2, "9+").toEqual("9")
+		expect(clearCE(2, "9+")).toEqual("9")
   })  
 })
 
 describe('clear All', () => {	
   test('clearing all elements', () => {
-		expect(clearAC("123456").toEqual("0")
-		expect(clearAC("9").toEqual("0")
-		expect(clearAC("0").toEqual("0")
+		expect(clearAC("123456")).toEqual("0")
+		expect(clearAC("9")).toEqual("0")
+		expect(clearAC("0")).toEqual("0")
   })  
 })
 
 describe('Checking for error thrown by the calculate function', () => {	
   test('returns error for number larger than 8', () => {
-		expect(calculate("999999999999*999999").toEqual("Lrg")
+		expect(calculate("999999999999*999999")).toEqual("Lrg")
   })  
   
   test('returns error for missing operator (90*)', () => {
-		expect(calculate("90*").toEqual("Err")
+		expect(calculate("90*")).toEqual("Err")
   })  
   
   test('eturns error for letter in equation', () => {	
-		expect(calculate("x+4").toEqual("Err")
+		expect(calculate("x+4")).toEqual("Err")
   })
 })
 
