@@ -119,13 +119,3 @@ describe('Checking if all errors will be handled', () => {
     expect(errorHandling('=','12+1')).toBe('12+1')
   })
 })
-
-
-
-
-
-
-
-
-
-
