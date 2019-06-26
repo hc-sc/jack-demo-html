@@ -62,7 +62,7 @@ describe('button input', function() {
 		done();
 	});
 });
-describe('error handeling', function() {
+describe('Checking for error thrown by the calculate function', function() {
 	it('returns error for number larger than 8', function(done) {
 		assert.equal(calculate("999999999999*999999"), "Lrg");
 		done();
@@ -73,6 +73,48 @@ describe('error handeling', function() {
 	});
 	it('returns error for letter in equation', function(done) {
 		assert.equal(calculate("x+4"), "Err");
+		done();
+	});
+});
+
+describe('Calculator function', function() {
+	it('check return after entering 2', function(done) {
+		assert.equal(calculator("1",0,""), "1");
+		assert.equal(calculator("2",0,""), "2");
+		assert.equal(calculator("3",0,""), "3");
+		assert.equal(calculator("4",0,""), "4");
+		assert.equal(calculator("5",0,""), "5");
+		assert.equal(calculator("6",0,""), "6");
+		assert.equal(calculator("7",0,""), "7");
+		assert.equal(calculator("8",0,""), "8");
+		assert.equal(calculator("9",0,""), "9");
+		assert.equal(calculator(".",0,""), ".");
+		assert.equal(calculator("-",0,""), "-");
+		assert.equal(calculator("+",0,""), "+");		
+		assert.equal(calculator("AC",3,"123"), "0");
+		assert.equal(calculator("CE",3,"123"), "12");
+		assert.equal(calculator("CE",1,"1"), "0");
+		done();
+	});
+	
+	it('Checking if the calculation is preformed', function(done) {
+		assert.equal(calculator("=",3,"1+1"), "2");
+		assert.equal(calculator("=",3,"6-4"), "2");
+		assert.equal(calculator("=",3,"2*2"), "4");
+		assert.equal(calculator("=",3,"4/2"), "2");
+		assert.equal(calculator("=",3,"-2+2"), "0");
+		assert.equal(calculator("=",2,".2"), "0.2");
+		assert.equal(calculator("=",3,"2.0"), "2");
+		done();
+	});
+	
+	it('Checking for errors', function(done) {
+		assert.equal(calculator("=",4,"1..2"), "Err");
+		assert.equal(calculator("=",5,"1.2.3"), "Err");		
+		assert.equal(calculator("=",3,"..2"), "Err");
+		assert.equal(calculator("=",5,"..2+2"), "Err");
+		assert.equal(calculator("=",0,""), "NaN");
+		assert.equal(calculator("=",9,"9*9999999"), "Lrg");
 		done();
 	});
 });
