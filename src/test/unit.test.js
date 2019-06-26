@@ -93,6 +93,7 @@ describe('Calculator function', () => {
 describe('Checking if all errors will be handled', () => {	
   test('inputing values as soon as the page loads', () => {
     expect(errorHandling('1','0')).toBe('')
+	
 	//This happens in the case the user wants to input a negative int
     expect(errorHandling('+','0')).toBe('0')
     expect(errorHandling('-','0')).toBe('0')
@@ -112,7 +113,8 @@ describe('Checking if all errors will be handled', () => {
 		- check if the user will be able to cont with the previous answer if they hit an operator 
 	**/
   test('erase the previous answer if the user doesnt input an operator', () => {
-    expect(errorHandling('1','0')).toBe('')
+    var num = calculate('1+1');
+	expect(errorHandling('1','0')).toBe('')
   })  
   
   test('no errors to handle', () => {	
