@@ -26,13 +26,13 @@ describe('Testing calculator functions', () => {
 
 describe('clear one element', () => {	
   test('clear one number', () => {
-		expect(clearCE(6, "123456")).toEqual("12345")
+		expect(clearCE(6, "123456")).toEqual(12345)
   })    
   test('clearing one out of one elements', () => {
 		expect(clearCE(1, "9")).toEqual(0)
   })    
   test('clearing an operator', () => {
-		expect(clearCE(2, "9+")).toEqual("9")
+		expect(clearCE(2, "9+")).toEqual(9)
   })  
 })
 
@@ -60,21 +60,21 @@ describe('Checking for error thrown by the calculate function', () => {
 
 describe('Calculator function', () => {
   test('check return after entering a number', () => {
-		expect(calculator("1",0,"")).toEqual("1")
-		expect(calculator("2",0,"")).toEqual("2")
-		expect(calculator("3",0,"")).toEqual("3")
-		expect(calculator("4",0,"")).toEqual("4")
-		expect(calculator("5",0,"")).toEqual("5")
-		expect(calculator("6",0,"")).toEqual("6")
-		expect(calculator("7",0,"")).toEqual("7")
-		expect(calculator("8",0,"")).toEqual("8")
-		expect(calculator("9",0,"")).toEqual("9")
+		expect(calculator("1",0,"")).toEqual(1)
+		expect(calculator("2",0,"")).toEqual(2)
+		expect(calculator("3",0,"")).toEqual(3)
+		expect(calculator("4",0,"")).toEqual(4)
+		expect(calculator("5",0,"")).toEqual(5)
+		expect(calculator("6",0,"")).toEqual(6)
+		expect(calculator("7",0,"")).toEqual(7)
+		expect(calculator("8",0,"")).toEqual(8)
+		expect(calculator("9",0,"")).toEqual(9)
 		expect(calculator(".",0,"")).toEqual(".")
 		expect(calculator("-",0,"")).toEqual("-")
 		expect(calculator("+",0,"")).toEqual("+")		
-		expect(calculator("AC",3,"123")).toEqual("0")
-		expect(calculator("CE",3,"123")).toEqual("12")
-		expect(calculator("CE",1,"1")).toEqual("0")
+		expect(calculator("AC",3,"123")).toEqual(0)
+		expect(calculator("CE",3,"123")).toEqual(12)
+		expect(calculator("CE",1,"1")).toEqual(0)
   })  
   
   test('Checking if the calculation is preformed', () => {
