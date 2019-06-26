@@ -3,7 +3,8 @@ const {
 	calculate,
 	clearAC,
 	clearCE,
-	calculator
+	calculator,
+	errorHandling
 } = require('../calc-assets/calc.js');
 
 describe('calculations', function() {
@@ -26,7 +27,7 @@ describe('calculations', function() {
 	});
 });
 
-describe('Clearing one element', function() {
+describe('clear one element', function() {
 	it('clear one element', function(done) {
 		assert.equal(clearCE(6, "123456"), "12345");
 		done();
@@ -41,7 +42,7 @@ describe('Clearing one element', function() {
 	});
 });
 
-describe('Clearing All', function() {
+describe('clear all', function() {
 	it('clearing all elements', function(done) {
 		assert.equal(clearAC("123456"), "0");
 		done();
@@ -52,16 +53,6 @@ describe('Clearing All', function() {
 	});
 });
 
-describe('button input', function() {
-	it('clearing all elements', function(done) {
-		assert.equal(clearAC("123456"), "0");
-		done();
-	});
-	it('clearing ', function(done) {
-		assert.equal(clearAC("9"), "0");
-		done();
-	});
-});
 describe('Checking for error thrown by the calculate function', function() {
 	it('returns error for number larger than 8', function(done) {
 		assert.equal(calculate("999999999999*999999"), "Lrg");

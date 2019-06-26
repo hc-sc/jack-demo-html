@@ -87,5 +87,6 @@ module.exports = {
 	calculate,
 	clearAC,
 	clearCE,
-	calculator
+	calculator,
+	errorHandling
 }
