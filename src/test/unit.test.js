@@ -69,7 +69,7 @@ describe('Checking for error thrown by the calculate function', function() {
 });
 
 describe('Calculator function', function() {
-	it('check return after entering 2', function(done) {
+	it('check return after entering a number', function(done) {
 		assert.equal(calculator("1",0,""), "1");
 		assert.equal(calculator("2",0,""), "2");
 		assert.equal(calculator("3",0,""), "3");
@@ -105,6 +105,13 @@ describe('Calculator function', function() {
 		assert.equal(calculator("=",3,"..2"), "Err");
 		assert.equal(calculator("=",5,"..2+2"), "Err");
 		assert.equal(calculator("=",9,"9*9999999"), "Lrg");
+		done();
+	});
+});
+
+describe('Calculator function', function() {
+	it('check return after entering a number', function(done) {
+		assert.equal(calculator("8",3,"100", true), "8");
 		done();
 	});
 });

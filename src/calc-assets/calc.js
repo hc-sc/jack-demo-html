@@ -10,7 +10,7 @@ for (var i = 0; i < buttons.length; i++) {
 		var btnText = this.innerHTML;
 		var size = output.innerHTML.length;
 		var input = output.innerHTML;
-		input = errorHandling(btnText, size, input);
+		input = errorHandling(btnText, size, input, result);
 		output.innerHTML = calculator(btnText, size, input);
 	}
 }
@@ -38,7 +38,7 @@ function calculator(textButton, size, input){
 	return input;
 }
 
-function errorHandling(textButton, size, input){
+function errorHandling(textButton, size, input, result){
 	if (input == '0' && textButton != '.' && operator.indexOf(textButton) == -1){
 		size = 0;
 		result = false;
