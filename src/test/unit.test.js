@@ -111,8 +111,8 @@ describe('Calculator function', function() {
 
 describe('Checking if all errors will be handled', function() {
 	it('check return after entering a number', function(done) {
-		assert.equal(calculator("1","Err"), '');
-		assert.equal(calculator("1","Lrg"), '');
+		assert.equal(calculator("1","Err"), 'undefined1');
+		assert.equal(calculator("1","Lrg"), 'undefined1');
 		done();
 	});
 });
