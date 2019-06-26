@@ -1,16 +1,16 @@
 var buttons = document.body.querySelectorAll('.buttons > button');
 var output = document.querySelector('.window');
 var operator = ['×', '÷', '-', '+', '%'];
-
-var result = false;
 var equation = '';
+var result = false;
+var size = 0;
 
 for (var i = 0; i < buttons.length; i++) {
 	buttons[i].onclick = function(e) {
 		var btnText = this.innerHTML;
 		var size = output.innerHTML.length;
 		var input = output.innerHTML;
-		input = errorHandling(btnText, size, input, result);
+		input = errorHandling(btnText, input);
 		output.innerHTML = calculator(btnText, size, input);
 	}
 }
@@ -27,7 +27,6 @@ function calculator(textButton, size, input){
 	} else if (textButton === '.' && !oversize) {
 			input += '.';
 	} else if (textButton === '=') {
-		result = true;
 		input = calculate(input);
 	} else {
 		if (!oversize) {
@@ -38,7 +37,7 @@ function calculator(textButton, size, input){
 	return input;
 }
 
-function errorHandling(textButton, size, input, result){
+function errorHandling(textButton, input){
 	if (input == '0' && textButton != '.' && operator.indexOf(textButton) == -1){
 		size = 0;
 		result = false;
@@ -74,11 +73,14 @@ function calculate(sequence) {
 	try {
 		var equal = Math.round(eval(equation) * 100) / 100;
 		if (equation.length > 8) {
+			result = false;
 			return 'Lrg';
 		} else {
+			result = true;
 			return equal;
 		}
 	} catch (error) {
+		result = false;
 		return 'Err';
 	}
 }
