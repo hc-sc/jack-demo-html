@@ -77,7 +77,7 @@ function calculate(sequence) {
 			return 'Lrg';
 		} else {
 			result = true;
-			return equal;
+			return (string) equal;
 		}
 	} catch (error) {
 		result = false;
