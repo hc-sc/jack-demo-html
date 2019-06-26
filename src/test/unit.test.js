@@ -104,7 +104,7 @@ describe('Checking if all errors will be handled', () => {
 	  expect(errorHandling('1','Err')).toBe('')
 	  expect(errorHandling('1','Lrg')).toBe('')
 	  
-	  expect(errorHandling('=','Lrg')).toBeNaN()
+	  expect(errorHandling("=","Lrg")).toBeNaN()
 	  expect(errorHandling('=','Err')).toBeNaN()
 
   })  
