@@ -107,4 +107,31 @@ describe('Checking if all errors will be handled', () => {
   test('using the calc after an error is displayed', () => {
 	  expect(errorHandling(".","Lrg")).toHaveBeenCalled('')
 	  expect(errorHandling("+","Err")).toHaveBeenCalled('')
-	
+	  expect(errorHandling("1","Err")).toHaveBeenCalled('')
+	  expect(errorHandling("1","Lrg")).toHaveBeenCalled('')
+  })  
+  
+  /**
+	Tests to be implemented: 
+		- check if the result will be earsed after the user hits equal 
+		- check if the user will be able to cont with the previous answer if they hit an operator 
+	**/
+  test('erase the previous answer if the user doesnt input an operator', () => {
+    expect(errorHandling("1","0")).toHaveBeenCalled('')
+  })  
+  
+  test('no errors to handle', () => {	
+    expect(errorHandling("+","1")).toHaveBeenCalled('1')
+    expect(errorHandling("=","12+1")).toHaveBeenCalled('12+1')
+  })
+})
+
+
+
+
+
+
+
+
+
+
