@@ -45,17 +45,11 @@ describe('clear All', () => {
 })
 
 describe('Checking for error thrown by the calculate function', () => {	
-  test('returns error for number larger than 8', () => {
-		expect(calculate('999999999999*999999')).toBe('Lrg')
-  })  
-  
-  test('returns error for missing operator (90*)', () => {
-		expect(calculate('90*')).toBe('Err')
-  })  
-  
-  test('eturns error for letter in equation', () => {	
-		expect(calculate('x+4')).toBe('Err')
-  })
+  test('returning the correct errors', () => {
+	expect(calculate('999999999999*999999')).toBe('Lrg')
+	expect(calculate('90*')).toBe('Err')
+	expect(calculate('x+4')).toBe('Err')
+	expect(calculate('=')).toBeNaN()
 })
 
 describe('Calculator function', () => {
