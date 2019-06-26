@@ -1,4 +1,3 @@
-var assert = require('assert');
 const {
 	calculate,
 	clearAC,
