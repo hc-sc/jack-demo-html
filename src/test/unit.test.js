@@ -29,7 +29,7 @@ describe('clear one element', () => {
 		expect(clearCE(6, "123456")).toEqual("12345")
   })    
   test('clearing one out of one elements', () => {
-		expect(clearCE(1, "9")).toEqual("0")
+		expect(clearCE(1, "9")).toEqual(0)
   })    
   test('clearing an operator', () => {
 		expect(clearCE(2, "9+")).toEqual("9")
@@ -78,7 +78,7 @@ describe('Calculator function', () => {
   })  
   
   test('Checking if the calculation is preformed', () => {
-		expect(calculator("=",3,"1+1")).toEqual("2")
+		expect(calculator("=",3,"1+1")).toEqual(2)
 		expect(calculator("=",3,"6-4")).toEqual("2")
 		expect(calculator("=",3,"2*2")).toEqual("4")
 		expect(calculator("=",3,"4/2")).toEqual("2")
