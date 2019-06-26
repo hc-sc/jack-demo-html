@@ -34,7 +34,7 @@ function calculator(textButton, size, input){
 			input += textButton;
 		}
 	}
-	return input;
+	return String(input);
 }
 
 function errorHandling(textButton, input){
@@ -77,7 +77,7 @@ function calculate(sequence) {
 			return 'Lrg';
 		} else {
 			result = true;
-			return (string) equal;
+			return String(equal);
 		}
 	} catch (error) {
 		result = false;
