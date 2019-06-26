@@ -79,12 +79,12 @@ describe('Calculator function', () => {
   
   test('Checking if the calculation is preformed', () => {
 		expect(calculator("=",3,"1+1")).toEqual(2)
-		expect(calculator("=",3,"6-4")).toEqual("2")
-		expect(calculator("=",3,"2*2")).toEqual("4")
-		expect(calculator("=",3,"4/2")).toEqual("2")
-		expect(calculator("=",3,"-2+2")).toEqual("0")
-		expect(calculator("=",2,".2")).toEqual("0.2")
-		expect(calculator("=",3,"2.0")).toEqual("2")
+		expect(calculator("=",3,"6-4")).toEqual(2)
+		expect(calculator("=",3,"2*2")).toEqual(4)
+		expect(calculator("=",3,"4/2")).toEqual(2)
+		expect(calculator("=",3,"-2+2")).toEqual(0)
+		expect(calculator("=",2,".2")).toEqual(0.2)
+		expect(calculator("=",3,"2.0")).toEqual(2)
   })  
   
   test('checking for errors', () => {	
