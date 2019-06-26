@@ -38,9 +38,9 @@ describe('clear one element', () => {
 
 describe('clear All', () => {	
   test('clearing all elements', () => {
-		expect(clearAC("123456")).toEqual("0")
-		expect(clearAC("9")).toEqual("0")
-		expect(clearAC("0")).toEqual("0")
+		expect(clearAC("123456")).toEqual(0)
+		expect(clearAC("9")).toEqual(0)
+		expect(clearAC("0")).toEqual(0)
   })  
 })
 
@@ -100,8 +100,8 @@ describe('Checking if all errors will be handled', () => {
   test('inputing values as soon as the page loads', () => {
     expect(errorHandling("1","0")).toEqual('')
 	//This happens in the case the user wants to input a negative int
-    expect(errorHandling("+","0")).toEqual('+')
-    expect(errorHandling("-","0")).toEqual('-')
+    expect(errorHandling("+","0")).toEqual('0')
+    expect(errorHandling("-","0")).toEqual('0')
   })  
   
   test('using the calc after an error is displayed', () => {
