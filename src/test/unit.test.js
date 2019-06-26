@@ -49,7 +49,6 @@ describe('Checking for error thrown by the calculate function', () => {
 	expect(calculate('999999999999*999999')).toBe('Lrg')
 	expect(calculate('90*')).toBe('Err')
 	expect(calculate('x+4')).toBe('Err')
-	expect(calculate('Err')).toBeNaN()
 	})
 })
 describe('Calculator function', () => {
@@ -87,6 +86,10 @@ describe('Calculator function', () => {
 		expect(calculator('=',3,'..2')).toBe('Err')
 		expect(calculator('=',5,'..2+2')).toBe('Err')
 		expect(calculator('=',9,'9*9999999')).toBe('Lrg')
+		expect(calculator('=',3,'Err')).toBeNaN()
+		expect(calculator('=',3,'Lrg')).toBeNaN()
+		expect(calculator('=',0,'')).toBeNaN()
+		expect(calculator('=',1,'0')).toBeNaN()
   })
 })
 
