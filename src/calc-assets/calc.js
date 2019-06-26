@@ -1,16 +1,16 @@
 var buttons = document.body.querySelectorAll('.buttons > button');
 var output = document.querySelector('.window');
 var operator = ['×', '÷', '-', '+', '%'];
-
-var result = false;
 var equation = '';
+var result = false;
+var size = 0;
 
 for (var i = 0; i < buttons.length; i++) {
 	buttons[i].onclick = function(e) {
 		var btnText = this.innerHTML;
 		var size = output.innerHTML.length;
 		var input = output.innerHTML;
-		input = errorHandling(btnText, size, input);
+		input = errorHandling(btnText, input);
 		output.innerHTML = calculator(btnText, size, input);
 	}
 }
@@ -27,7 +27,6 @@ function calculator(textButton, size, input){
 	} else if (textButton === '.' && !oversize) {
 			input += '.';
 	} else if (textButton === '=') {
-		result = true;
 		input = calculate(input);
 	} else {
 		if (!oversize) {
@@ -35,10 +34,10 @@ function calculator(textButton, size, input){
 			input += textButton;
 		}
 	}
-	return input;
+	return String(input);
 }
 
-function errorHandling(textButton, size, input){
+function errorHandling(textButton, input){
 	if (input == '0' && textButton != '.' && operator.indexOf(textButton) == -1){
 		size = 0;
 		result = false;
@@ -58,14 +57,14 @@ function errorHandling(textButton, size, input){
 function clearAC(input) {
 	operatorFlag = false;
 	equation = '';
-	return 0;
+	return '0';
 }
 
 function clearCE(length, input) {
 	if (length > 1) {
 		return input.slice(0, input.length - 1);
 	}
-	return 0;
+	return '0';
 }
 
 function calculate(sequence) {
@@ -74,11 +73,14 @@ function calculate(sequence) {
 	try {
 		var equal = Math.round(eval(equation) * 100) / 100;
 		if (equation.length > 8) {
+			result = false;
 			return 'Lrg';
 		} else {
-			return equal;
+			result = true;
+			return String(equal);
 		}
 	} catch (error) {
+		result = false;
 		return 'Err';
 	}
 }
