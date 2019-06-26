@@ -110,13 +110,26 @@ describe('Calculator function', function() {
 });
 
 describe('Checking if all errors will be handled', function() {
-	it('check return after entering a number', function(done) {
+	it('Check the return with errors present', function(done) {
+		//Checking if the input will clear when inputing a value
 		assert.equal(errorHandling("1","0"), '');
+		//Checking for the second if statment
+		assert.equal(errorHandling(".","Lrg"), '');
+		assert.equal(errorHandling("+","Err"), '');
 		assert.equal(errorHandling("1","Err"), '');
 		assert.equal(errorHandling("1","Lrg"), '');
+		//Skiping the if statments 	
+		assert.equal(errorHandling("+","1"), '1');
+		assert.equal(errorHandling("=","12+1"), '12+1');	
+
+
 		done();
 	});
 });
+
+
+
+
 
 
 
