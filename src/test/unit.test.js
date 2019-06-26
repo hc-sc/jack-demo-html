@@ -113,7 +113,7 @@ describe('Calculator function', function() {
 		assert.equal(calculator("=",5,"1.2.3"), "Err");		
 		assert.equal(calculator("=",3,"..2"), "Err");
 		assert.equal(calculator("=",5,"..2+2"), "Err");
-		assert.equal(calculator("=",0,""), "NaN");
+		assert.equal(calculator("=",0,""), NaN);
 		assert.equal(calculator("=",9,"9*9999999"), "Lrg");
 		done();
 	});
