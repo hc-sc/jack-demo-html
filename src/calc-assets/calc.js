@@ -57,14 +57,14 @@ function errorHandling(textButton, input){
 function clearAC(input) {
 	operatorFlag = false;
 	equation = '';
-	return 0;
+	return '0';
 }
 
 function clearCE(length, input) {
 	if (length > 1) {
 		return input.slice(0, input.length - 1);
 	}
-	return 0;
+	return '0';
 }
 
 function calculate(sequence) {
