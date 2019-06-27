@@ -83,32 +83,53 @@ describe('Testing calculator functions', () => {
   })  
 })
 
-
 describe('clear one element', () => {	
-  test('clear one number', () => {
+  test('clear one charcter', () => {
 		expect(clearCE(6, '123456')).toBe('12345')
-  })    
-  test('clearing one out of one elements', () => {
+		expect(clearCE(5, '56+67')).toBe('56+6')
+		expect(clearCE(4, '12.3')).toBe('12.')
+		expect(clearCE(3, '12.')).toBe('12')
 		expect(clearCE(1, '9')).toBe('0')
-  })    
+  })
   test('clearing an operator', () => {
 		expect(clearCE(2, '9+')).toBe('9')
-  })  
+		expect(clearCE(1, '.')).toBe('0')
+		expect(clearCE(2, '-9')).toBe('-')
+		expect(clearCE(1, '-')).toBe('0')
+  })
+  test('check for multiple clears', () => {
+		var cl = clear(3,'123')
+		var cl = clear(2,cl)
+		expect(clearCE(1, cl)).toBe('0')
+  })    
 })
 
 describe('clear All', () => {	
-  test('clearing all elements', () => {
+  test('clearing input', () => {
 		expect(clearAC('123456')).toBe('0')
 		expect(clearAC('9')).toBe('0')
 		expect(clearAC('0')).toBe('0')
+  })
+  test('clearing equation', () => {
+		expect(clearAC('12+3')).toBe('0')
+		expect(clearAC('5/6')).toBe('0')
+		expect(clearAC('0+0')).toBe('0')
+  })  
+  test('clearing result', () => {
+		var calc = calculate('12+3')
+		expect(clearAC(calc)).toBe('0')
   })  
 })
 
+
+
 describe('Checking for error thrown by the calculate function', () => {	
-  test('returning the correct errors', () => {
-	expect(calculate('999999999999*999999')).toBe('Lrg')
+  test('throw a wrong formating error', () => {
 	expect(calculate('90*')).toBe('Err')
 	expect(calculate('x+4')).toBe('Err')
+	})	
+  test('thow a large number error', () => {
+	expect(calculate('999999999999*999999')).toBe('Lrg')
 	})
 })
 describe('Calculator function', () => {
@@ -151,6 +172,7 @@ describe('Calculator function', () => {
 })
 
 describe('Checking if all errors will be handled', () => {	
+  // This is not correct. results are not what to be expected. 
   test('inputing values as soon as the page loads', () => {
     expect(errorHandling('1','0')).toBe('')
 	//This happens in the case the user wants to input a negative int
@@ -166,7 +188,6 @@ describe('Checking if all errors will be handled', () => {
 
   })    
 
-  
   /**
 	Tests to be implemented: 
 		- check if the result will be earsed after the user hits equal 
