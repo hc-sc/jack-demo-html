@@ -57,6 +57,7 @@ function errorHandling(textButton, input) {
 		input = '';
 		beg = false;
 	}
+	console.log('2 - ' + size + '  ' + input);
 	return input;
 }
 
