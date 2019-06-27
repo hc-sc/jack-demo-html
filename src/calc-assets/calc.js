@@ -40,7 +40,7 @@ function calculator(textButton, size, input) {
 	return String(input);
 }
 
-function errorHandling(textButton, input, beg) {	
+function errorHandling(textButton, input, beg) {
 	if (input == '0' && textButton != '.' && beg) {
 		size = 0;
 		result = false;
@@ -57,7 +57,6 @@ function errorHandling(textButton, input, beg) {
 		input = '';
 		beg = false;
 	}
-	console.log('2 - ' + size + '  ' + input);
 	return input;
 }
 
