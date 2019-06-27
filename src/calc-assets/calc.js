@@ -4,6 +4,7 @@ const operator = ['×', '÷', '-', '+', '%'];
 var equation = '';
 var result = false;
 var size = 0;
+var beg = true;
 
 for (var i = 0; i < buttons.length; i++) {
 	buttons[i].onclick = function(e) {
@@ -15,7 +16,7 @@ for (var i = 0; i < buttons.length; i++) {
 	}
 }
 
-function calculator(textButton, size, input){
+function calculator(textButton, size, input) {
 	var oversize = false;
 	if (size > 8) {
 		oversize = true;
@@ -25,37 +26,42 @@ function calculator(textButton, size, input){
 	} else if (textButton === 'CE') {
 		input = clearCE(input.length, input);
 	} else if (textButton === '.' && !oversize) {
-			input += '.';
+		beg = false;
+		input += '.';
 	} else if (textButton === '=') {
+		beg = false;
 		input = calculate(input);
-	} else {
-		if (!oversize) {
-			result = false;
-			input += textButton;
-		}
+	} else if (!oversize) {
+		beg = false;
+		result = false;
+		input += textButton;
 	}
 	return String(input);
 }
 
-function errorHandling(textButton, input){
-	if (input == '0' && textButton != '.' && operator.indexOf(textButton) == -1){
+function errorHandling(textButton, input) {
+	if (input == '0' && textButton != '.' && beg) {
 		size = 0;
 		result = false;
 		input = '';
-	}else if (input == 'Err' || input == 'Lrg'){
+		beg = false;
+	} else if (result && operator.indexOf(textButton) == -1) {
 		size = 0;
 		result = false;
 		input = '';
-	}else if(result && operator.indexOf(textButton) == -1){
-		size = 0;			
+		beg = false;
+	} else if (input == 'Err' || input == 'Lrg') {
+		size = 0;
 		result = false;
 		input = '';
+		beg = false;
 	}
-	return input;	
+	return input;
 }
 
 function clearAC(input) {
 	operatorFlag = false;
+	beg = true;
 	equation = '';
 	return '0';
 }
@@ -64,6 +70,7 @@ function clearCE(length, input) {
 	if (length > 1) {
 		return input.slice(0, input.length - 1);
 	}
+	beg = true;
 	return '0';
 }
 
@@ -77,7 +84,8 @@ function calculate(sequence) {
 			return 'Lrg';
 		} else {
 			result = true;
-			return String(equal);
+			beg = false;
+			return equal;
 		}
 	} catch (error) {
 		result = false;

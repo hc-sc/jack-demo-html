@@ -7,20 +7,80 @@ const {
 } = require('../calc-assets/calc.js');
 
 describe('Testing calculator functions', () => {	
-  test('2 number calculation', () => {
-		expect(calculate('1+1')).toBe('2')
-		expect(calculate('6-4')).toBe('2')
-		expect(calculate('2*2')).toBe('4')
-		expect(calculate('4/2')).toBe('2')
-		expect(calculate('-2+2')).toBe('0')
-  })    
-  test('decimal calculation', () => {
-		expect(calculate('1.9+1.1')).toBe('3')
-		expect(calculate('6.7-4.2')).toBe('2.5')
-		expect(calculate('2.1*2.8')).toBe('5.88')
-		expect(calculate('4.6/2.3')).toBe('2')
-		expect(calculate('-2+2.2')).toBe('0.2')
-  })    
+// regular operations
+  test('2 number addition', () => {
+		expect(calculate('1+1')).toBe(2)
+		expect(calculate('6+4')).toBe(10)
+		expect(calculate('2+2')).toBe(4)
+		expect(calculate('4+2')).toBe(6)
+		expect(calculate('20+60')).toBe(80)
+  }) 
+  test('2 number subtraction', () => {
+		expect(calculate('1-1')).toBe(0)
+		expect(calculate('6-4')).toBe(2)
+		expect(calculate('2-2')).toBe(0)
+		expect(calculate('4-2')).toBe(2)
+		expect(calculate('20-60')).toBe(-40)
+  }) 
+  test('2 number multiplication', () => {
+		expect(calculate('1*1')).toBe(1)
+		expect(calculate('6*4')).toBe(24)
+		expect(calculate('2*2')).toBe(4)
+		expect(calculate('4*2')).toBe(8)
+		expect(calculate('20*60')).toBe(1200)
+  })   
+  test('2 number division', () => {
+		expect(calculate('1/1')).toBe(1)
+		expect(calculate('0/2')).toBe(0)
+		expect(calculate('2/0')).toBe('Infinity')
+		expect(calculate('4/2')).toBe(2)
+		expect(calculate('60/20')).toBe(3)
+  })   
+  
+  test('2 number negation', () => {
+		expect(calculate('-1+1')).toBe(0)
+		expect(calculate('-6-4')).toBe(-10)
+		expect(calculate('-2*2')).toBe(-4)
+		expect(calculate('-4/2')).toBe(-2)
+		expect(calculate('-2+2')).toBe(0)
+  }) 
+
+// Decimal
+  test('decimal addition', () => {
+		expect(calculate('1.9+1.1')).toBe(3)
+		expect(calculate('6.7+4.2')).toBe(10.9)
+		expect(calculate('2.1+2.8')).toBe(4.9)
+		expect(calculate('4.6+2.3')).toBe(6.9)
+		expect(calculate('-2+2.2')).toBe(0.2)
+  })  
+  test('decimal subtraction', () => {
+		expect(calculate('1.9-1.1')).toBe(0.8)
+		expect(calculate('6.7-4.2')).toBe(2.5)
+		expect(calculate('2.1-2.8')).toBe(-0.7)
+		expect(calculate('4.6-2.3')).toBe(2.3)
+		expect(calculate('-2-2.2')).toBe(-4.2)
+  })  
+  test('decimal multiplication', () => {
+		expect(calculate('1.9*1.1')).toBeCloseTo(2.09,5)
+		expect(calculate('6.7*4.2')).toBeCloseTo(28.14,5)
+		expect(calculate('2.1*2.8')).toBeCloseTo(5.88,5)
+		expect(calculate('-4.6*-2.3')).toBeCloseTo(2,5)
+		expect(calculate('-2*2.2')).toBeCloseTo(0.2,5)
+  })  
+  // test('decimal division', () => {
+		// expect(calculate('1.9+1.1')).toBe('3')
+		// expect(calculate('6.7-4.2')).toBe('2.5')
+		// expect(calculate('2.1*2.8')).toBe('5.88')
+		// expect(calculate('4.6/2.3')).toBe('2')
+		// expect(calculate('-2+2.2')).toBe('0.2')
+  // })  
+  // test('decimal negation', () => {
+		// expect(calculate('1.9+1.1')).toBe('3')
+		// expect(calculate('6.7-4.2')).toBe('2.5')
+		// expect(calculate('2.1*2.8')).toBe('5.88')
+		// expect(calculate('4.6/2.3')).toBe('2')
+		// expect(calculate('-2+2.2')).toBe('0.2')
+  // })  
 })
 
 
