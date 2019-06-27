@@ -79,7 +79,7 @@ function calculate(sequence) {
 	equation = equation.replace(/÷/g, '/');
 	try {
 		var equal = Math.round(eval(equation) * 100) / 100;
-		if (equation.length > 10) {
+		if (equation.length > 9) {
 			result = false;
 			return 'Lrg';
 		} else {
