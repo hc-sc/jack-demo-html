@@ -181,9 +181,9 @@ describe('Calculator function', () => {
 describe('Checking if all errors will be handled', () => {
 	
 	test('inputing values as soon as the page loads', () => {
-		expect(errorHandling('1', '0')).toBe('')
-		expect(errorHandling('+', '0')).toBe('')
-		expect(errorHandling('-', '0')).toBe('')
+		expect(errorHandling('1', '0', true)).toBe('')
+		expect(errorHandling('+', '0', true)).toBe('')
+		expect(errorHandling('-', '0', true)).toBe('')
 	})
 
 	test('using the calc after an error is displayed', () => {
