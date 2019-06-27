@@ -10,6 +10,7 @@ for (var i = 0; i < buttons.length; i++) {
 	buttons[i].onclick = function(e) {
 		var btnText = this.innerHTML;
 		var size = output.innerHTML.length;
+		if (size == 0) beg = true;
 		var input = output.innerHTML;
 		input = errorHandling(btnText, input);
 		output.innerHTML = calculator(btnText, size, input);
@@ -39,8 +40,7 @@ function calculator(textButton, size, input) {
 	return String(input);
 }
 
-function errorHandling(textButton, input) {
-	console.log('This is before the if statments' + input);	
+function errorHandling(textButton, input) {	
 	if (input == '0' && textButton != '.' && beg) {
 		size = 0;
 		result = false;
@@ -57,7 +57,6 @@ function errorHandling(textButton, input) {
 		input = '';
 		beg = false;
 	}
-	console.log('This is after the if statments' + input);
 	return input;
 }
 
