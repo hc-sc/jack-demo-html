@@ -98,8 +98,8 @@ describe('clear one element', () => {
 		expect(clearCE(1, '-')).toBe('0')
   })
   test('check for multiple clears', () => {
-		var cl = clear(3,'123')
-		var cl = clear(2,cl)
+		var cl = clearCE(3,'123')
+		var cl = clearCE(2,cl)
 		expect(clearCE(1, cl)).toBe('0')
   })    
 })
