@@ -12,7 +12,7 @@ for (var i = 0; i < buttons.length; i++) {
 		var size = output.innerHTML.length;
 		if (size == 0) beg = true;
 		var input = output.innerHTML;
-		input = errorHandling(btnText, input);
+		input = errorHandling(btnText, input, beg);
 		output.innerHTML = calculator(btnText, size, input);
 	}
 }
@@ -40,8 +40,8 @@ function calculator(textButton, size, input) {
 	return String(input);
 }
 
-function errorHandling(textButton, input) {	
-	if (input == '0' && textButton != '.') {
+function errorHandling(textButton, input, beg) {	
+	if (input == '0' && textButton != '.' && beg) {
 		size = 0;
 		result = false;
 		input = '';
