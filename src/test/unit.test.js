@@ -153,10 +153,9 @@ describe('Calculator function', () => {
 describe('Checking if all errors will be handled', () => {	
   test('inputing values as soon as the page loads', () => {
     expect(errorHandling('1','0')).toBe('')
-	
 	//This happens in the case the user wants to input a negative int
-    expect(errorHandling('+','0')).toBe('0')
-    expect(errorHandling('-','0')).toBe('0')
+    expect(errorHandling('+','0')).toBe('')
+    expect(errorHandling('-','0')).toBe('')
   })  
   
   test('using the calc after an error is displayed', () => {
@@ -165,7 +164,8 @@ describe('Checking if all errors will be handled', () => {
 	  expect(errorHandling('1','Err')).toBe('')
 	  expect(errorHandling('1','Lrg')).toBe('')
 
-  })  
+  })    
+
   
   /**
 	Tests to be implemented: 

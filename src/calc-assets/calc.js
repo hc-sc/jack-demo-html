@@ -40,6 +40,7 @@ function calculator(textButton, size, input) {
 }
 
 function errorHandling(textButton, input) {
+	console.log('This is before the if statments' + input);	
 	if (input == '0' && textButton != '.' && beg) {
 		size = 0;
 		result = false;
@@ -56,6 +57,7 @@ function errorHandling(textButton, input) {
 		input = '';
 		beg = false;
 	}
+	console.log('This is after the if statments' + input);
 	return input;
 }
 
