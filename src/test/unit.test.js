@@ -145,7 +145,7 @@ describe('Calculator function', () => {
 		expect(calculator('=',5,'1.2.3')).toBe('Err')
 		expect(calculator('=',3,'..2')).toBe('Err')
 		expect(calculator('=',5,'..2+2')).toBe('Err')
-		expect(calculator('=',9,'9*9999999')).toBe('Lrg')
+		expect(calculator('=',9,'9*99999999')).toBe('Lrg')
 		expect(calculator('=',0,'')).toBe('NaN')
   })
 })
