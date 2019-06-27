@@ -1,6 +1,6 @@
 var buttons = document.body.querySelectorAll('.buttons > button');
 var output = document.querySelector('.window');
-var operator = ['×', '÷', '-', '+', '%'];
+const operator = ['×', '÷', '-', '+', '%'];
 var equation = '';
 var result = false;
 var size = 0;
