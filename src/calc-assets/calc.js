@@ -41,7 +41,7 @@ function calculator(textButton, size, input) {
 }
 
 function errorHandling(textButton, input) {	
-	if (input == '0' && textButton != '.' && beg) {
+	if (input == '0' && textButton != '.') {
 		size = 0;
 		result = false;
 		input = '';
