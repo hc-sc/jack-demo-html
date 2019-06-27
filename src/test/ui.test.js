@@ -26,4 +26,30 @@ describe('Calculator Tests', () => {
          const text = await (await element.getProperty('textContent')).jsonValue();
          expect(text).toBe('9+');
   });
+ test("inputting 9+5= should display 14", async () => {
+	await page.click('button[id="five"]');
+	await page.click('button[id="ans"]');
+         const element = await page.$(".window");
+         const text = await (await element.getProperty('textContent')).jsonValue();
+         expect(text).toBe('14');
+  });
+test("clicking AC should display 0", async () => {
+        await page.click('button[id="AC"]');
+         const element = await page.$(".window");
+         const text = await (await element.getProperty('textContent')).jsonValue();
+         expect(text).toBe('0');
+  });
+ test("inputting 3*125= should display 375", async () => {
+        await page.click('button[id="three"]');
+        await page.click('button[id="multiply"]');
+ 	await page.click('button[id="one"]');
+	await page.click('button[id="two"]');
+	await page.click('button[id="five"]');
+ 	await page.click('button[id="ans"]');
+         const element = await page.$(".window");
+         const text = await (await element.getProperty('textContent')).jsonValue();
+         expect(text).toBe('375');
+  });
+
+
 })
