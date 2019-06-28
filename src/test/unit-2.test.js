@@ -80,20 +80,5 @@ describe('Testing calculator functions', () => {
 	})
 })
 
-describe('thrown errors from calculate function', () => {
-	test('throw a wrong formating error', () => {
-		expect(calculate('90*')).toBe('Err')
-		expect(calculate('x+4')).toBe('Err')
-		expect(calculate('*')).toBe('Err')
-		expect(calculate('+')).toBe('Err')
-		expect(calculate('-')).toBe('Err')
-		expect(calculate('hi')).toBe('Err')
-	})
-	test('thow a large number error', () => {
-		expect(calculate('999999999999*999999')).toBe('Lrg')
-		expect(calculate('88888888888888*999999')).toBe('Lrg')
-		expect(calculate('888888888887777+999999')).toBe('Lrg')
-		expect(calculate('999999999999999999999999')).toBe('Lrg')
-	})
-})
+
 
