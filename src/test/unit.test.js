@@ -3,7 +3,6 @@ const {
 	errorHandling
 } = require('../calc-assets/calc.js');
 
-
 describe('Checking if all errors will be handled', () => {
 	test('inputing values as soon as the page loads', () => {
 		expect(errorHandling('1', '0', true)).toBe('')
