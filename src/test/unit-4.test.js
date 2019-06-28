@@ -1,4 +1,7 @@
-const calculator = require('../calc-assets/calc.js');
+const {
+	calculator
+} = require('../calc-assets/calc.js');
+
 describe('Calculator function', () => {
 	test('check return after entering a number', () => {
 		expect(calculator('1', 0, '')).toBe('1')
