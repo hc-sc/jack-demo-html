@@ -10,11 +10,8 @@ describe('General Tests', () => {
     const landscape = await page.$eval(".landscape", el => (el ? true : false));
     expect(landscape).toBe(true);
   });
-  test("should select the 'something is broken' checkbox", async () => {
-    await page.click('summary[class="btn btn-default text-center"]');
-    await page.click('input[id="problem1"]');
-    // expect(landscape).toBe(true);
-  });
+
+
 })
 
 describe('Calculator Tests', () => {
@@ -68,7 +65,36 @@ test("clicking AC should display 0", async () => {
          const text = await (await element.getProperty('textContent')).jsonValue();
          expect(text).toBe('2.8');
   });
+})
 
+describe('Error Tests', () => {
+
+  test("inputting 7++= should display 'Err'", async () => {
+        await page.click('button[id="AC"]');
+        await page.click('button[id="seven"]');
+        await page.click('button[id="add"]');
+        await page.click('button[id="add"]');
+        await page.click('button[id="ans"]');
+         const element = await page.$(".window");
+         const text = await (await element.getProperty('textContent')).jsonValue();
+         expect(text).toBe('Err');
+});
+ test("inputting 9999*9999= should display 'Lrg'", async () => {
+        await page.click('button[id="AC"]');
+        await page.click('button[id="nine"]');
+        await page.click('button[id="nine"]');
+        await page.click('button[id="nine"]');
+	await page.click('button[id="nine"]');
+	await page.click('button[id="multiply"]');
+	await page.click('button[id="nine"]');
+	await page.click('button[id="nine"]');
+	await page.click('button[id="nine"]');
+	await page.click('button[id="nine"]');
+        await page.click('button[id="ans"]');
+         const element = await page.$(".window");
+         const text = await (await element.getProperty('textContent')).jsonValue();
+         expect(text).toBe('Lrg');
+});
 
 })
 
