@@ -1,6 +1,7 @@
 const {
 	clearAC,
-	clearCE
+	clearCE,
+	calculate
 } = require('../calc-assets/calc.js');
 
 describe('clear one element', () => {
