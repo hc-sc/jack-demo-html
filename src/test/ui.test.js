@@ -52,6 +52,19 @@ test("clicking AC should display 0", async () => {
          const text = await (await element.getProperty('textContent')).jsonValue();
          expect(text).toBe('375');
   });
+test("inputting 77/11= should display 7", async () => {
+        await page.click('button[id="AC"]');
+	await page.click('button[id="seven"]');
+        await page.click('button[id="seven"]');
+        await page.click('button[id="divide"]');
+        await page.click('button[id="one"]');
+        await page.click('button[id="one"]');
+        await page.click('button[id="ans"]');
+         const element = await page.$(".window");
+         const text = await (await element.getProperty('textContent')).jsonValue();
+         expect(text).toBe('7');
+  });
+
  test("inputting 4.5-1.7= should display 2.8", async () => {
         await page.click('button[id="AC"]');
 	await page.click('button[id="four"]');
@@ -96,7 +109,7 @@ describe('Error Tests', () => {
          const text = await (await element.getProperty('textContent')).jsonValue();
          expect(text).toBe('Lrg');
 
-	browser.close();
+	
 });
 
 })
