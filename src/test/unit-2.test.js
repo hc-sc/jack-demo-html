@@ -2,7 +2,6 @@ const {
 	calculate
 } = require('../calc-assets/calc.js');
 
-
 describe('Testing calculator functions', () => {
 	// regular operations
 	test('2 number addition', () => {
