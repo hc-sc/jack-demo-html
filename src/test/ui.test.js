@@ -1,6 +1,7 @@
+
 describe('General Tests', () => {
   beforeAll(async () => {
-    await page.goto('file://localhost/home/bbhowmik/jack-demo-html/dist/index-en.html')
+	await page.goto('file://localhost/home/bbhowmik/jack-demo-html/dist/index-en.html')
   });
 
   test('should display "Date Modified" text on page', async () => {
@@ -94,6 +95,8 @@ describe('Error Tests', () => {
          const element = await page.$(".window");
          const text = await (await element.getProperty('textContent')).jsonValue();
          expect(text).toBe('Lrg');
+
+	browser.close();
 });
 
 })
