@@ -1,9 +1,9 @@
-
 describe('General Tests', () => {
   beforeAll(async () => {
 	await page.goto('file://localhost/home/bbhowmik/jack-demo-html/dist/index-en.html')
   });
-
+ 
+ 
   test('should display "Date Modified" text on page', async () => {
     await expect(page).toMatch('Date modified: 2019-06-04')
   });
@@ -109,6 +109,15 @@ describe('Error Tests', () => {
          const text = await (await element.getProperty('textContent')).jsonValue();
          expect(text).toBe('Lrg');
 
+	
+});
+ // test("save screenshot of page as 'error.png'", async () => {
+   //     await page.screenshot({path:"error.png"});
+// });
+
+
+afterAll(async () => {
+	 await page.screenshot({path:"error.png"});    
 	
 });
 
