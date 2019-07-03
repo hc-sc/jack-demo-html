@@ -1,6 +1,6 @@
 #!/bin/bash
-#This script setsup the sandbox for the UI testing. This script will go back to the original dir after the setup is done
-#Needs to be excuted everytime jenkins runs a new build via > . sandbox-setup.sh
+# this script setsup the sandbox for the UI testing. This script will go back to the original dir after the setup is done
+# needs to be excuted everytime jenkins runs a new build via > . sandbox-setup.sh
 # please note using ./ sandbox-setup.sh will not setup the sandbox since it will not run on the same terminal instance 
 
 echo "installing npm and all its dependencies"
