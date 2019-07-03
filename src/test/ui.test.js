@@ -111,9 +111,6 @@ describe('Error Tests', () => {
 
 	
 });
- // test("save screenshot of page as 'error.png'", async () => {
-   //     await page.screenshot({path:"error.png"});
-// });
 
 
 afterAll(async () => {
