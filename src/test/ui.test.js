@@ -117,7 +117,7 @@ describe('Error Tests', () => {
 
 
 afterAll(async () => {
-	 await page.screenshot({path:"error.png"});    
+	 await page.screenshot({path:"error.png", fullPage: true});    
 	
 });
 
