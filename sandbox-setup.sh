@@ -6,7 +6,6 @@
 echo "installing npm and all its dependencies"
 npm install
 
-
 current_dir=$PWD
 echo "Setup script started will resume to ${current_dir} after completion"
 cd node_modules/puppeteer/.local-chromium/linux-*/chrome-linux/
