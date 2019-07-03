@@ -7,9 +7,7 @@ module.exports = {
           '/src/test/unit-1.test.js',
           '/src/test/unit-2.test.js',
           '/src/test/unit-3.test.js',
-          '/src/test/unit-4.test.js'
-          
+          '/src/test/unit-4.test.js'     
         ]
-    }
-    
+    }    
 ]};
