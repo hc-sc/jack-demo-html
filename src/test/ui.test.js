@@ -1,3 +1,6 @@
+const devices = require('puppeteer/DeviceDescriptors');
+const iPhonex = devices['iPhone X'];
+
 describe('General Tests', () => {
   beforeAll(async () => {
 	await page.goto('file://localhost/home/bbhowmik/jack-demo-html/dist/index-en.html')
@@ -96,8 +99,10 @@ describe('Error Tests', () => {
 
 
 afterAll(async () => {
-	 await page.screenshot({path:"error.png", fullPage: true});    
-	
+	await page.screenshot({path:"error.png", fullPage: true});    
+	await page.emulate(iPhonex);
+	await page.screenshot({path:"mobile.png", fullPage: true});
+	 
 });
 
 })
