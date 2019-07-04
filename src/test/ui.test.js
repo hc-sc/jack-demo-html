@@ -1,6 +1,6 @@
 describe('General Tests', () => {
   beforeAll(async () => {
-	await page.goto('file://localhost/home/bbhowmik/jack-demo-html/dist/index-en.html')
+	await page.goto('file://localhost/home/mradwan/jack-demo-html/dist/index-en.html')
   });
  
  
