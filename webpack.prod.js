@@ -7,7 +7,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const webpack = require('webpack');
-const CompressionPlugin = require('compression-webpack-plugin');
 
 const entry = {
 	'main': './src/index.js'
@@ -71,10 +70,6 @@ const _module = {
 }
 
 const plugins = [
-	new CompressionPlugin({
-		algorithm: 'gzip',
-		test: /\.(js|css|html|svg)$/,
-	}),
 	new FriendlyErrorsWebpackPlugin(),
 	new webpack.optimize.ModuleConcatenationPlugin(),
 	new HtmlWebpackPlugin({
