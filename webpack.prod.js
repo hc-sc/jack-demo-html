@@ -73,7 +73,7 @@ const plugins = [
 	new FriendlyErrorsWebpackPlugin(),
 	new webpack.optimize.ModuleConcatenationPlugin(),
 	new HtmlWebpackPlugin({
-		filename: 'index-en.html',
+		filename: 'index.html',
 		template: './src/main-en.html',
 		minify: {
 			removeAttributeQuotes: true,
