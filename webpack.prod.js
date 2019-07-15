@@ -36,7 +36,7 @@ const optimization = {
 
 const output = {
 	filename: 'main-[contentHash].js',
-	path: path.resolve(__dirname + '/dist/app-html')
+	path: path.resolve(__dirname + '/dist')
 }
 
 const _module = {
