@@ -1,9 +1,3 @@
-[submodule "dist/theme/themes-cdn"]
-	path = dist/theme/themes-cdn
-	url = https://github.com/wet-boew/themes-cdn
-[submodule "dist/theme/wet-boew-cdn"]
-	path = dist/theme/wet-boew-cdn
-	url = https://github.com/wet-boew/wet-boew-cdn
 [submodule "src/theme/themes-cdn"]
 	path = src/theme/themes-cdn
 	url = https://github.com/wet-boew/themes-cdn
