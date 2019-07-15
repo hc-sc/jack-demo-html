@@ -6,10 +6,10 @@
 	-p 443:443 \
     haproxy:1.7
 
-docker run --name nginx-app-html \
+docker run --name app-html \
  	-p 81:80 \
 	-v /home/mradwan/jack-demo-html/dist:/usr/share/nginx/html \
-	-v /home/mradwan/jack-demo-html/theme:/usr/share/nginx/html/theme \
+	-v /home/mradwan/jack-demo-html/theme/GCWeb:/usr/share/nginx/html/theme/GCWeb \
 	-d nginx
 
 docker network connect appnet haproxy-open
