@@ -4,10 +4,10 @@ module.exports = {
       'displayName': 'unit test',
       'testEnvironment': 'jsdom',
       'testRegex':[
-          '/src/test/unit-1.test.js',
-          '/src/test/unit-2.test.js',
-          '/src/test/unit-3.test.js',
-          '/src/test/unit-4.test.js'
+          '/src/test/unit-errorHandling.test.js',
+          '/src/test/unit-calculation.test.js',
+          '/src/test/unit-displayingResult.test.js',
+          '/src/test/unit-clearing.test.js'
 	]  
 },
     {	

@@ -1,6 +1,6 @@
 #!/bin/bash
 current_dir=$PWD
 echo "Building project"
-npm run build-dev
+npm run build-prod
 echo "move theme from src to dist"
-mv $current_dir/src/theme /$current_dir/dist
+cp -a $current_dir/src/theme /$current_dir/dist
