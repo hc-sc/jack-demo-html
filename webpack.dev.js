@@ -30,7 +30,7 @@ const _module = {
 const plugins = [
 	new FriendlyErrorsWebpackPlugin(),
 	new HtmlWebpackPlugin({
-		filename: 'index-en.html',
+		filename: 'index.html',
 		template: './src/main-en.html',
 	}),
 	new HtmlWebpackPlugin({
