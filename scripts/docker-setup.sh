@@ -1,7 +1,7 @@
 #!/bin/bash
 
  docker create --name proxy \
-	-v /home/mradwan/jack-demo-html/haProxy/config/:/usr/local/etc/haproxy:ro \
+	-v /home/mradwan/jack-demo-html/haProxy/config/ha_config.cfg.cfg:/usr/local/etc/haproxy:ro \
 	-v /home/mradwan/jack-demo-html/haProxy/error/:/etc/haproxy/errors/ \
 	-v /certs:/etc/haproxy/certs:ro \
     -p 80:80 \
