@@ -1,4 +1,4 @@
 files:
   include: 'src/assets/calc/*.s+(a|c)ss'
   ignore:
-   - '/node_modules/node-sass/test/fixtures/**/*.s+(a|c)ss'
+    - '/node_modules/node-sass/test/fixtures/**/*.s+(a|c)ss'

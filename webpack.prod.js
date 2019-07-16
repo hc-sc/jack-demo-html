@@ -4,123 +4,113 @@ const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const SassLintPlugin = require('sass-lint-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const webpack = require('webpack');
 
 const entry = {
-	'main': './src/index.js'
-}
+  main: './src/index.js'
+};
 
 const optimization = {
-	runtimeChunk: 'single',
-	splitChunks: {
-		chunks: 'all',
-		maxInitialRequests: Infinity,
-		minSize: 0,
-		cacheGroups: {
-			vendor: {
-				test: /[\\/]node_modules[\\/]/,
-				name(module) {
-					const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
-					return `npm.${packageName.replace('@', '')}`;
-				},
-			},
-		},
-	},
-	minimizer: [
-		new TerserJSPlugin(),
-		new OptimizeCSSAssetsPlugin()
-	]
-}
+  runtimeChunk: 'single',
+  splitChunks: {
+    chunks: 'all',
+    maxInitialRequests: Infinity,
+    minSize: 0,
+    cacheGroups: {
+      vendor: {
+        test: /[\\/]node_modules[\\/]/,
+        name(module) {
+          const packageName = module.context.match(
+            /[\\/]node_modules[\\/](.*?)([\\/]|$)/
+          )[1];
+          return `npm.${packageName.replace('@', '')}`;
+        }
+      }
+    }
+  },
+  minimizer: [new TerserJSPlugin(), new OptimizeCSSAssetsPlugin()]
+};
 
 const output = {
-	filename: 'main-[contentHash].js',
-	path: path.resolve(__dirname + '/dist')
-}
+  filename: 'main-[contentHash].js',
+  path: path.resolve(__dirname + '/dist')
+};
 
 const _module = {
-	rules: [{
-			test: /\.s?css$/,
-			exclude: /node_modules/,
-			use: [
-				MiniCssExtractPlugin.loader,
-				'css-loader',
-				'sass-loader'
-			]
-		},
-		{
-			test: /\.js$/,
-			exclude: /node_modules/,
-			use: [
-				'babel-loader',
-				'eslint-loader'
-			],
-		},
-		{
-			test: /\.html$/,
-			loader: 'htmllint-loader',
-			include: [
-				'/src/main-en.html',
-				'/src/main-fr.html',
-			],
-			exclude: /node_modules/,
-		},
-	]
-}
+  rules: [
+    {
+      test: /\.s?css$/,
+      exclude: /node_modules/,
+      use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+    },
+    {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: ['babel-loader', 'eslint-loader']
+    },
+    {
+      test: /\.html$/,
+      loader: 'htmllint-loader',
+      include: ['/src/main-en.html', '/src/main-fr.html'],
+      exclude: /node_modules/
+    }
+  ]
+};
 
 const plugins = [
-	new FriendlyErrorsWebpackPlugin(),
-	new webpack.optimize.ModuleConcatenationPlugin(),
-	new HtmlWebpackPlugin({
-		filename: 'index.html',
-		template: './src/main-en.html',
-		minify: {
-			removeAttributeQuotes: true,
-			collapseWhitespace: true,
-			removeComments: true,
-			removeRedundantAttributes: true,
-			useShrotDoctype: true,
-			removeEmptyAttributes: true,
-			removeStyleLinkTypeAttributes: true,
-			keepClosingSlash: true,
-			minifyJS: true,
-			minifyCSS: true,
-			minifyURLs: true
-		}
-	}),
-	new HtmlWebpackPlugin({
-		filename: 'index-fr.html',
-		template: './src/main-fr.html',
-		minify: {
-			removeAttributeQuotes: true,
-			collapseWhitespace: true,
-			removeComments: true,
-			removeRedundantAttributes: true,
-			useShrotDoctype: true,
-			removeEmptyAttributes: true,
-			removeStyleLinkTypeAttributes: true,
-			keepClosingSlash: true,
-			minifyJS: true,
-			minifyCSS: true,
-			minifyURLs: true
-		}
-	}),
-	new MiniCssExtractPlugin({
-		filename: '[name]-[contentHash].css'
-	}),
-	new CleanWebpackPlugin(),
-	new SassLintPlugin(),
-]
+  new FriendlyErrorsWebpackPlugin(),
+  new webpack.optimize.ModuleConcatenationPlugin(),
+  new HtmlWebpackPlugin({
+    filename: 'index.html',
+    template: './src/main-en.html',
+    minify: {
+      removeAttributeQuotes: true,
+      collapseWhitespace: true,
+      removeComments: true,
+      removeRedundantAttributes: true,
+      useShrotDoctype: true,
+      removeEmptyAttributes: true,
+      removeStyleLinkTypeAttributes: true,
+      keepClosingSlash: true,
+      minifyJS: true,
+      minifyCSS: true,
+      minifyURLs: true
+    }
+  }),
+  new HtmlWebpackPlugin({
+    filename: 'index-fr.html',
+    template: './src/main-fr.html',
+    minify: {
+      removeAttributeQuotes: true,
+      collapseWhitespace: true,
+      removeComments: true,
+      removeRedundantAttributes: true,
+      useShrotDoctype: true,
+      removeEmptyAttributes: true,
+      removeStyleLinkTypeAttributes: true,
+      keepClosingSlash: true,
+      minifyJS: true,
+      minifyCSS: true,
+      minifyURLs: true
+    }
+  }),
+  new MiniCssExtractPlugin({
+    filename: '[name]-[contentHash].css'
+  }),
+  new CleanWebpackPlugin(),
+  new SassLintPlugin()
+];
 
 module.exports = {
-	entry,
-	mode: 'production',
-	module: _module,
-	output,
-	plugins,
-	optimization,
-	devServer: {
-		quiet: true,
-	},
-}
+  entry,
+  mode: 'production',
+  module: _module,
+  output,
+  plugins,
+  optimization,
+  devServer: {
+    quiet: true
+  }
+};

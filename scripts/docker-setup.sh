@@ -1,4 +1,5 @@
 #!/bin/bash
+
  docker create --name haproxy-open \
     -v /root/haproxy/cfg-file/:/usr/local/etc/haproxy:ro \
 	-v /root/haproxy/error/:/etc/haproxy/errors/ \
@@ -9,7 +10,11 @@
 docker run --name app-html \
  	-p 81:80 \
 	-v /home/mradwan/jack-demo-html/dist:/usr/share/nginx/html \
-	-v /home/mradwan/jack-demo-html/theme/GCWeb:/usr/share/nginx/html/theme/GCWeb \
+	-v /home/mradwan/jack-demo-html/theme:/usr/share/nginx/html/theme \
+	-d nginx
+
+docker run --name app-error \
+ 	-p 82:80 \
 	-d nginx
 
 docker network connect appnet haproxy-open
