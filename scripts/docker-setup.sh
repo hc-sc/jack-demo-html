@@ -1,10 +1,10 @@
 #!/bin/bash
 
  docker create --name proxy \
+	-v /home/mradwan/jack-demo-html/haproxy/cfg
     -v /root/haproxy/cfg-file/:/usr/local/etc/haproxy:ro \
 	-v /root/haproxy/error/:/etc/haproxy/errors/ \
-	-v /certs:/certs:ro \
-	-p 22:22 \
+	-v /certs:/etc/haproxy/certs:ro \
     -p 80:80 \
 	-p 443:443 \
     haproxy:1.7
