@@ -8,14 +8,15 @@
 	-p 443:443 \
     haproxy:1.7
 
-docker run --name app-html \
+docker run --name app-htm \
  	-p 81:80 \
-	-v /home/mradwan/jack-demo-html/dist:/usr/share/nginx/html \
-	-v /home/mradwan/jack-demo-html/theme:/usr/share/nginx/html/theme \
+	-v /home/mradwan/jack-demo-html/dist:/usr/share/nginx/html/html \
+	-v /home/mradwan/jack-demo-html/theme:/usr/share/nginx/html/html/theme \
 	-d nginx
 
-docker run --name app-error \
+docker run --name app-menu \
  	-p 82:80 \
+	-v /home/mradwan/jack-demo-html/menu:/usr/share/nginx/html \
 	-d nginx
 #ssl
 sudo docker run -it --rm \
