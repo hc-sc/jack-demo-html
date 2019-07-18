@@ -1,20 +1,20 @@
 #!/bin/bash
 
  docker create --name proxy \
-	-v /home/mradwan/jack-demo-html/proxy/haProxy/config/ha_config.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro \
-	-v /home/mradwan/jack-demo-html/proxy/haProxy/error/:/etc/haproxy/errors/ \
+	-v /home/mradwan/proxy/haProxy/config/ha_config.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro \
+	-v /home/mradwan/proxy/haProxy/error/:/etc/haproxy/errors/ \
     -p 80:80 \
     haproxy:1.7
 
 docker run --name app-html \
  	-p 81:80 \
-	-v /home/mradwan/jack-demo-html/html/dist:/usr/share/nginx/html/html \
-	-v /home/mradwan/jack-demo-html/html/theme:/usr/share/nginx/html/html/theme \
+	-v /home/mradwan/html/dist:/usr/share/nginx/html/html \
+	-v /home/mradwan/html/theme:/usr/share/nginx/html/html/theme \
 	-d nginx
 
 docker run --name app-menu \
  	-p 82:80 \
-	-v /home/mradwan/jack-demo-html/html/menu:/usr/share/nginx/html \
+	-v /home/mradwan/menu:/usr/share/nginx/html \
 	-d nginx
 
 
