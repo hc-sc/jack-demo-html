@@ -20,13 +20,18 @@ docker run --name app-menu \
 	-v /home/mradwan/menu:/usr/share/nginx/html \
 	-d nginx
 
-#php
-docker run -it --rm --name app-php -v "$PWD":/usr/src/myapp -w /usr/src/myapp php:7.2-cli php your-script.php
+#php with apache
+docker run --name app-php \
+	-p 83:80  \
+	-v /home/mradwan/php/src:/var/www/html/php \
+	-v /home/mradwan/php/theme:/var/www/html/php/theme \
+	-d php:7.2-apache
+
 
 #java tom cat
 
 
-
+docker run -it --rm --name app -v "$PWD":/usr/src/myapp -p 83:80 -w /usr/src/myapp php:7.2-cli
 
 certbot certonly --standalone --http-01-port 80 -d majic-student.canadacentral.cloudapp.azure.com
 

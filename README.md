@@ -4,6 +4,8 @@ This document outlines how to implement continuous integration using docker, Git
 
 ### [Documentation](https://jill.hc-sc.gc.ca/confluence/display/JO/Jack+demo%3A+HTML)
 
+##[Demo Website](http://majic-student.canadacentral.cloudapp.azure.com/)
+
 Current installed plugins:
 
 1. [MiniCssExtractPlugin](https://github.com/webpack-contrib/mini-css-extract-plugin)
