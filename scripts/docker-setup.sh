@@ -26,6 +26,7 @@ docker run --name app-php \
 	-v /home/mradwan/php/src:/var/www/html/php \
 	-v /home/mradwan/php/theme:/var/www/html/php/theme \
 	-d php:7.2-apache
+	
 
 
 #java tom cat
@@ -34,6 +35,24 @@ docker run --name app-php \
 docker run -it --rm --name app -v "$PWD":/usr/src/myapp -p 83:80 -w /usr/src/myapp php:7.2-cli
 
 certbot certonly --standalone --http-01-port 80 -d majic-student.canadacentral.cloudapp.azure.com
+
+#mysql
+
+docker run -d --name mysql-server \
+	-p 3306:3306 \
+	-e MYSQL_ROOT_PASSWORD=sonarqube123 \
+	-e MYSQL_DATABASE=sonar \
+	mysql/mysql-server
+
+#sonarqube instance
+
+docker run -d --name SonarQube \
+	--link mysql-server:mysql-server \
+	-p 9000:9000 -p 9092:9092 \
+	-e SONARQUBE_JDBC_USERNAME=sonar \
+	-e SONARQUBE_JDBC_PASSWORD=sonarqube123 \
+	-e "SONARQUBE_JDBC_URL=jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance" \
+  	sonarqube
 
 # create a subnet and add them to the subnet
 docker network create \
@@ -45,3 +64,5 @@ docker network connect appnet proxy
 docker network connect appnet app-menu
 docker network connect appnet app-html
 docker network connect appnet app-php
+docker network connect appnet sonarqube
+docker network connect appnet mysql-server
