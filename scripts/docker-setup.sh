@@ -46,13 +46,9 @@ docker run -d --name mysql-server \
 
 #sonarqube instance
 
-docker run -d --name SonarQube \
-	--link mysql-server:mysql-server \
-	-p 9000:9000 -p 9092:9092 \
-	-e SONARQUBE_JDBC_USERNAME=sonar \
-	-e SONARQUBE_JDBC_PASSWORD=sonarqube123 \
-	-e "SONARQUBE_JDBC_URL=jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance" \
-  	sonarqube
+docker run -d --name SonarQube --link mysql-server:mysql-server -p 9000:9000 -p 9092:9092 \
+	-v /home/bbhowmik/sonar/conf/sonar.properties:/opt/sonarqube/conf/sonar.properties \
+	sonarqube:7.4-community
 
 # create a subnet and add them to the subnet
 docker network create \
@@ -64,5 +60,5 @@ docker network connect appnet proxy
 docker network connect appnet app-menu
 docker network connect appnet app-html
 docker network connect appnet app-php
-docker network connect appnet sonarqube
+docker network connect appnet SonarQube
 docker network connect appnet mysql-server
