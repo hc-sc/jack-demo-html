@@ -71,11 +71,10 @@ function clearCE(length, input) {
 }
 
 function calculate(sequence) {
-	equation = sequence.replace(/×/g, '*');
-	equation = equation.replace(/÷/g, '/');
+	var newVal = evalute(sequence);
 	try {
-		var equal = Math.round(eval(equation) * 100) / 100;
-		if (equation.length > 9) {
+		var equal = newVal;
+		if (equal.length > 9) {
 			result = false;
 			return 'Lrg';
 		} else {
@@ -87,6 +86,13 @@ function calculate(sequence) {
 		result = false;
 		return 'Err';
 	}
+}
+
+function evalute(num) {
+	var equation = sequence.replace(/×/g, '*');
+	equation = equation.replace(/÷/g, '/');
+	var newVal = Math.round(newVal * 100) / 100;
+	return newVal;
 }
 
 module.exports = {
