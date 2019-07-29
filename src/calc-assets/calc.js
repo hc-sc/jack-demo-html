@@ -74,10 +74,8 @@ function calculate(sequence) {
 	equation = sequence.replace(/×/g, '*');
 	equation = equation.replace(/÷/g, '/');
 	var newVal = Number(equation);
-	console.log(newVal);
-	console.log(typeof newVal);
 	try {
-		var equal = Math.round(eval(equation) * 100) / 100;
+		var equal = Math.round(newVal * 100) / 100;
 		if (equation.length > 9) {
 			result = false;
 			return 'Lrg';
