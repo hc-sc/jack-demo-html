@@ -89,9 +89,10 @@ function calculate(sequence) {
 }
 
 function evalute(num) {
-	var equation = sequence.replace(/×/g, '*');
-	equation = equation.replace(/÷/g, '/');
-	var newVal = Math.round(newVal * 100) / 100;
+	equation = num.replace(/×/g, '*');
+	equation = num.replace(/÷/g, '/');
+	var newVal = Number(equation);
+	newVal = Math.round(newVal * 100) / 100;
 	return newVal;
 }
 
