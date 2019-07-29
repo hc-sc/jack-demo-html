@@ -74,7 +74,7 @@ function calculate(sequence) {
 	var newVal = evalute(sequence);
 	try {
 		var equal = newVal;
-		if (equation.length > 9) {
+		if (equal.length > 9) {
 			result = false;
 			return 'Lrg';
 		} else {
@@ -89,7 +89,7 @@ function calculate(sequence) {
 }
 
 function evalute(num) {
-	equation = sequence.replace(/×/g, '*');
+	var equation = sequence.replace(/×/g, '*');
 	equation = equation.replace(/÷/g, '/');
 	var newVal = Math.round(newVal * 100) / 100;
 	return newVal;
