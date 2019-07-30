@@ -1,6 +1,4 @@
-    ![preview 1](https://github.com/hc-sc/jack-demo-html/blob/radme/assets/jack_over_view.png)
-
-# HTML
+# HTML Demo
 
 This is a demo for continuous integration and development.
 
