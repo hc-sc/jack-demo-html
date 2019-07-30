@@ -9,11 +9,15 @@ module.exports = {
         '/src/test/unit-displayingResult.test.js',
         '/src/test/unit-clearing.test.js'
       ]
+	
     },
     {
       displayName: 'ui test',
       preset: 'jest-puppeteer',
       testRegex: ['/src/test/ui.test.js']
     }
-  ]
+  ],
+testResultsProcessor: 'jest-sonar-reporter',
+collectCoverage: true,
+coverageDirectory: './.coverage'
 };

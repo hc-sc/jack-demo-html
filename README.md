@@ -18,7 +18,7 @@ This is a demo for continuous integration and development.
 
 # What is Jack ?
 
-    ![alt text](https://jill.hc-sc.gc.ca/confluence/download/attachments/12091433/image2018-7-4_15-19-17.png?version=1&modificationDate=1530731957404&api=v2)
+    ![alt text](assets/jack_over_view.png)
 
 # What is CI/CD ?
 
