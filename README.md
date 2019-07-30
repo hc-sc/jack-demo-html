@@ -1,3 +1,5 @@
+    ![preview 1](https://github.com/hc-sc/jack-demo-html/blob/radme/assets/jack_over_view.png)
+
 # HTML
 
 This is a demo for continuous integration and development.
@@ -18,7 +20,6 @@ This is a demo for continuous integration and development.
 
 # What is Jack ?
     
-    ![preview 1](https://github.com/hc-sc/jack-demo-html/blob/radme/assets/jack_over_view.png)
 
 # What is CI/CD ?
 
