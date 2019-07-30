@@ -1,29 +1,40 @@
 # HTML Demo
 
-This is a demo for continuous integration and development.
+This is a demo for continuous integration and development. [Demo Website.](http://majic-student.canadacentral.cloudapp.azure.com/).
 
-### Quick Start
+## Quick Start
 
 1. Clone repo on VM:
+
    ```bash
    $ git clone --recursive https://github.hc-sc.gc.ca/hs/jack-demo-html
    ```
+
 2. install all dependencies and setp up ui testing sandbox:
+
    ```bash
    $ cd jac-demo-html
    $ . setup.sh
    ```
+
 3. setup up docker containers to host the demo
 
-- [Link](https://jill.hc-sc.gc.ca/confluence/display/JO/Docker+Containers)
+   - [Docker setup.](https://jill.hc-sc.gc.ca/confluence/display/JO/Docker+Containers)
 
-### What is Jack ?
+## Documentation
 
-This is an introduction the CI/CD and all the tools used
+- [Documentation.](https://jill.hc-sc.gc.ca/confluence/display/JO/Jack+demo%3A+HTML)
 
-- [Introduction](https://jill.hc-sc.gc.ca/confluence/display/JACK/Introduction)
+## What is Jack ?
 
-### resources
+- [Introduction to Jack.](https://jill.hc-sc.gc.ca/confluence/display/JACK/Introduction)
 
-- [Documentation](https://jill.hc-sc.gc.ca/confluence/display/JO/Jack+demo%3A+HTML)
-- [Demo Website](http://majic-student.canadacentral.cloudapp.azure.com/)
+### Tools used in Jack
+
+- GitHub
+- JIRA
+- Jenkins
+- SonarQube
+- Stride
+- Confluence
+- Artifactory
