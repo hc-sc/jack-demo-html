@@ -18,7 +18,9 @@ This is a demo for continuous integration and development.
 
 ### What is Jack ?
 
-    The following link is an inroduction to jack. [Link.](https://jill.hc-sc.gc.ca/confluence/display/JACK/Introduction)
+    The following link is an inroduction to jack.
+
+    [Introduction](https://jill.hc-sc.gc.ca/confluence/display/JACK/Introduction)
 
 ### resources
 
