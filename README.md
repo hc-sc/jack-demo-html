@@ -2,7 +2,7 @@
 
 This is a demo for continuous integration and development.
 
-## Quick Start
+### Quick Start
 
 1. Clone repo on VM:
    ```bash
@@ -16,14 +16,11 @@ This is a demo for continuous integration and development.
 3. setup up docker containers to host the demo
    [Link](https://jill.hc-sc.gc.ca/confluence/display/JO/Docker+Containers)
 
-# What is Jack ?
-    
+### What is Jack ?
 
-# What is CI/CD ?
+    The following link is an inroduction to jack. [Link.](https://jill.hc-sc.gc.ca/confluence/display/JACK/Introduction)
 
-# How does it work ?
-
-# resources
+### resources
 
 - [Documentation](https://jill.hc-sc.gc.ca/confluence/display/JO/Jack+demo%3A+HTML)
 - [Demo Website](http://majic-student.canadacentral.cloudapp.azure.com/)
