@@ -18,7 +18,7 @@ This is a demo for continuous integration and development.
 
 # What is Jack ?
 
-    ![alternativetext](assets/jack_over_view.png)
+    ![preview 1](assets/jack_over_view.png)
 
 # What is CI/CD ?
 
