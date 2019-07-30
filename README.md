@@ -17,8 +17,8 @@ This is a demo for continuous integration and development.
    [Link](https://jill.hc-sc.gc.ca/confluence/display/JO/Docker+Containers)
 
 # What is Jack ?
-
-    ![preview 1](assets/jack_over_view.png)
+    
+    ![preview 1](https://github.com/hc-sc/jack-demo-html/blob/radme/assets/jack_over_view.png)
 
 # What is CI/CD ?
 
