@@ -14,13 +14,14 @@ This is a demo for continuous integration and development.
    $ . setup.sh
    ```
 3. setup up docker containers to host the demo
-   [Link](https://jill.hc-sc.gc.ca/confluence/display/JO/Docker+Containers)
+
+- [Link](https://jill.hc-sc.gc.ca/confluence/display/JO/Docker+Containers)
 
 ### What is Jack ?
 
-    The following link is an inroduction to jack.
+This is an introduction the CI/CD and all the tools used
 
-    [Introduction](https://jill.hc-sc.gc.ca/confluence/display/JACK/Introduction)
+- [Introduction](https://jill.hc-sc.gc.ca/confluence/display/JACK/Introduction)
 
 ### resources
 
