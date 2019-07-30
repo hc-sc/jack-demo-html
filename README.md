@@ -18,7 +18,7 @@ This is a demo for continuous integration and development.
 
 # What is Jack ?
 
-    ![alt text](assets/jack_over_view.png)
+    ![Alt text](assets/jack_over_view.png?raw=true "Jack overview")
 
 # What is CI/CD ?
 
