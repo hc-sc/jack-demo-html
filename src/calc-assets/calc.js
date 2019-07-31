@@ -93,6 +93,7 @@ function evalute(num) {
 	equation = num.replace(/÷/g, '/');
 	var newVal = Number(equation);
 	newVal = Math.round(newVal * 100) / 100;
+	console.log(newVal);
 	return newVal;
 }
 
