@@ -71,10 +71,11 @@ function clearCE(length, input) {
 }
 
 function calculate(sequence) {
-	var newVal = evalute(sequence);
+	equation = sequence.replace(/×/g, '*');
+	equation = equation.replace(/÷/g, '/');
 	try {
-		var equal = newVal;
-		if (equal.length > 9) {
+		var equal = Math.round(eval(equation) * 100) / 100;
+		if (equation.length > 9) {
 			result = false;
 			return 'Lrg';
 		} else {
@@ -88,20 +89,10 @@ function calculate(sequence) {
 	}
 }
 
-function evalute(num) {
-	equation = num.replace(/×/g, '*');
-	equation = num.replace(/÷/g, '/');
-	var newVal = Number(equation);
-	newVal = Math.round(newVal * 100) / 100;
-	console.log(newVal);
-	return newVal;
-}
-
 module.exports = {
 	calculate,
 	clearAC,
 	clearCE,
 	calculator,
-	errorHandling,
-	evalute
+	errorHandling
 };
