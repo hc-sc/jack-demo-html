@@ -1,4 +1,4 @@
-const { calculate, errorHandling } = require('../calc-assets/calc.js');
+const { calculate, errorHandling, evalute } = require('../calc-assets/calc.js');
 
 describe('Checking if all errors will be handled', () => {
 	test('inputing values as soon as the page loads', () => {
