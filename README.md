@@ -1,6 +1,6 @@
 # HTML Demo
 
-This is a demo for continuous integration and development. [Demo Website.](http://majic-student.canadacentral.cloudapp.azure.com/).
+This is a demo for continuous integration and development. [Demo Website.](http://majic-student.canadacentral.cloudapp.azure.com/html).
 
 ## Quick Start
 

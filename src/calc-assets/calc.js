@@ -101,5 +101,6 @@ module.exports = {
 	clearAC,
 	clearCE,
 	calculator,
-	errorHandling
+	errorHandling,
+	evalute
 };
