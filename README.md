@@ -35,6 +35,5 @@ This is a demo for continuous integration and development. [Demo Website.](http:
 - JIRA
 - Jenkins
 - SonarQube
-- Stride
 - Confluence
 - Artifactory
